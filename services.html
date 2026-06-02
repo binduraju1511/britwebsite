@@ -1,0 +1,1631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon - these will show in browser tabs and bookmarks -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/headerlogo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/headerlogo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/headerlogo.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <title>Our Services - BR Innovation & Technology</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        :root {
+            --navy: #0A2647;
+            --gold: #fada5e;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--light-gray);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 38, 71, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 38, 71, 0.98);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--gold);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+
+
+        /* Home Button */
+        .home-btn {
+            position: fixed;
+            top: 80px;
+            left: 20px;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            z-index: 1001;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .home-btn:hover {
+            background: var(--navy);
+            color: var(--gold);
+        }
+
+
+        /* Hero Section */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(10, 38, 71, 0.8), rgba(10, 38, 71, 0.5)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--dark-gray);
+            opacity: 0.8;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--light-gray);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-content h3 {
+            color: var(--navy);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--navy);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: var(--transition);
+            border-radius: 50px;
+        }
+
+        .btn:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        /* Why Choose Us Section */
+        .why-us {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #0A2647 0%, #1B4B8A 100%);
+            color: var(--white);
+        }
+
+        .why-us .section-header h2,
+        .why-us .section-header p {
+            color: var(--white);
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .why-us-card {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+
+        .why-us-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .why-us-card i {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .why-us-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* Industries Section */
+        .industries {
+            padding: 6rem 2rem;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('assets/images/education technology.jpg');
+            overflow: hidden;
+        }
+        
+        .industries-container {
+            max-width: 100%;
+            margin: 0 auto;
+            overflow: hidden; /* Hide scrollbar */
+            position: relative;
+        }
+        
+        .industries-grid {
+            display: flex;
+            gap: 2rem;
+            padding: 0 1rem;
+            animation: scroll 40s linear infinite; /* Adjust time to control speed */
+        }
+        
+        .education technology-card {
+            flex: 0 0 250px;
+            width: 250px;
+            background: var(--white);
+            border-radius: 10px;
+            text-align: center;
+            padding: 2rem;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Animation keyframes */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%); /* Move by half the width since we duplicated the cards */
+            }
+        }
+        
+        /* Pause animation on hover */
+        .industries-grid:hover {
+            animation-play-state: paused;
+        }
+        
+        @media (max-width: 768px) {
+            .education technology-card {
+                flex: 0 0 200px;
+                width: 200px;
+            }
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 6rem 2rem;
+            background: linear-gradient(rgba(10, 38, 71, 0.9), rgba(10, 38, 71, 0.9)), url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta .btn {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .cta .btn:hover {
+            background: var(--white);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .services-grid,
+            .why-us-grid,
+            .industries-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .home-btn {
+                top: 80px;
+                left: 10px;
+                padding: 8px 16px;
+                font-size: 0.9rem;
+                border-radius: 50px;
+            }
+
+            .industries-container {
+                padding: 1rem 0;
+            }
+
+            .industries-grid {
+                padding: 1rem 0;
+            }
+
+            .education technology-card {
+                width: 200px;
+            }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--navy);
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem;
+                transition: var(--transition);
+                transform: translateY(-150%);
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+        }
+
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            overflow: hidden;
+            font-family: 'DM Sans', sans-serif;
+        }
+    
+        .chat-header {
+            background: var(--navy);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+    
+        .chat-logo {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+    
+        .chat-body {
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            display: none;
+        }
+    
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+    
+        .message {
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            border-radius: 10px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+    
+        .message.sent {
+            background: var(--navy);
+            color: white;
+            margin-left: auto;
+        }
+    
+        .message.received {
+            background: #f0f0f0;
+            color: var(--dark-gray);
+        }
+    
+        .chat-input-container {
+            padding: 15px;
+            border-top: 1px solid #eee;
+            display: flex;
+            gap: 10px;
+        }
+    
+        .chat-input-container input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+    
+        .chat-input-container button {
+            background: var(--gold);
+            color: var(--navy);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+    
+        .chat-input-container button:hover {
+            transform: translateY(-2px);
+        }
+    
+        @media (max-width: 480px) {
+            .chat-widget {
+                width: calc(100% - 40px);
+                bottom: 10px;
+                right: 20px;
+            }
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.65);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background-color: #111111;
+            border: 1px solid #d4af37;
+            max-width: 700px;
+            margin: 50px auto;
+            border-radius: 10px;
+            position: relative;
+            animation: modalFadeIn 0.3s;
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            padding: 20px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+            position: relative;
+        }
+
+        .modal-title {
+            margin: 0;
+            color: #d4af37;
+            font-size: 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #cccccc;
+            transition: color 0.3s;
+        }
+
+        .close-btn:hover {
+            color: #d4af37;
+        }
+
+        .modal-body {
+            padding: 20px;
+            color: #ffffff;
+        }
+
+        .modal-section {
+            margin-bottom: 20px;
+        }
+
+        .modal-section h3 {
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .modal-body p,
+        .modal-body li {
+            color: #ffffff;
+        }
+
+        .modal-body a {
+            color: #d4af37;
+            text-decoration: none;
+        }
+
+        .modal-body a:hover {
+            color: #ffffff;
+        }
+
+        .feature-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .feature-list li:before {
+            content: "•";
+            color: var(--gold);
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+
+        /* Service Card Enhancements */
+        .service-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn {
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .modal-content {
+                margin: 20px;
+                width: auto;
+            }
+
+            .modal-header {
+                padding: 15px;
+            }
+
+            .modal-body {
+                padding: 15px;
+            }
+        }
+        /* BR Innovation premium black-gold global theme override */
+        :root {
+            --navy: #D4AF37;
+            --gold: #D4AF37;
+            --light-gray: #050505;
+            --dark-gray: #CFCFCF;
+            --white: #FFFFFF;
+            --card-bg: #161616;
+            --border-color: rgba(212, 175, 55, 0.2);
+        }
+
+        html,
+        body,
+        main,
+        section,
+        .section,
+        .services,
+        .cta,
+        .cta-section,
+        .footer,
+        footer {
+            background: #050505 !important;
+            color: #FFFFFF !important;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .section-title,
+        .heading,
+        .title {
+            color: #D4AF37 !important;
+        }
+
+        p,
+        li,
+        span,
+        label,
+        .text,
+        .description {
+            color: #FFFFFF !important;
+        }
+
+        .subtitle,
+        .subtext,
+        .muted,
+        .secondary,
+        small {
+            color: #CFCFCF !important;
+        }
+
+        .card,
+        [class*="card"],
+        .service-card,
+        .featured-card,
+        .project-card {
+            background: #161616 !important;
+            border: 1px solid rgba(212, 175, 55, 0.2) !important;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+        }
+
+        .card:hover,
+        [class*="card"]:hover,
+        .service-card:hover,
+        .featured-card:hover,
+        .project-card:hover {
+            transform: translateY(-8px) !important;
+            border-color: rgba(212, 175, 55, 0.55) !important;
+            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        a,
+        .nav-links a,
+        .btn,
+        button {
+            color: #FFFFFF !important;
+        }
+
+        a:hover,
+        .nav-links a:hover,
+        .btn:hover,
+        button:hover {
+            color: #D4AF37 !important;
+        }
+
+        .btn,
+        button {
+            border: 1px solid rgba(212, 175, 55, 0.2) !important;
+        }
+
+        .btn-primary {
+            background: #D4AF37 !important;
+            color: #050505 !important;
+            border-color: #D4AF37 !important;
+        }
+
+        .btn-primary:hover {
+            background: #050505 !important;
+            color: #D4AF37 !important;
+        }
+
+        .btn-secondary {
+            background: transparent !important;
+            color: #FFFFFF !important;
+            border: 1px solid rgba(212, 175, 55, 0.45) !important;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(212, 175, 55, 0.12) !important;
+            color: #D4AF37 !important;
+        }
+
+        .navbar,
+        .navbar.scrolled,
+        .footer,
+        footer {
+            background: #050505 !important;
+            color: #FFFFFF !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="">
+                BR Innovation & Technology
+            </a>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <!-- Gallery temporarily disabled -->
+                <!-- <li><a href="gallery.html">Gallery</a></li> -->
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+<!-- Home Button -->
+<a href="index.html" class="home-btn">
+    <i class="fas fa-home"></i>
+    Home
+</a>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Our Solutions</h1>
+
+        <p>
+            Adaptive AI learning systems and educational robotics
+            designed to support children through intelligent,
+            interactive, and engaging experiences.
+        </p>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="services">
+
+    <div class="section-header">
+
+        <h2>What We Offer</h2>
+
+        <p>
+            Discover our AI-powered educational solutions focused on
+            adaptive learning, emotional intelligence, and interactive robotics.
+        </p>
+
+    </div>
+
+    <div class="services-grid">
+
+        <div class="service-card" data-service-type="adaptive">
+
+            <div class="service-image">
+                <img src="assets/images/gallery/gallery1.png"
+                    alt="Adaptive Learning">
+            </div>
+
+            <div class="service-content">
+
+                <h3>Adaptive Learning Systems</h3>
+
+                <p>
+                    AI-powered learning experiences that adapt to children's
+                    behavior, engagement, and educational needs.
+                </p>
+
+                <a href="#" class="btn"
+                onclick="openServiceModal('adaptive')">
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="service-card" data-service-type="emotion">
+
+            <div class="service-image">
+                <img src="assets/images/gallery/gallery2.png"
+                    alt="Emotional Intelligence">
+            </div>
+
+            <div class="service-content">
+
+                <h3>Emotional Intelligence Support</h3>
+
+                <p>
+                    Interactive AI systems designed to understand
+                    emotions and encourage positive learning engagement.
+                </p>
+
+                <a href="#" class="btn"
+                onclick="openServiceModal('emotion')">
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="service-card" data-service-type="robotics">
+
+            <div class="service-image">
+                <img src="assets/images/gallery/gallery3.png"
+                    alt="Educational Robotics">
+            </div>
+
+            <div class="service-content">
+
+                <h3>Educational Robotics</h3>
+
+                <p>
+                    Hands-on robotics experiences that combine AI,
+                    creativity, STEM learning, and interactive education.
+                </p>
+
+                <a href="#" class="btn"
+                onclick="openServiceModal('robotics')">
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="service-card" data-service-type="innovation">
+
+            <div class="service-image">
+                <img src="assets/images/gallery/gallery4.png"
+                    alt="AI Innovation">
+            </div>
+
+            <div class="service-content">
+
+                <h3>AI Innovation & Development</h3>
+
+                <p>
+                    Continuous development of future-ready AI educational
+                    ecosystems designed for schools and families.
+                </p>
+
+                <a href="#" class="btn"
+                onclick="openServiceModal('innovation')">
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Why Choose Us -->
+<section class="why-us">
+
+    <div class="section-header">
+
+        <h2>Why Choose BR Innovation & Technology</h2>
+
+        <p>
+            Focused on building the future of adaptive AI learning experiences.
+        </p>
+
+    </div>
+
+    <div class="why-us-grid">
+
+        <div class="why-us-card">
+
+            <i class="fas fa-lightbulb"></i>
+
+            <h3>Innovation Driven</h3>
+
+            <p>
+                Building intelligent learning systems focused on emotional
+                engagement and adaptive experiences.
+            </p>
+
+        </div>
+
+        <div class="why-us-card">
+
+            <i class="fas fa-robot"></i>
+
+            <h3>Interactive AI</h3>
+
+            <p>
+                Combining robotics and AI to create engaging educational companions.
+            </p>
+
+        </div>
+
+        <div class="why-us-card">
+
+            <i class="fas fa-graduation-cap"></i>
+
+            <h3>Educational Focus</h3>
+
+            <p>
+                Designed specifically to support children’s learning and development.
+            </p>
+
+        </div>
+
+        <div class="why-us-card">
+
+            <i class="fas fa-microchip"></i>
+
+            <h3>Future Technology</h3>
+
+            <p>
+                Scalable AI systems built for future-ready learning environments.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Focus Areas -->
+<section class="industries">
+
+    <div class="section-header">
+
+        <h2>Our Focus Areas</h2>
+
+        <p>
+            Building intelligent educational experiences through AI and robotics.
+        </p>
+
+    </div>
+
+    <div class="industries-container">
+
+        <div class="industries-grid">
+
+            <div class="technology-card">
+
+                <i class="fas fa-brain"></i>
+
+                <h3>Adaptive Learning</h3>
+
+                <p>
+                    Personalized AI learning experiences for children.
+                </p>
+
+            </div>
+
+            <div class="technology-card">
+
+                <i class="fas fa-heart"></i>
+
+                <h3>Emotional Intelligence</h3>
+
+                <p>
+                    Emotion-aware interactions and engagement systems.
+                </p>
+
+            </div>
+
+            <div class="technology-card">
+
+                <i class="fas fa-robot"></i>
+
+                <h3>Educational Robotics</h3>
+
+                <p>
+                    Interactive robotics designed for modern STEM education.
+                </p>
+
+            </div>
+
+            <div class="technology-card">
+
+                <i class="fas fa-school"></i>
+
+                <h3>Schools & Learning</h3>
+
+                <p>
+                    Smart classroom integration and AI learning support.
+                </p>
+
+            </div>
+
+            <div class="technology-card">
+
+                <i class="fas fa-users"></i>
+
+                <h3>Families & Parents</h3>
+
+                <p>
+                    Safe and engaging AI experiences for home learning.
+                </p>
+
+            </div>
+
+            <div class="technology-card">
+
+                <i class="fas fa-rocket"></i>
+
+                <h3>Future Innovation</h3>
+
+                <p>
+                    Building scalable AI educational ecosystems for tomorrow.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CTA -->
+<section class="cta">
+
+    <h2>Interested in YANI?</h2>
+
+    <p>
+        Connect with BR Innovation & Technology to explore adaptive AI learning,
+        educational robotics, and future-ready innovation.
+    </p>
+
+    <a href="contact.html" class="btn">
+        Contact Us
+    </a>
+
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div class="footer-section">
+
+            <h3>About Us</h3>
+
+            <p>
+                BR Innovation & Technology is an AI educational robotics startup
+                focused on adaptive learning systems and interactive AI companions.
+            </p>
+
+        </div>
+
+        <div class="footer-section">
+
+            <h3>Quick Links</h3>
+
+            <ul class="footer-links">
+
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Solutions</a></li>
+                <!-- Gallery temporarily disabled -->
+                <!-- <li><a href="gallery.html">Gallery</a></li> -->
+                <li><a href="contact.html">Contact</a></li>
+
+            </ul>
+
+        </div>
+
+        <div class="footer-section">
+
+            <h3>Contact Info</h3>
+
+            <p>Email: contact@brinnoandtech.com</p>
+            <p>Email: info@brinnoandtech.com</p>
+            <p>Phone: +91 79755150565</p>
+            <p>Bangalore, Karnataka, India</p>
+
+        </div>
+
+        <div class="footer-section">
+
+            <h3>Follow Us</h3>
+
+                    <div class="social-links">
+
+                        <a href="https://www.linkedin.com/company/br-innovation-and-technology/"
+                        target="_blank"
+                        class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/brinnovationandtechnology?igsh=aGExMDNpMHMxOXZx"
+                        target="_blank"
+                        class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                    </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 BR Innovation & Technology. All rights reserved.</p>
+    </div>
+
+</footer>
+
+<!-- Chat Widget -->
+<div class="chat-widget">
+
+    <div class="chat-header" onclick="toggleChat()">
+
+        <img src="assets/images/logo.png"
+            alt="YANI Assistant"
+            class="chat-logo">
+
+        <span>Talk with YANI Assistant</span>
+
+        <i class="fas fa-chevron-up" id="chat-toggle-icon"></i>
+
+    </div>
+
+    <div class="chat-body" id="chat-body">
+
+        <div class="chat-messages" id="chat-messages">
+
+            <div class="message received">
+                Hello! 👋
+                Welcome to BR Innovation & Technology.
+                I'm the YANI AI Assistant.
+            </div>
+
+        </div>
+
+        <div class="chat-input-container">
+
+            <input
+                type="text"
+                id="chat-input"
+                placeholder="Ask about YANI or our solutions..."
+                onkeypress="handleKeyPress(event)"
+            >
+
+            <button onclick="sendMessage()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- Service Detail Modal -->
+
+    <div id="serviceModal" class="modal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2 class="modal-title" id="modalTitle">
+                    Service Title
+                </h2>
+
+                <button class="close-btn" onclick="closeModal()">
+                    &times;
+                </button>
+
+            </div>
+
+            <div class="modal-body" id="modalBody">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+    const serviceDetails = {
+
+        adaptive: {
+
+            title: "Adaptive Learning Systems",
+
+            content: `
+
+                <div class="modal-section">
+
+                    <h3>Overview</h3>
+
+                    <p>
+                        YANI uses adaptive AI learning techniques to personalize educational
+                        experiences based on children's behavior, focus levels,
+                        emotional engagement, and interaction patterns.
+                    </p>
+
+                </div>
+
+                <div class="modal-section">
+
+                    <h3>Key Features</h3>
+
+                    <ul class="feature-list">
+
+                        <li>Personalized AI interaction</li>
+                        <li>Behavior-based learning adaptation</li>
+                        <li>Focus enhancement support</li>
+                        <li>Interactive educational activities</li>
+                        <li>Real-time engagement analysis</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="modal-section">
+
+                    <h3>Vision</h3>
+
+                    <p>
+                        Our goal is to build intelligent educational companions
+                        capable of supporting every child's unique learning journey.
+                    </p>
+
+                </div>
+
+            `
+        },
+
+        emotion: {
+
+            title: "Emotional Intelligence Support",
+
+            content: `
+
+                <div class="modal-section">
+
+                    <h3>Overview</h3>
+
+                    <p>
+                        YANI is designed to encourage emotional engagement
+                        and interactive communication using intelligent AI responses.
+                    </p>
+
+                </div>
+
+                <div class="modal-section">
+
+                    <h3>Capabilities</h3>
+
+                    <ul class="feature-list">
+
+                        <li>Emotion-aware interaction</li>
+                        <li>Positive engagement support</li>
+                        <li>Interactive communication</li>
+                        <li>Child-friendly responses</li>
+                        <li>Encouraging learning environment</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="modal-section">
+
+                    <h3>Future Scope</h3>
+
+                    <p>
+                        Future versions of YANI aim to support deeper emotional
+                        understanding and intelligent adaptive communication systems.
+                    </p>
+
+                </div>
+
+            `
+        },
+
+        robotics: {
+
+            title: "Educational Robotics",
+
+            content: `
+
+                <div class="modal-section">
+
+                    <h3>Overview</h3>
+
+                    <p>
+                        BR Innovation & Technology combines robotics,
+                        artificial intelligence, and STEM learning to create
+                        engaging educational experiences for children.
+                    </p>
+
+                </div>
+
+                <div class="modal-section">
+
+                    <h3>Learning Areas</h3>
+
+                    <ul class="feature-list">
+
+                        <li>Hands-on STEM education</li>
+                        <li>Interactive robotics learning</li>
+                        <li>AI-based educational systems</li>
+                        <li>Creativity and problem solving</li>
+                        <li>Future technology exposure</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="modal-section">
+
+                    <h3>Innovation Goal</h3>
+
+                    <p>
+                        We aim to make AI and robotics accessible,
+                        engaging, and educational for future generations.
+                    </p>
+
+                </div>
+
+            `
+        },
+
+        innovation: {
+
+            title: "AI Innovation & Development",
+
+            content: `
+
+                <div class="modal-section">
+
+                    <h3>Overview</h3>
+
+                    <p>
+                        BR Innovation & Technology continuously develops
+                        future-ready AI educational ecosystems designed for
+                        schools, families, and intelligent learning environments.
+                    </p>
+
+                </div>
+
+                <div class="modal-section">
+
+                    <h3>Focus Areas</h3>
+
+                    <ul class="feature-list">
+
+                        <li>AI companion systems</li>
+                        <li>Adaptive educational experiences</li>
+                        <li>Scalable AI ecosystems</li>
+                        <li>Interactive learning technology</li>
+                        <li>Next-generation educational innovation</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="modal-section">
+
+                    <h3>Our Mission</h3>
+
+                    <p>
+                        To build intelligent technologies that support
+                        children's learning, creativity, and emotional development.
+                    </p>
+
+                </div>
+
+            `
+        }
+
+    };
+
+    function openServiceModal(service){
+
+        document.getElementById('modalTitle').innerHTML =
+            serviceDetails[service].title;
+
+        document.getElementById('modalBody').innerHTML =
+            serviceDetails[service].content;
+
+        document.getElementById('serviceModal').style.display = 'block';
+
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(){
+
+        document.getElementById('serviceModal').style.display = 'none';
+
+        document.body.style.overflow = 'auto';
+    }
+
+    window.onclick = function(event){
+
+        const modal = document.getElementById('serviceModal');
+
+        if(event.target == modal){
+
+            closeModal();
+
+        }
+    }
+
+    </script>
+
+</body>
+
+</html>

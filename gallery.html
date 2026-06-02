@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - BR Innovation & Technology</title>
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/headerlogo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/headerlogo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/headerlogo.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+        :root {
+            --primary-color: #0A2647;
+            --secondary-color: #fada5e;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --navy: #0A2647;
+            --gold: #fada5e;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            overflow-x: hidden;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 38, 71, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--gold);
+        }
+
+        /* Home Button */
+        .home-btn {
+            position: fixed;
+            top: 100px;
+            left: 20px;
+            background: var(--navy);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            z-index: 1001;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .home-btn:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(rgba(10, 38, 71, 0.8), rgba(10, 38, 71, 0.8)), url('https://images.unsplash.com/photo-1497366216548-37526070297c');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 76px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 80px 20px;
+        }
+
+        .gallery-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            columns: 3;
+            column-gap: 20px;
+        }
+
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 20px;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition);
+            aspect-ratio: 16/9;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Fix for video items */
+        .gallery-item img,
+        .gallery-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 10px;
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 20px;
+            color: white;
+            opacity: 0;
+            transition: var(--transition);
+            pointer-events: none;
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+
+        /* Enhanced Popup Styles */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.95);
+            display: none;
+            flex-direction: column;
+            z-index: 2000;
+        }
+
+        .popup-top-bar {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+        }
+
+        .popup-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .popup-actions {
+            display: flex;
+            gap: 20px;
+        }
+
+        .popup-actions button,
+        .popup-actions a {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 5px;
+        }
+
+        .popup-actions button:hover,
+        .popup-actions a:hover {
+            color: var(--gold);
+        }
+
+        .popup-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 40px;
+        }
+
+        .popup-media-container {
+            width: 80%;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .popup-media {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Updated Navigation Buttons */
+        .popup-nav {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 20px;
+            border-radius: 50%;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            z-index: 2001;
+        }
+
+        .popup-nav:hover {
+            background: rgba(0, 0, 0, 0.8);
+            color: var(--gold);
+        }
+
+        .popup-prev {
+            left: 20px;
+        }
+
+        .popup-next {
+            right: 20px;
+        }
+
+        .popup-preview-strip {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Preview Strip Enhancements */
+        .preview-container {
+            display: flex;
+            gap: 10px;
+            max-width: 80%;
+            margin: 0 auto;
+            overflow-x: auto;
+            padding: 10px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--gold) rgba(255, 255, 255, 0.1);
+        }
+
+        .preview-item {
+            width: 120px;
+            height: 70px;
+            border-radius: 4px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: var(--transition);
+            opacity: 0.6;
+            flex-shrink: 0;
+        }
+
+        .preview-item img,
+        .preview-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .preview-item.active {
+            border-color: var(--gold);
+            opacity: 1;
+        }
+
+        .preview-item:hover {
+            opacity: 1;
+        }
+
+        /* Scrollbar Styles */
+        .preview-container::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .preview-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .preview-container::-webkit-scrollbar-thumb {
+            background-color: var(--gold);
+            border-radius: 6px;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 80px 0 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin-bottom: 30px;
+            min-width: 250px;
+            padding: 0 20px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .gallery-container {
+                columns: 2;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-container {
+                columns: 1;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .popup-nav {
+                font-size: 1.5rem;
+                width: 40px;
+                height: 40px;
+                padding: 10px;
+            }
+
+            .preview-item {
+                width: 80px;
+                height: 50px;
+            }
+
+            .popup-title {
+                font-size: 1rem;
+            }
+
+            .popup-top-bar {
+                padding: 15px 20px;
+            }
+        }
+
+        /* Mobile Menu Styles */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--navy);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+        }
+
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            overflow: hidden;
+            font-family: 'DM Sans', sans-serif;
+        }
+    
+        .chat-header {
+            background: var(--navy);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+    
+        .chat-logo {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+    
+        .chat-body {
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            display: none;
+        }
+    
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+    
+        .message {
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            border-radius: 10px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+    
+        .message.sent {
+            background: var(--navy);
+            color: white;
+            margin-left: auto;
+        }
+    
+        .message.received {
+            background: #f0f0f0;
+            color: var(--dark-gray);
+        }
+    
+        .chat-input-container {
+            padding: 15px;
+            border-top: 1px solid #eee;
+            display: flex;
+            gap: 10px;
+        }
+    
+        .chat-input-container input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+    
+        .chat-input-container button {
+            background: var(--gold);
+            color: var(--navy);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+    
+        .chat-input-container button:hover {
+            transform: translateY(-2px);
+        }
+    
+        @media (max-width: 480px) {
+            .chat-widget {
+                width: calc(100% - 40px);
+                bottom: 10px;
+                right: 20px;
+            }
+        }
+        /* BR Innovation premium black-gold global theme override */
+        :root {
+            --navy: #D4AF37;
+            --gold: #D4AF37;
+            --light-gray: #050505;
+            --dark-gray: #CFCFCF;
+            --white: #FFFFFF;
+            --card-bg: #161616;
+            --border-color: rgba(212, 175, 55, 0.2);
+        }
+
+        html,
+        body,
+        main,
+        section,
+        .section,
+        .gallery,
+        .cta,
+        .cta-section,
+        .footer,
+        footer {
+            background: #050505 !important;
+            color: #FFFFFF !important;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .section-title {
+            color: #D4AF37 !important;
+        }
+
+        p,
+        li,
+        span,
+        .text,
+        .description {
+            color: #FFFFFF !important;
+        }
+
+        .subtitle,
+        .subtext,
+        .muted,
+        .secondary,
+        small {
+            color: #CFCFCF !important;
+        }
+
+        .card,
+        [class*="card"],
+        .gallery-item {
+            background: #161616 !important;
+            border: 1px solid rgba(212, 175, 55, 0.2) !important;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+        }
+
+        .card:hover,
+        [class*="card"]:hover,
+        .gallery-item:hover {
+            transform: translateY(-8px) !important;
+            border-color: rgba(212, 175, 55, 0.55) !important;
+            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        a,
+        .nav-links a,
+        .btn,
+        button {
+            color: #FFFFFF !important;
+        }
+
+        a:hover,
+        .nav-links a:hover,
+        .btn:hover,
+        button:hover {
+            color: #D4AF37 !important;
+        }
+
+        .btn,
+        button {
+            border: 1px solid rgba(212, 175, 55, 0.2) !important;
+        }
+
+        .btn-primary {
+            background: #D4AF37 !important;
+            color: #050505 !important;
+            border-color: #D4AF37 !important;
+        }
+
+        .btn-primary:hover {
+            background: #050505 !important;
+            color: #D4AF37 !important;
+        }
+
+        .navbar,
+        .navbar.scrolled,
+        .footer,
+        footer {
+            background: #050505 !important;
+            color: #FFFFFF !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="BR Innovation & Technology Logo">
+                BR Innovation & Technology
+            </a>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Button -->
+    <a href="index.html" class="home-btn">
+        <i class="fas fa-home"></i>
+        Home
+    </a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Our Gallery</h1>
+            <p>Explore our portfolio of industrial excellence and innovative solutions</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="gallery-container" id="gallery-container">
+            <!-- Gallery items will be added dynamically -->
+        </div>
+    </section>
+
+    <!-- Enhanced Popup -->
+    <div class="popup-overlay">
+        <div class="popup-top-bar">
+            <h3 class="popup-title"></h3>
+            <div class="popup-actions">
+                <a href="#" class="popup-download" download>
+                    <i class="fas fa-download"></i>
+                </a>
+                <button class="popup-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="popup-content">
+            <button class="popup-nav popup-prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="popup-media-container">
+                <img src="" alt="" class="popup-media">
+                <video src="" class="popup-media" controls style="display: none;"></video>
+            </div>
+
+            <button class="popup-nav popup-next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        <div class="popup-preview-strip">
+            <div class="preview-container">
+                <!-- Previews will be added dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>BR Innovation & Technology is a leading contractor & supplier specializing in AI-powered educational robotics solutions since 2001.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>74, Bapagram, Machohall, Dasanapura Hobli<br>Bangalore North - 560091</p>
+                <p>Phone: 79755150565 / 9880439900</p>
+                <p>Email: brinoandtech@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/company/br-innovation-and-technology/" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.instagram.com/brinnovationandtechnology?igsh=aGExMDNpMHMxOXZx" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 BR Innovation & Technology. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+<div class="chat-widget">
+    <div class="chat-header" onclick="toggleChat()">
+        <img src="assets/images/logo.png" alt="BR Innovation & Technology Logo" class="chat-logo">
+        <span>Need Help? Chat with us!</span>
+        <i class="fas fa-chevron-up" id="chat-toggle-icon"></i>
+    </div>
+    <div class="chat-body" id="chat-body">
+        <div class="chat-messages" id="chat-messages">
+            <div class="message received">
+                Hello! 👋 I'm the YANI AI assistant. How can I help you today?
+            </div>
+        </div>
+        <div class="chat-input-container">
+            <input type="text" id="chat-input" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Gallery and Popup Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            // Gallery items data
+    const galleryItems = [
+
+        {
+            type: 'image',
+            src: 'assets/images/gallery/gallery1.jpg',
+            title: 'YANI Prototype',
+            description: 'BR Innovation & Technology'
+        },
+
+        {
+            type: 'image',
+            src: 'assets/images/gallery/gallery2.jpg',
+            title: 'AI Educational Robotics',
+            description: 'BR Innovation & Technology'
+        },
+
+        {
+            type: 'image',
+            src: 'assets/images/gallery/gallery3.jpg',
+            title: 'Adaptive Learning System',
+            description: 'BR Innovation & Technology'
+        },
+
+        {
+            type: 'image',
+            src: 'assets/images/gallery/gallery4.jpg',
+            title: 'Interactive AI Companion',
+            description: 'BR Innovation & Technology'
+        },
+
+        {
+            type: 'image',
+            src: 'assets/images/gallery/gallery5.jpg',
+            title: 'Prototype Development',
+            description: 'BR Innovation & Technology'
+        },
+
+        {
+            type: 'image',
+            src: 'assets/images/gallery/gallery6.jpg',
+            title: 'STEM Innovation',
+            description: 'BR Innovation & Technology'
+        },
+
+        {
+            type: 'image',
+            src: 'assets/images/gallery/gallery7.jpg',
+            title: 'Educational Technology',
+            description: 'BR Innovation & Technology'
+        },
+
+        {
+            type: 'image',
+            src: 'assets/images/gallery/gallery8.jpg',
+            title: 'AI Learning Experience',
+            description: 'BR Innovation & Technology'
+        },
+
+        {
+            type: 'image',
+            src: 'assets/images/gallery/gallery9.jpg',
+            title: 'Future Learning Systems',
+            description: 'BR Innovation & Technology'
+        },
+
+        {
+            type: 'image',
+            src: 'assets/images/gallery/gallery10.jpg',
+            title: 'YANI Innovation',
+            description: 'BR Innovation & Technology'
+        }
+
+    ];
+
+
+            const galleryContainer = document.getElementById('gallery-container');
+            const popup = document.querySelector('.popup-overlay');
+            const popupClose = document.querySelector('.popup-close');
+            const popupMedia = document.querySelectorAll('.popup-media');
+            const popupTitle = document.querySelector('.popup-title');
+            const popupDownload = document.querySelector('.popup-download');
+            const popupPrev = document.querySelector('.popup-prev');
+            const popupNext = document.querySelector('.popup-next');
+            const previewContainer = document.querySelector('.preview-container');
+
+            let currentIndex = 0;
+
+            // Create gallery items
+            galleryItems.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.className = 'gallery-item';
+                div.setAttribute('data-aos', 'fade-up');
+                div.setAttribute('data-index', index);
+
+                const mediaElement = item.type === 'video'
+                    ? `<video src="${item.src}" muted loop playsinline>`
+                    : `<img src="${item.src}" alt="${item.title}">`;
+
+                div.innerHTML = `
+                    ${mediaElement}
+                    <div class="gallery-item-overlay">
+                        <h3>${item.title}</h3>
+                        <p>${item.description}</p>
+                    </div>
+                `;
+
+                if (item.type === 'video') {
+                    const video = div.querySelector('video');
+
+                    div.addEventListener('mouseenter', () => {
+                        video.play();
+                        div.querySelector('.gallery-item-overlay').style.opacity = '1';
+                    });
+
+                    div.addEventListener('mouseleave', () => {
+                        video.pause();
+                        video.currentTime = 0;
+                        div.querySelector('.gallery-item-overlay').style.opacity = '0';
+                    });
+                }
+
+                galleryContainer.appendChild(div);
+            });
+
+            // Update popup content function
+            const updatePopupContent = (item) => {
+                const isVideo = item.type === 'video';
+                const imgMedia = popupMedia[0];
+                const videoMedia = popupMedia[1];
+
+                if (isVideo) {
+                    imgMedia.style.display = 'none';
+                    videoMedia.style.display = 'block';
+                    videoMedia.src = item.src;
+                    videoMedia.play();
+                } else {
+                    imgMedia.style.display = 'block';
+                    videoMedia.style.display = 'none';
+                    imgMedia.src = item.src;
+                }
+
+                popupTitle.textContent = `${item.title} | ${item.description}`;
+                popupDownload.href = item.src;
+                popupDownload.download = `${item.title.toLowerCase().replace(/\s+/g, '-')}.${isVideo ? 'mp4' : 'jpg'}`;
+
+                updatePreviewStrip();
+            };
+
+            // Update navigation buttons
+            const updateNavigationButtons = () => {
+                popupPrev.style.display = currentIndex > 0 ? 'block' : 'none';
+                popupNext.style.display = currentIndex < galleryItems.length - 1 ? 'block' : 'none';
+            };
+
+            // Update preview strip
+            const updatePreviewStrip = () => {
+                previewContainer.innerHTML = '';
+
+                galleryItems.forEach((item, index) => {
+                    const preview = document.createElement('div');
+                    preview.className = `preview-item ${index === currentIndex ? 'active' : ''}`;
+
+                    const media = item.type === 'video'
+                        ? `<video src="${item.src}" alt="${item.title}">`
+                        : `<img src="${item.src}" alt="${item.title}">`;
+
+                    preview.innerHTML = media;
+
+                    preview.addEventListener('click', () => {
+                        if (currentIndex !== index) {
+                            if (popupMedia[1].style.display === 'block') {
+                                popupMedia[1].pause();
+                            }
+                            currentIndex = index;
+                            updatePopupContent(galleryItems[index]);
+                            updateNavigationButtons();
+                        }
+                    });
+
+                    previewContainer.appendChild(preview);
+                });
+
+                // Scroll active preview into view
+                const activePreview = previewContainer.children[currentIndex];
+                if (activePreview) {
+                    activePreview.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'nearest',
+                        inline: 'center'
+                    });
+                }
+            };
+
+            // Open popup
+            const openPopup = (index) => {
+                currentIndex = index;
+                popup.style.display = 'flex';
+                updatePopupContent(galleryItems[index]);
+                updateNavigationButtons();
+            };
+
+            // Navigate through gallery
+            const navigate = (direction) => {
+                const newIndex = currentIndex + direction;
+                if (newIndex >= 0 && newIndex < galleryItems.length) {
+                    if (popupMedia[1].style.display === 'block') {
+                        popupMedia[1].pause();
+                    }
+                    currentIndex = newIndex;
+                    updatePopupContent(galleryItems[currentIndex]);
+                    updateNavigationButtons();
+                }
+            };
+
+            // Event Listeners
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    openPopup(parseInt(item.getAttribute('data-index')));
+                });
+            });
+
+            popupClose.addEventListener('click', () => {
+                popup.style.display = 'none';
+                if (popupMedia[1].style.display === 'block') {
+                    popupMedia[1].pause();
+                }
+            });
+
+            popup.addEventListener('click', (e) => {
+                if (e.target === popup) {
+                    popup.style.display = 'none';
+                    if (popupMedia[1].style.display === 'block') {
+                        popupMedia[1].pause();
+                    }
+                }
+            });
+
+            popupPrev.addEventListener('click', () => navigate(-1));
+            popupNext.addEventListener('click', () => navigate(1));
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (popup.style.display === 'flex') {
+                    switch (e.key) {
+                        case 'Escape':
+                            popup.style.display = 'none';
+                            if (popupMedia[1].style.display === 'block') {
+                                popupMedia[1].pause();
+                            }
+                            break;
+                        case 'ArrowLeft':
+                            navigate(-1);
+                            break;
+                        case 'ArrowRight':
+                            navigate(1);
+                            break;
+                    }
+                }
+            });
+
+            // Mobile Navigation Toggle
+            const mobileMenuBtn = document.createElement('button');
+            mobileMenuBtn.className = 'mobile-menu-btn';
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            document.querySelector('.nav-container').appendChild(mobileMenuBtn);
+
+            const navLinks = document.querySelector('.nav-links');
+
+            mobileMenuBtn.addEventListener('click', function () {
+                navLinks.classList.toggle('show');
+                this.classList.toggle('active');
+                this.innerHTML = this.classList.contains('active')
+                    ? '<i class="fas fa-times"></i>'
+                    : '<i class="fas fa-bars"></i>';
+            });
+        });
+
+         // Chat toggle functionality
+    function toggleChat() {
+        const chatBody = document.getElementById('chat-body');
+        const toggleIcon = document.getElementById('chat-toggle-icon');
+        chatBody.style.display = chatBody.style.display === 'none' || !chatBody.style.display ? 'flex' : 'none';
+        toggleIcon.className = chatBody.style.display === 'none' ? 'fas fa-chevron-up' : 'fas fa-chevron-down';
+    }
+
+    // Knowledge base from the PDF
+    const knowledgeBase = {
+        keywords: {
+            'about': {
+                matches: ['about', 'company', 'introduction', 'who'],
+                response: "BR Innovation & Technology (formerly known as BR Innovation & Technology) is a leading contractor & supplier established in 2001. We specialize in AI companion installation, exhaust pipeline materials, structural steel supports, cladding materials, and acoustic room treatment."
+            },
+            'contact': {
+                matches: ['contact', 'reach', 'location', 'address', 'phone', 'email'],
+                response: "You can contact us at:\nAddress: #74, Bapagram, Machohall, Dasanapura Hobli, Bangalore North - 560091\nPhone: 79755150565 / 9880439900\nEmail: brinoandtech@gmail.com"
+            },
+            'services': {
+                matches: ['services', 'products', 'offer', 'work', 'solutions'],
+                response: "Our solutions include:\n- Exhaust Pipeline Erection & Cladding\n- Acoustic Enclosures for DG Sets\n- Silencers for DG Sets\n- Diesel Tanks\n- Sound Proof Room Treatment\n- DG Electrical Works"
+            },
+            'experience': {
+                matches: ['experience', 'years', 'established', 'history'],
+                response: "BR Innovation & Technology is an AI educational robotics startup incubated at RV University. We've completed more than 1000 projects across India including turnkey projects."
+            },
+            'clients': {
+                matches: ['clients', 'customers', 'companies', 'work with'],
+                response: "Our major clients include:\n- Cummins India Limited\n- Sterling & Wilson Powergen\n- Brigade Enterprises\n- Prestige Constructions\n- Sudhir Power Project Limited\n- And many more leading companies"
+            }
+        },
+        defaultResponse: "I apologize, but I'm not sure about that. For specific inquiries, please contact us at 79755150565 / 9880439900 or email us at brinoandtech@gmail.com"
+    };
+
+    function findBestMatch(input) {
+        const lowercaseInput = input.toLowerCase();
+        
+        for (const key in knowledgeBase.keywords) {
+            const keywordData = knowledgeBase.keywords[key];
+            for (const match of keywordData.matches) {
+                if (lowercaseInput.includes(match)) {
+                    return keywordData.response;
+                }
+            }
+        }
+        
+        return knowledgeBase.defaultResponse;
+    }
+
+    function sendMessage() {
+        const input = document.getElementById('chat-input');
+        const message = input.value.trim();
+        
+        if (message) {
+            // Add user message
+            addMessage(message, 'sent');
+            
+            // Get and add bot response
+            const response = findBestMatch(message);
+            setTimeout(() => addMessage(response, 'received'), 500);
+            
+            // Clear input
+            input.value = '';
+        }
+    }
+
+    function addMessage(message, type) {
+        const messagesContainer = document.getElementById('chat-messages');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${type}`;
+        messageDiv.textContent = message;
+        messagesContainer.appendChild(messageDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    function handleKeyPress(event) {
+        if (event.key === 'Enter') {
+            sendMessage();
+        }
+    }
+    </script>
+</body>
+
+</html>

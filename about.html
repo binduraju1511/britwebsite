@@ -1,0 +1,2604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon - these will show in browser tabs and bookmarks -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/headerlogo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/headerlogo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/headerlogo.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <title>About Us - BR Innovation & Technology</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Font awesome imports -->
+    <link rel="stylesheet" data-purpose="Layout StyleSheet" title="Web Awesome"
+        href="/css/app-wa-3b124ff0e0d7a67cd8c995d0aeb1d15a.css?vsn=d">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap');
+
+        /* Your existing CSS variables remain the same */
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+        }
+
+        :root {
+            --navy: #0A2647;
+            --gold: #fada5e;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--light-gray);
+            padding-top: 80px;
+            /* Account for fixed header */
+        }
+
+        /* Header/Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 38, 71, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 38, 71, 0.98);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--gold);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+
+        /* Home Button */
+        .home-btn {
+            position: fixed;
+            top: 100px;
+            /* Position below navbar */
+            left: 2rem;
+            background: var(--navy);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 900;
+            transition: var(--transition);
+        }
+
+        .home-btn:hover {
+            background: var(--gold);
+            color: var(--navy);
+            transform: translateY(-3px);
+        }
+
+/* Hero Section */
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: -1rem;
+            background: #050505;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            opacity: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        /* Hero Content */
+
+        .hero-content {
+
+            position: relative;
+
+            z-index: 3;
+
+            max-width: 800px;
+
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+
+            font-size: 4rem;
+
+            margin-bottom: 1rem;
+
+            line-height: 1.1;
+        }
+
+        .hero p {
+
+            font-size: 1.2rem;
+
+            opacity: 0.9;
+
+            line-height: 1.7;
+        }
+
+        /* Responsive */
+
+        @media(max-width:768px){
+
+            .hero h1{
+                font-size:2.5rem;
+            }
+
+            .hero p{
+                font-size:1rem;
+            }
+
+        }
+
+        /* History Section */
+        .history {
+            padding: 8rem 2rem;
+            background: var(--white);
+        }
+
+        .history-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .history-text h2 {
+            font-size: 3rem;
+            color: var(--navy);
+            margin-bottom: 2rem;
+        }
+
+        .history-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+        }
+
+        .history-image {
+            position: relative;
+        }
+
+        .history-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .history-badge {
+            position: absolute;
+            bottom: -2rem;
+            right: -2rem;
+            background: var(--navy);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .history-badge span:first-child {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        /* Timeline Section */
+        .timeline {
+            padding: 4rem 2rem;
+            background: var(--light-gray);
+        }
+        
+        .timeline-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .timeline-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .timeline-header h2 {
+            font-size: 3rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-content {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+        }
+        
+        .timeline__nav {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+            padding-right: 2rem;
+            border-right: 2px solid rgba(10, 38, 71, 0.1);
+        }
+        
+        .timeline__nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .timeline__nav li {
+            margin: 0.5rem 0;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+        
+        .timeline__nav li:hover {
+            background: rgba(10, 38, 71, 0.05);
+        }
+        
+        .timeline__nav li.active {
+            background: var(--navy);
+            color: white;
+            font-weight: 500;
+        }
+        
+        .timeline__nav li.active::before {
+            content: '';
+            position: absolute;
+            right: -2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1rem;
+            height: 2px;
+            background: var(--gold);
+        }
+        
+        .timeline__main {
+            padding-left: 1rem;
+        }
+        
+        .year-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+            display: none;
+        }
+        
+        .year-section.active {
+            opacity: 1;
+            transform: translateY(0);
+            display: block;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(10, 38, 71, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--navy);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-card:hover::before {
+            opacity: 1;
+        }
+        
+        .project-company {
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .project-name {
+            color: var(--dark-gray);
+            font-size: 0.95rem;
+        }
+        
+        .year-header {
+            margin-bottom: 2rem;
+        }
+        
+        .year-title {
+            font-size: 2rem;
+            color: var(--navy);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        
+        .year-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gold);
+        }
+        
+        @media (max-width: 992px) {
+            .timeline-content {
+                grid-template-columns: 1fr;
+            }
+        
+            .timeline__nav {
+                position: relative;
+                top: 0;
+                padding-right: 0;
+                border-right: none;
+                border-bottom: 2px solid rgba(10, 38, 71, 0.1);
+                padding-bottom: 1rem;
+                margin-bottom: 2rem;
+                overflow-x: auto;
+            }
+        
+            .timeline__nav ul {
+                display: flex;
+                gap: 0.5rem;
+            }
+        
+            .timeline__nav li {
+                white-space: nowrap;
+            }
+        
+            .timeline__nav li.active::before {
+                display: none;
+            }
+        
+            .timeline__main {
+                padding-left: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .timeline {
+                padding: 3rem 1rem;
+            }
+        
+            .timeline-header h2 {
+                font-size: 2.5rem;
+            }
+        
+            .year-title {
+                font-size: 1.75rem;
+            }
+        }
+
+        /* Leadership Section */
+        .leadership {
+            padding: 80px 0;
+            background: #fff;
+            overflow: hidden;
+        }
+
+        .leadership-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 16px;
+        }
+
+        /* Base leader row style */
+        .leader-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 100px;
+            position: relative;
+        }
+
+        .leader-row:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Specific styles for founder (text left, image right) */
+        .founder-row {
+            flex-direction: row;
+            /* Text left, image right */
+        }
+
+        /* Specific styles for co-founder (image left, text right) */
+        .cofounder-row {
+            flex-direction: row-reverse;
+            /* Text right, image left */
+        }
+
+        .leader-info {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .leader-image-container {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 600px;
+        }
+
+        /* Background shapes */
+        .leader-image-container::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 600px;
+            background: #f8f9fa;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            z-index: 1;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .cofounder-row .leader-image-container::before {
+            border-radius: 70% 30% 30% 70% / 30% 50% 70% 30%;
+            background: #f0f2f5;
+        }
+
+        .leader-image {
+            width: 400px;
+            height: 550px;
+            object-fit: contain;
+            /* Changed from 'cover' to 'contain' */
+            object-position: center center;
+            /* Ensures center alignment */
+            position: relative;
+            z-index: 2;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .leader-name {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .leader-title {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        .leader-bio {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            text-align: justify;
+        }
+
+
+        /* Update leadership section social links styles */
+        /* Reset and override any existing social link styles */
+        .leader-row .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .leader-row .social-link {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 2px solid var(--navy);
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            /* Add position relative */
+        }
+
+        /* Override the global social link styles */
+        .social-link {
+            background: transparent !important;
+            position: relative !important;
+            overflow: visible !important;
+        }
+
+        /* Style the icon specifically */
+        .leader-row .social-link i {
+            font-size: 1.2rem;
+            color: var(--navy);
+            transition: color 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Hover states */
+        .leader-row .social-link:hover {
+            border-color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        .leader-row .social-link:hover i {
+            color: var(--gold);
+        }
+
+        /* Additional specificity to ensure icons stay visible */
+        .leader-info .social-links .social-link i {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .leader-info .social-links .social-link:hover i {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        /* Clear any conflicting styles */
+        .social-link::before,
+        .social-link::after {
+            display: none !important;
+        }
+
+        /* Ensure proper z-index for social links */
+        .leader-info {
+            position: relative;
+            z-index: 3;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-link {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background: #0056b3;
+            transform: translateY(-3px);
+        }
+
+        .social-link i {
+            font-size: 1.2rem;
+        }
+
+        /* Decorative elements */
+        .leader-row::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgba(0, 86, 179, 0.05);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .founder-row::after {
+            right: 10%;
+            top: -20px;
+        }
+
+        .cofounder-row::after {
+            left: 10%;
+            bottom: -20px;
+        }
+
+        @media (max-width: 968px) {
+
+            .leader-row,
+            .founder-row,
+            .cofounder-row {
+                flex-direction: column;
+                text-align: center;
+                margin-bottom: 60px;
+            }
+
+            .leader-info {
+                padding: 20px;
+            }
+
+            .leader-image-container {
+                margin: 40px 0;
+            }
+
+            .leader-image-container::before {
+                width: 350px;
+                height: 450px;
+            }
+
+            .leader-image {
+                width: 300px;
+                height: 400px;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .leader-bio {
+                text-align: center;
+            }
+        }
+
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: var(--navy);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--gold);
+            color: var(--navy);
+            transform: translateY(-3px);
+        }
+
+        /* Team Section */
+        .team {
+            padding: 8rem 2rem;
+            background: var(--light-gray);
+        }
+
+        .team-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .team-header h2 {
+            font-size: 3rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .team-header p {
+            color: var(--dark-gray);
+            font-size: 1.1rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-card {
+            background: #161616;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .team-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .team-info h3 {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-info p {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Values Section */
+        .values {
+            padding: 8rem 2rem;
+            background: var(--navy);
+
+            color: var(--white);
+        }
+
+        .values-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .values-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .values-header h2 {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .value-card i {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .value-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .history-container {
+                gap: 3rem;
+            }
+
+            .leadership-grid {
+                gap: 3rem;
+            }
+
+            .leader-image-container {
+                min-height: 500px;
+            }
+
+            .leader-image-container::before {
+                width: 400px;
+                height: 500px;
+            }
+
+            .leader-image {
+                width: 350px;
+                height: 480px;
+            }
+
+        }
+
+
+        @media (max-width: 992px) {
+            .history-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .history-badge {
+                right: 50%;
+                transform: translateX(50%);
+            }
+
+            .leadership-grid {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .timeline-items::before {
+                left: 0;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                margin-left: 20px;
+            }
+
+            .timeline-item:nth-child(even) {
+                flex-direction: column;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .timeline-content::before {
+                left: -40px !important;
+                transform: translateY(-50%) !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .history-text h2,
+            .timeline-header h2,
+            .leadership-header h2,
+            .team-header h2,
+            .values-header h2 {
+                font-size: 2.5rem;
+            }
+
+            .home-btn {
+                top: 1rem;
+                right: 1rem;
+                padding: 0.75rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .history-badge {
+                width: 120px;
+                height: 120px;
+                padding: 1.5rem;
+            }
+
+            .history-badge span:first-child {
+                font-size: 2rem;
+            }
+        }
+
+
+        /* Footer Styles */
+        .footer {
+            background: linear-gradient(180deg, #0A2647 0%, #051628 100%);
+            color: #fff;
+            padding: 5rem 0 0;
+            position: relative;
+            overflow: hidden;
+            margin-top: 0;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(207, 181, 59, 0.5), transparent);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand {
+            padding-right: 2rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .footer-logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .footer-description {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links h4 {
+            color: #CFB53B;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+
+        .footer-links h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: #CFB53B;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: #CFB53B;
+            transform: translateX(5px);
+        }
+
+        .footer-contact-info .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item i {
+            color: #CFB53B;
+            font-size: 1.2rem;
+            padding-top: 0.25rem;
+        }
+
+        .contact-item .contact-text {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        .contact-item .contact-label {
+            color: #fff;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link:hover {
+            background: var(--gold);
+            color: var(--navy);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer-bottom::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        }
+
+        .footer-bottom-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom-text {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-bottom-links a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .footer-main {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .nav-container {
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--navy);
+                padding: 1rem;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+
+            .nav-links a {
+                width: 100%;
+                text-align: center;
+                padding: 1rem;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .footer-bottom-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .footer-brand {
+                padding-right: 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .logo img {
+                height: 30px;
+            }
+
+            .footer-content {
+                padding: 0 1rem;
+            }
+        }
+
+        /* Fix leadership header styling */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 3.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .section-header p {
+            color: var(--dark-gray);
+            font-size: 1.2rem;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            overflow: hidden;
+            font-family: 'DM Sans', sans-serif;
+        }
+    
+        .chat-header {
+            background: var(--navy);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+    
+        .chat-logo {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+    
+        .chat-body {
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            display: none;
+        }
+    
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+    
+        .message {
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            border-radius: 10px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+    
+        .message.sent {
+            background: var(--navy);
+            color: white;
+            margin-left: auto;
+        }
+    
+        .message.received {
+            background: #f0f0f0;
+            color: var(--dark-gray);
+        }
+    
+        .chat-input-container {
+            padding: 15px;
+            border-top: 1px solid #eee;
+            display: flex;
+            gap: 10px;
+        }
+    
+        .chat-input-container input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+    
+        .chat-input-container button {
+            background: var(--gold);
+            color: var(--navy);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+    
+        .chat-input-container button:hover {
+            transform: translateY(-2px);
+        }
+    
+        @media (max-width: 480px) {
+            .chat-widget {
+                width: calc(100% - 40px);
+                bottom: 10px;
+                right: 20px;
+            }
+        }
+        /* BR Innovation premium black-gold global theme override */
+        :root {
+            --navy: #D4AF37;
+            --gold: #D4AF37;
+            --light-gray: #050505;
+            --dark-gray: #CFCFCF;
+            --white: #FFFFFF;
+            --card-bg: #161616;
+            --border-color: rgba(212, 175, 55, 0.2);
+        }
+
+        html,
+        body,
+        main,
+        section,
+        .section,
+        .about,
+        .founders,
+        .leadership,
+        .cta,
+        .cta-section,
+        .footer,
+        footer {
+            background: #050505 !important;
+            color: #FFFFFF !important;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .section-title,
+        .heading,
+        .title {
+            color: #D4AF37 !important;
+        }
+
+        p,
+        li,
+        span,
+        label,
+        .text,
+        .description {
+            color: #FFFFFF !important;
+        }
+
+        .subtitle,
+        .subtext,
+        .muted,
+        .secondary,
+        small {
+            color: #CFCFCF !important;
+        }
+
+        .card,
+        [class*="card"],
+        .founder-card,
+        .leadership-card,
+        .team-card,
+        .value-card {
+            background: #161616 !important;
+            border: 1px solid rgba(212, 175, 55, 0.2) !important;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+        }
+
+        .card:hover,
+        [class*="card"]:hover,
+        .founder-card:hover,
+        .leadership-card:hover,
+        .team-card:hover,
+        .value-card:hover {
+            transform: translateY(-8px) !important;
+            border-color: rgba(212, 175, 55, 0.55) !important;
+            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        a,
+        .nav-links a,
+        .btn,
+        button {
+            color: #FFFFFF !important;
+            transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease !important;
+        }
+
+        a:hover,
+        .nav-links a:hover,
+        .btn:hover,
+        button:hover {
+            color: #D4AF37 !important;
+        }
+
+        .btn,
+        button {
+            border: 1px solid rgba(212, 175, 55, 0.2) !important;
+        }
+
+        .btn-primary {
+            background: #D4AF37 !important;
+            color: #050505 !important;
+            border-color: #D4AF37 !important;
+        }
+
+        .btn-primary:hover {
+            background: #050505 !important;
+            color: #D4AF37 !important;
+        }
+
+        .btn-secondary {
+            background: transparent !important;
+            color: #FFFFFF !important;
+            border: 1px solid rgba(212, 175, 55, 0.45) !important;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(212, 175, 55, 0.12) !important;
+            color: #D4AF37 !important;
+        }
+
+        .navbar,
+        .navbar.scrolled,
+        .footer,
+        footer {
+            background: #050505 !important;
+            color: #FFFFFF !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="BR Innovation & Technology Logo">
+                BR Innovation & Technology
+            </a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <!-- Gallery temporarily disabled -->
+                <!-- <li><a href="gallery.html">Gallery</a></li> -->
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Your page content goes here -->
+
+    <!-- Home Page -->
+    <a href="index.html" class="home-btn">
+        <i class="fas fa-home"></i>
+        Home
+    </a>
+
+    <section class="hero">
+
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="assets/videos/robot.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <h1>
+                Focus. Feel. Learn.
+            </h1>
+
+            <p>
+                Adaptive AI educational robotics designed to support
+                children through intelligent learning and emotional engagement.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- History Section -->
+    <section class="history">
+        <div class="history-container">
+            <div class="history-text">
+                <h2>Our Journey of Excellence</h2>
+                <p>Founded in 2025, BR Innovation & Technology has grown
+                    from a small engineering firm to become one of India's leading contractors and suppliers in
+                    AI-powered educational robotics solutions.</p>
+                <p>BR Innovation & Technology is currently focused on developing and refining adaptive AI learning solutions designed to support children’s focus, emotions, and education. Our journey began with a vision to create an intelligent companion system that combines emotional understanding with personalized learning experiences.</p>
+                <p>We have successfully developed our initial YANI prototype and conducted early-stage testing with children and educational environments, receiving encouraging engagement and positive feedback. The company is presently in the prototype and validation phase, continuously improving the system for future large-scale deployment.</p>
+                <p>Based in Bangalore, our team is actively working on AI development, product enhancement, and educational innovation to build scalable solutions for homes, schools, and learning ecosystems across India.</p>
+            </div>
+            <div class="history-image">
+                <img src="assets/images/cuterobot.png"
+                    alt="Factory Image">
+                <div class="history-badge">
+                    <span>2.5+</span>
+                    <span>Years of Excellence</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Leadership Section -->
+    <section class="leadership">
+        <div class="leadership-container">
+            <div class="section-header">
+                <h2>Our Leadership</h2>
+                <p>Meet the visionaries driving BR Innovation & Technology's success</p>
+            </div>
+
+            <!-- Founder (Image on Right) -->
+            <div class="leader-row founder-row">
+                <div class="leader-info">
+                    <h3 class="leader-name">Bindu R</h3>
+                    <p class="leader-title">Founder - BR Innovation & Technology</p>
+                    <p class="leader-bio"><p style="text-align: justify;">Bindu R is the founder of BR Innovation & Technology and the visionary behind YANI, an adaptive AI companion designed to support children’s focus, emotions, and learning. With strong experience in business management, marketing, and innovation leadership, she is driving the company toward building accessible AI-powered learning systems for homes and schools across India.</p>
+                    <p style="text-align: justify;">Under her leadership, BR Innovation & Technology developed the YANI prototype and successfully conducted early testing with children and schools, achieving strong engagement and positive educational impact.</p>
+                    <!-- <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="far fa-envelope"></i>
+                        </a>
+                    </div> -->
+                </div>
+                <div class="leader-image-container">
+                    <img src="assets/images/founder.png" alt="Mr. Raju" class="leader-image">
+                </div>
+            </div>
+
+            <!-- Co-founder (Image on Left) -->
+            <div class="leader-row cofounder-row">
+                <div class="leader-info">
+                    <h3 class="leader-name">Mrs. Usha Rani </h3>
+                    <p class="leader-title">Managing Partner of BR Innovation & Technology</p>
+                    <p class="leader-bio"><p style="text-align: justify;">Mrs. Usha Rani G is the Managing Partner of BR Innovation & Technology and a key contributor to the company’s remarkable success. A 9th-grade graduate, she joined her husband, Mr. Raju Srinivas, in establishing BR Innovation & Technology and has been instrumental in its growth over the past 25 years. With her dedication, strategic thinking, and leadership, she has helped scale the company from an initial turnover of ₹50,000 to an annual turnover exceeding ₹100 crore.</p>
+                        <p style="text-align: justify;">Mrs. Usha Rani also holds prominent positions in reputed education technology bodies. She serves as the Co-Chairman of Women Empowerment at KASSIA, is a member of the Peenya Industries Association (PIA), and an active member of the Federation of Karnataka Chambers of Commerce & Industry (FKCCI).</p>
+                        <p style="text-align: justify;">Her contributions have earned the company numerous awards in various MSME categories, and her efforts have been widely recognized by clients and education technology peers. Mrs. Usha Rani’s commitment to excellence and her leadership have been integral to the continued success and reputation of BR Innovation & Technology.</p></p>
+                    <!-- <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="far fa-envelope"></i>
+                        </a>
+                    </div> -->
+                </div>
+                <div class="leader-image-container">
+                    <img src="assets/images/cofounder.png" alt="Technical Director" class="leader-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+   <!-- Achievements Section -->
+<section class="team">
+    <div class="team-container">
+        <div class="team-header">
+            <h2>Achievements & Milestones</h2>
+            <p>A testament to our commitment to excellence and continuous growth</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="assets/images/awardimg1.png" alt="Quality Achievement">
+                <div class="team-info">
+                    <h3>FKCCI Women Entrepreneur Award</h3>
+                    <p>Mrs. Usharani G honored by Federation of Karnataka Chambers of Commerce and Industry on International Women's Day 2023.</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="assets/images/awardimg2.jpeg" alt="Client Success">
+                <div class="team-info">
+                    <h3>Women Entrepreneur Excellence</h3>
+                    <p>Mrs. Usha Rani honored with the National Woman Entrepreneur Award by the Governor at Ubuntu National Summit.</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="assets/images/awardimg3.jpeg" alt="Growth Achievement">
+                <div class="team-info">
+                    <h3>Excellence in AI Companion Award</h3>
+                    <p>Awarded the Lagu Udyog Bharat Award for excellence in adaptive AI learning. A national recognition of our quality and expertise.</p>                </div>
+            </div>
+            <div class="team-card">
+                <img src="assets/images/awardimg4.png" alt="Innovation">
+                <div class="team-info">
+                    <h3>Prestige Excellence Award</h3>
+                    <p>Recognized by Prestige Group for exemplary DG Lowside Works at Prestige Jindal City project in November 2022.</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+    <!-- Values Section -->
+    <section class="values">
+        <div class="values-container">
+            <div class="values-header">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide us every day</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fas fa-medal"></i>
+                    <h3>Excellence</h3>
+                    <p>Committed to delivering the highest quality in every project</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Integrity</h3>
+                    <p>Building trust through honest and ethical business practices</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Innovation</h3>
+                    <p>Continuously improving and adapting to new technologies</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Teamwork</h3>
+                    <p>Collaborating to achieve extraordinary results</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div class="footer-main">
+
+                <div class="footer-brand">
+
+                    <div class="footer-logo">
+                        <img src="assets/images/logo.png" alt="BR Innovation & Technology Logo">
+                        <span class="footer-logo-text">BR Innovation & Technology</span>
+                    </div>
+
+                    <p class="footer-description">
+                        BR Innovation & Technology is an AI educational robotics startup focused on building adaptive
+                        learning companions that support children’s focus, emotional engagement, and interactive learning
+                        experiences through intelligent robotics and AI systems.
+                    </p>
+
+                    <div class="social-links">
+
+                        <a href="https://www.linkedin.com/company/br-innovation-and-technology/"
+                        target="_blank"
+                        class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/brinnovationandtechnology?igsh=aGExMDNpMHMxOXZx"
+                        target="_blank"
+                        class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="footer-links">
+
+                    <h4>Quick Links</h4>
+
+                    <ul>
+                        <li>
+                            <a href="about.html">
+                                <i class="fas fa-chevron-right"></i> About Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="services.html">
+                                <i class="fas fa-chevron-right"></i> Solutions
+                            </a>
+                        </li>
+                        <li>
+                            <!-- Gallery temporarily disabled -->
+                            <!-- <a href="gallery.html">
+                                <i class="fas fa-chevron-right"></i> Gallery
+                            </a> -->
+                        </li>
+                        <li>
+                            <a href="contact.html">
+                                <i class="fas fa-chevron-right"></i> Contact Us
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="footer-links">
+
+                    <h4>Our Focus Areas</h4>
+
+                    <ul>
+                        <li>
+                            <a href="services.html">
+                                <i class="fas fa-chevron-right"></i>
+                                Adaptive Learning
+                            </a>
+                        </li>
+                        <li>
+                            <a href="services.html">
+                                <i class="fas fa-chevron-right"></i>
+                                Emotional Intelligence
+                            </a>
+                        </li>
+                        <li>
+                            <a href="services.html">
+                                <i class="fas fa-chevron-right"></i>
+                                Educational Robotics
+                            </a>
+                        </li>
+                        <li>
+                            <a href="services.html">
+                                <i class="fas fa-chevron-right"></i>
+                                AI Learning Systems
+                            </a>
+                        </li>
+                        <li>
+                            <a href="services.html">
+                                <i class="fas fa-chevron-right"></i>
+                                STEM Innovation
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="footer-contact-info">
+
+                    <h4>Contact Information</h4>
+
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <div class="contact-label">Location</div>
+                            <div class="contact-text">Bangalore, Karnataka, India</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <div>
+                            <div class="contact-label">Website</div>
+                            <div class="contact-text">
+                                <a href="https://brinnoandtech.com" target="_blank" rel="noopener noreferrer">brinnoandtech.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <div class="contact-label">Call Us</div>
+                            <div class="contact-text">
+                                <a href="tel:+917975515056">+91 7975515056</a> /
+                                <a href="tel:+919880439900">+91 9880439900</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <div class="contact-label">Email</div>
+                            <div class="contact-text">
+                                <a href="mailto:contact@brinnoandtech.com">contact@brinnoandtech.com</a><br>
+                                <a href="mailto:info@brinnoandtech.com">info@brinnoandtech.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <div class="footer-bottom-content">
+
+                <div class="footer-bottom-text">
+                    © 2025 BR Innovation & Technology. All rights reserved.
+                </div>
+
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- Chat Widget -->
+<div class="chat-widget">
+    <div class="chat-header" onclick="toggleChat()">
+        <img src="assets/images/logo.png" alt="YANI AI Assistant" class="chat-logo">
+        <span>Need Help? Chat with us!</span>
+        <i class="fas fa-chevron-up" id="chat-toggle-icon"></i>
+    </div>
+    <div class="chat-body" id="chat-body">
+        <div class="chat-messages" id="chat-messages">
+            <div class="message received">
+                Hello! 👋 I'm the YANI AI assistant. How can I help you today?
+            </div>
+        </div>
+        <div class="chat-input-container">
+            <input type="text" id="chat-input" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+    <script>
+
+        // Scroll Animation
+        function revealOnScroll() {
+            var reveals = document.querySelectorAll('.timeline-item, .leader-card, .team-card, .value-card');
+
+            reveals.forEach(reveal => {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveal.getBoundingClientRect().top;
+                var elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+
+        // Initialize animation on page load
+        revealOnScroll();
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        const navContainer = document.querySelector('.nav-container');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ?
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navContainer.contains(e.target)) {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Update active nav link based on current page
+        function setActiveNavLink() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === currentPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        // Initialize active nav link
+        setActiveNavLink();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation class to footer elements when they come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.footer-main > div');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementBottom = element.getBoundingClientRect().bottom;
+                const isVisible = (elementTop < window.innerHeight) && (elementBottom >= 0);
+
+                if (isVisible) {
+                    element.classList.add('animate');
+                }
+            });
+        };
+
+        // Listen for scroll events
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Initial check for elements in view
+        animateOnScroll();
+
+
+         // Chat toggle functionality
+    function toggleChat() {
+        const chatBody = document.getElementById('chat-body');
+        const toggleIcon = document.getElementById('chat-toggle-icon');
+        chatBody.style.display = chatBody.style.display === 'none' || !chatBody.style.display ? 'flex' : 'none';
+        toggleIcon.className = chatBody.style.display === 'none' ? 'fas fa-chevron-up' : 'fas fa-chevron-down';
+    }
+
+    // Knowledge base from the PDF
+    const knowledgeBase = {
+        keywords: {
+            'about': {
+                matches: ['about', 'company', 'introduction', 'who'],
+                response: "BR Innovation & Technology (formerly known as BR Innovation & Technology) is a leading contractor & supplier established in 2001. We specialize in AI companion installation, exhaust pipeline materials, structural steel supports, cladding materials, and acoustic room treatment."
+            },
+            'contact': {
+                matches: ['contact', 'reach', 'location', 'address', 'phone', 'email'],
+                response: "You can contact BR Innovation & Technology at:\nAddress: Bangalore, Karnataka, India\nPhone: +91 7975515056 / +91 9880439900\nEmail: contact@brinnoandtech.com / info@brinnoandtech.com\nWebsite: brinnoandtech.com"
+            },
+            'services': {
+                matches: ['services', 'products', 'offer', 'work', 'solutions'],
+                response: "Our solutions include:\n- Exhaust Pipeline Erection & Cladding\n- Acoustic Enclosures for DG Sets\n- Silencers for DG Sets\n- Diesel Tanks\n- Sound Proof Room Treatment\n- DG Electrical Works"
+            },
+            'experience': {
+                matches: ['experience', 'years', 'established', 'history'],
+                response: "BR Innovation & Technology is an AI educational robotics startup incubated at RV University. We've completed more than 1000 projects across India including turnkey projects."
+            },
+            'clients': {
+                matches: ['clients', 'customers', 'companies', 'work with'],
+                response: "Our major clients include:\n- Cummins India Limited\n- Sterling & Wilson Powergen\n- Brigade Enterprises\n- Prestige Constructions\n- Sudhir Power Project Limited\n- And many more leading companies"
+            }
+        },
+        defaultResponse: "I apologize, but I'm not sure about that. For specific inquiries, please contact us at +91 7975515056 / +91 9880439900 or email contact@brinnoandtech.com or info@brinnoandtech.com."
+    };
+
+    function findBestMatch(input) {
+        const lowercaseInput = input.toLowerCase();
+        
+        for (const key in knowledgeBase.keywords) {
+            const keywordData = knowledgeBase.keywords[key];
+            for (const match of keywordData.matches) {
+                if (lowercaseInput.includes(match)) {
+                    return keywordData.response;
+                }
+            }
+        }
+        
+        return knowledgeBase.defaultResponse;
+    }
+
+    function sendMessage() {
+        const input = document.getElementById('chat-input');
+        const message = input.value.trim();
+        
+        if (message) {
+            // Add user message
+            addMessage(message, 'sent');
+            
+            // Get and add bot response
+            const response = findBestMatch(message);
+            setTimeout(() => addMessage(response, 'received'), 500);
+            
+            // Clear input
+            input.value = '';
+        }
+    }
+
+    function addMessage(message, type) {
+        const messagesContainer = document.getElementById('chat-messages');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${type}`;
+        messageDiv.textContent = message;
+        messagesContainer.appendChild(messageDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    function handleKeyPress(event) {
+        if (event.key === 'Enter') {
+            sendMessage();
+        }
+    }
+
+    // Add this to your existing JavaScript
+const salesData = {
+    "2014-2015": [
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/S.AMAZON SELLER SERVICES PL -BANGALORE" },
+        { company: "Sterling & Wilson Powergen PL-Cochin", project: "TATA CONSULTANCY SERVICES-Thiruvanthapuram" },
+        { company: "M/S.STERLING AND WILSON POWERGEN PVT LTD HYD", project: "M/s.Continental Hospitals Ltd.-Hyderabad" }
+        // Add more projects as needed
+    ],
+    "2015-2016": [
+        { company: "Gmmco Limited", project: "M-far Manyata Tech Park, Nagavara, Bangalore-45" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s. Nitte University,Mangalore-575018" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s.Goldman Sachs Service P L Bangalore-560071" }
+        // Add more projects as needed
+    ]
+};
+
+document.querySelectorAll('.timeline-content').forEach(item => {
+    const year = item.getAttribute('data-year');
+    const projectList = item.querySelector('.project-list');
+    
+    // Populate project list
+    if (salesData[year]) {
+        salesData[year].forEach(project => {
+            const projectDiv = document.createElement('div');
+            projectDiv.className = 'project-item';
+            projectDiv.innerHTML = `
+                <strong>${project.company}</strong>
+                <span>${project.project}</span>
+            `;
+            projectList.appendChild(projectDiv);
+        });
+    }
+
+    // Handle click events
+    item.addEventListener('click', () => {
+        // Remove active class from all items
+        document.querySelectorAll('.timeline-content').forEach(content => {
+            content.classList.remove('active');
+        });
+        // Add active class to clicked item
+        item.classList.add('active');
+    });
+});
+
+// Close popup when clicking outside
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.timeline-content')) {
+        document.querySelectorAll('.timeline-content').forEach(content => {
+            content.classList.remove('active');
+        });
+    }
+});
+
+// Timeline data from PDF
+const timelineData = {
+    "2014-2015": [
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/S.AMAZON SELLER SERVICES PL -BANGALORE" },
+        { company: "M/S.STERLING AND WILSON POWERGEN PVT LTD HYD", project: "M/s.Babji Realtors Pl, Mandal-Rangareddy Dist" },
+        { company: "M/s.Sterling and Wilson Powergen Pvt Ltd., Chn", project: "Ceedeeyes Hosuing & Infrastructure - Chennai" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "Ceesna Garden Developers PL-Bangalore" },
+        { company: "Sterling & Wilson Powergen PL-Cochin", project: "M/s.Cognizant Technology Solution India P L-Kochi" },
+        { company: "M/S.STERLING AND WILSON POWERGEN PVT LTD HYD", project: "M/s.Continental Hospitals Ltd.-Hyderabad" },
+        { company: "M/S.STERLING AND WILSON POWERGEN PVT LTD HYD", project: "M/s.Franklin Templeton International-Hyderabad" },
+        { company: "M/S.STERLING AND WILSON POWERGEN PVT LTD HYD", project: "M/s.Ganga Hitech City-2 Sociaty-Hyderabad" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "HCL Technologies Limited-Bangalore" },
+        { company: "M/s.Powerica Limited", project: "M/s.Hitachi-Kancheepuram" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s.Information Technology Park Ltd.,-Bangalore" },
+        { company: "M/S.STERLING AND WILSON POWERGEN PVT LTD HYD", project: "M/s.Manjeera Retail Holdings PL-Hyderabad" },
+        { company: "Powerica Limited", project: "M/s.Malayala Manorama Co ltd-Palakkad" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s.Pardhanani Wilshire II- Bangalore" },
+        { company: "M/S.STERLING AND WILSON POWERGEN PVT LTD HYD", project: "M/s.Prajay Princeton Hotel Cum Retail Project-Hyderabad" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s.RGA Software Systems Pvt. Ltd-Bangalore" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "SAP LAB INDIA PVT LTD-Bangalore" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s. Shindengen India P L-Bangalore" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s.SJR Enterprises Pvt Ltd-Bangalore" },
+        { company: "M/S.STERLING AND WILSON POWERGEN PVT LTD HYD", project: "SLN TERMINUS INFRA PVT LTD-HYDERBAD" },
+        { company: "M/S.STERLING AND WILSON POWERGEN PVT LTD HYD", project: "M/s.Sundew Properties Ltd-SEZ-Hyderbad" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s.Symphony Teleca Corporation India (P) Ltd-BANGALORE" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s.Synergy Property Development-BANGALORE" },
+        { company: "Gmmco Limited", project: "M/s.Tata Elxsi Limited-BANGALORE" },
+        { company: "M/S.STERLING AND WILSON POWERGEN PVT LTD HYD", project: "TATA CONSULTANCY SERVICES- R R DIST HYDERABAD" },
+        { company: "Sterling & Wilson Powergen PL-Cochin", project: "TATA CONSULTANCY SERVICES-Thiruvanthapuram" },
+        { company: "M/S.STERLING AND WILSON POWERGEN PVT LTD HYD", project: "M/s.Tata Consultancy Services Ltd-HYDERBAD" },
+        { company: "Sterling & Wilson Powergen PL-Cochin", project: "M/s.Tata Consultancy Services Ltd-COCHIN" },
+        { company: "M/S.STERLING AND WILSON POWERGEN PVT LTD HYD", project: "TSI BUSINESS PARK (HYD) PVT LTD-HYDERABAD" },
+        { company: "M/S.STERLING AND WILSON POWERGEN PVT LTD HYD", project: "VIMTA LABS LTD-HYDERBAD" }
+    ],
+    "2015-2016": [
+        { company: "Gmmco Limited", project: "M-far Manyata Tech Park, Nagavara, Bangalore-45" },
+        { company: "Gmmco Limited", project: "SITE: M-FAR DEVELOPERS, MANYATHA TECH PARK, BANGALORE" },
+        { company: "Gmmco Limited., Chennai", project: "M/s.Radha Rajalakshmi Hotels, Chennai" },
+        { company: "ISS FACILITY SERVICES INDIA PVT LTD.,", project: "M/S. HP -IWF, BANGALORE" },
+        { company: "KNND ASSOCIATES PVT. LTD.,", project: "M/s. M-far Manyatha Tech Park, Nagavara, Bangalore" },
+        { company: "M/s. Gmmco Limited", project: "M/s. Gmmco Limited, Plot No Mysore-570018" },
+        { company: "M/s. Gmmco Limited", project: "M/s. GMMCO Limited, Plot No. , Mysore-570018" },
+        { company: "M/s. Powerica Limited -Bangalore", project: "M/s. Everblue Apparel Limited , Bangalore-561203" },
+        { company: "M/s. Powerica Limited -Bangalore", project: "M/S. NITESH HOUSING DEVELOPERS P L, BANGALORE" },
+        { company: "M/s. Powerica Limited -Bangalore", project: "M/S. SANDHAR AUTOMACH, , BANGALORE" },
+        { company: "M/s.Sterling and Wilson Powergen Pvt Ltd., Chn", project: "M/s. Tata Consultancy Service Limited, Chennai-603103" },
+        { company: "M/s.Sterling and Wilson Pvt. Ltd.,", project: "M/s. Admas Builders Pvt. Ltd.,Bangalore-560103" },
+        { company: "M/s.Sterling and Wilson Pvt. Ltd.,", project: "M/s.Sterling and Wilson Ltd.,, Bangalore-560095" },
+        { company: "PRAVIN ELECTRICALS PVT.LTD.,", project: "M/S. H P C L, BANGALORE" },
+        { company: "SINEWAVE GENERATORS PRIVATE LIMITED", project: "SINEWAVE GENERATORS PL, BANGALORE" },
+        { company: "SJR INFRASTRUCTURE PVT LTD.,", project: "M/s.SJR Infrastructure Pvt. Ltd.,, Bangalore-560066" },
+        { company: "STERLING AND GENERATORS PVT LTD.,", project: "STERLING GENERATORS PL, SURVEY NO : HAVELI" },
+        { company: "Sterling and Wilson Energy Systems Pl", project: "M/s. Cochin International Airport Ltd.,, Kochi-683111, Kerala," },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s. L&W Construction PL, Bangalore-560103" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s.Juniper, Blore-56103" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "L&W Contruction PL Bangalore-560103" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s. Virginia Developers PL, , Bangalore-560066" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s. Exora Business Parks PL, , Bangalore-560066" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s. Nitte University,Mangalore-575018" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s. Cargil India Pvt. Ltd.,, Davanagere-577601" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s. Palladium Constructions Bangalore-560010" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s.Goldman Sachs Service P L Bangalore-560071" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s.L&W Construction PL,Bangalore-560103" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s. Satern Griha Nirman PL, Bangalore-560100" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s.Embassy Property Developments, Bangalore-560037" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s. Satern Griha Nirman PL Bangalore-560100" }
+    ],
+    "2016-2017": [
+        { company: "Eurotech Generators LLP", project: "M/s. Prestige Exora Business Park-BANGALORE" },
+        { company: "Eurotech Generators LLP", project: "M/s.Prestige Fern Galaxy-BANGALORE" },
+        { company: "Excel Generators Pvt. Ltd.,", project: "Toyota Kirloskar Motors PL-BANGALORE" },
+        { company: "Gmmco Limited", project: "ITC GUNTUR" },
+        { company: "Gmmco Limited., Chennai", project: "M/s.IG3 Infra Limited-Thoraipakkam" },
+        { company: "ISS FACILITY SERVICES INDIA PVT LTD.,", project: "M/s. HP PPS India Operations PL-Bangalore-560037" },
+        { company: "M/s. Powerica Limited -Bangalore", project: "M/s. Sandhar Automach-Bangalore Dist" },
+        { company: "M/s. Powerica Limited -Bangalore", project: "M/s. Elixir Enterprises & Hotel PL-BANGALORE" },
+        { company: "M/s. Powerica Limited -Bangalore", project: "M/s.Cookson India Pvt Ltd-BANGALORE" },
+        { company: "M/s. Sudhir Power Projects Limited", project: "M/s. Tata Consultancy Service Ltd., BANGALORE" },
+        { company: "M/s. Sudhir Power Projects Limited", project: "M/s. DLF Utilities Ltd- CHENNAI" },
+        { company: "M/s. Sudhir Power Projects Limited", project: "M/s. Tata Consultancy Service Ltd.,-INDORE" },
+        { company: "PRESTIGE ESTATES PROJECTS LIMITED", project: "Project: Prestige Trade Towers, BANGALORE" },
+        { company: "RGA SOFTWARE SYSTEMS PVT LTD", project: "RGA SOFTWARE SYSTEMS Pl-BANGALORE" },
+        { company: "SJR INFRASTRUCTURE PVT LTD.,", project: "SJR INFRASTRUCTURE PVT LTD.,-BANGALORE" },
+        { company: "Sterling and Wilson Energy Systems Pl", project: "M/s. Cochin International Airport Ltd., -GUJARAT" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s.LM Wind Power Blades ( India)-BANGALORE" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s. GT Cinimas Pvt Ltd.,- BANGALORE" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s. Prestige Mysore Retail Ventures PL-BANGALORE" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s.Palladium Constructions PL-BANGALORE" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s. Shapoorji Aecos Construction PL-BANGALORE" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s. Tata Consultancy Service Limited-BANGALORE" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s. Juniper Networks India P L-BANGALORE" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s. Bharatiyam Foods & Breverages Pl-BANGALORE" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s. Pritech Projects-BANGALORE" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s. Embassay Property Developments-BANGALORE" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s.Shapoorji Aecos Construction PL-BANGALORE" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s. Fortius Infradevelopers LLP-BANGALORE" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s.The Tata Power Company Limited-BANGALORE" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s. Karle Infra PL-BANGALORE" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s. Manyatha Promoter Pvt Ltd.,-BANGALORE" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "M/s.Prestige Mysore Retail Ventures PL-MYSORE" },
+        { company: "Sterling and Wilson Powergen Pvt Ltd.,BLR", project: "CESSNA PROJECT-BANGALORE" },
+        { company: "Sterling and Wilson Powergen Pvt. Ltd., Hyderabad", project: "M/s. TSI Business Park (Hyd) Pvt. Ltd.," },
+        { company: "Sterling and Wilson Powergen Pvt. Ltd., Hyderabad", project: "M/s. Devbhumi Realtors P L- HYDERBAD" },
+        { company: "Sterling and Wilson Powergen Pvt. Ltd., Hyderabad", project: "SBI DATA CENTER-HYDERBAD" },
+        { company: "Sterling and Wilson Powergen Pvt. Ltd., Hyderabad", project: "M/s. LuLu Convention And Exhibition-HYDERBAD" },
+        { company: "Sterling & Wilson Powergen Pvt. Ltd., Cochin", project: "M/s. Cochin International Airport Ltd-COCHIN" }
+    ],
+    "2017-2018": [
+        { company: "CESSNA GARDEN BLOCK -11", project: "CESSNA BLOCK 11-BANGALORE" },
+        { company: "Excel Generators Pvt. Ltd.,", project: "HOSPIRA HELATHCARE INDIA PL-BANGALORE" },
+        { company: "Gmmco Limited., Chennai", project: "M/s.IG3 Infra Limited-CHENNAI" },
+        { company: "M/s. GMMCO Ltd., Maharastra", project: "M/s.Reliance Life Sciences Cent-MAHARASTRA" },
+        { company: "M/s. Jakson Limited- Hyderabad", project: "M/s. Hindustan Aeronautics Limited-HYDERBAD" },
+        { company: "M/s. Powerica Limited -Bangalore", project: "M/s. Hikal Limited-BANGALORE" },
+        { company: "M/s.Sterling and Wilson Powergen Pvt Ltd., Chn", project: "CENTRAL STORES-CHENNAI" },
+        { company: "M/s.Sterling and Wilson Pvt. Ltd.,", project: "ADMAS BUILDERS-BANGALORE" },
+        { company: "PRESTIGE ESTATES PROJECTS LIMITED", project: "Prestige Trade Towers-BANGALORE" }
+    ],
+    "2018-2019": [
+        { company: "Eurotech Generators LLP", project: "M/S KALYANI TECH PARK-BANGALORE" },
+        { company: "Gainwell Commosales Private Limited", project: "Gainwell Commosales Private Limited-UTTAR PRADESH" },
+        { company: "Gmmco Limited., Bangaluru", project: "M/S WIPRO, KODATHI M/S GMMCO LIMITED,-BANGALORE" },
+        { company: "Gmmco Limited., Chennai", project: "/s.Embassy Splendid Techzone (SEZ) Block-3-CHENNAI" },
+        { company: "Gmmco Limited., Chennai", project: "TATA PROJECT-CHENNAI" },
+        { company: "Gmmco Ltd, (Hyderabad)", project: "RAJAPUSHPA- HYDERABAD" },
+        { company: "Hical Technologies Private Limited", project: "Hical Technologies Private Limited-BANGALORE" },
+        { company: "JAKSON LIMITED-DELHI", project: "Assistant Divisional Engineer (ADE) Stores & Servic-DELHI" },
+        { company: "Gmmco Limited., Bangaluru", project: "M/S EMBASSY LAKE TERRACE-BANGALORE" },
+        { company: "M/S. JAKSON LIMITED", project: "Larsen & Toubro Limited, Construction-CHENNAI" },
+        { company: "M/s. Jakson Limited- Hyderabad", project: "Cyient Limited,-HYDERABAD" },
+        { company: "M/s. Jakson Limited- Hyderabad", project: "Sundram Fastner Ltd.,-HYDERABAD" },
+        { company: "M/s. Jakson Limited- Hyderabad", project: "Honer Developers Pvt Ltd- HYDERABAD" },
+        { company: "M/s.Sterling and Wilson Pvt. Ltd.,", project: "INDOCEAN-BANGALORE" },
+        { company: "PRESTIGE ESTATES PROJECTS LIMITED", project: "Prestige Falcon Towers-BANGALORE" },
+        { company: "PRESTIGE ESTATES PROJECTS LIMITED", project: "Prestige Pinewood-BANGALORE" },
+        { company: "PRESTIGE ESTATES PROJECTS LIMITED", project: "PRESTIGE GOLFSHIRE-BANGALORE" },
+        { company: "PRESTIGE ESTATES PROJECTS LIMITED", project: "SPENCER HEIGHTS-BANGALORE" },
+        { company: "PRESTIGE ESTATES PROJECTS LIMITED", project: "CENTRAL STREET-BANGALORE" },
+        { company: "Prestige Nottinghill Investments", project: "Prestige Elysian-BANGALORE" },
+        { company: "Prestige Southcity Holdings", project: "prestige Gulmohar- BANGALORE" },
+        { company: "PRESTIGE WHITEFIELD INVESTMENT & DEVELOPERS LLP", project: "TECHNO STAR-BANGALORE" },
+        { company: "RAVI ENGINEERS", project: "RMZ-BANGALORE" },
+        { company: "SHRI SAI CONSTRUCTION", project: "M/s Divija Commercial Properties Pvt.Ltd-BANGALORE" }
+    ],
+    "2019-2020": [
+        { company: "AKARSH COMMERCIAL DEVELOPMENT", project: "AKARSH DEVELOPMENTS-BANGALORE" },
+        { company: "Cessna Garden Developers Pvt Ltd", project: "CESSNA BLOCK 10-BANGALORE" },
+        { company: "JAKSON LIMITED - VIZAG", project: "MOURYA-Vishakhapatnam" },
+        { company: "Lakshya Powertech Pvt Ltd", project: "WIPRO,-HYDERABAD" },
+        { company: "M/S GMMCO LIMITED - CHENNAI", project: "EMBASSY SPLENDID-CHENNAI" },
+        { company: "M/S GMMCO LIMITED - CHENNAI", project: "SIMS HOSPITAL- CHENNAI" },
+        { company: "Ms Gmmco Ltd ( COCHIN )", project: "IBM - Cochin" },
+        { company: "M/S. JAKSON LIMITED", project: "FORD-NEW DELHI" },
+        { company: "M/s. Jakson Limited- Hyderabad", project: "(Project Name: My Home Bhooja)-HYDERABAD" },
+        { company: "M/S. POWERICA LTD.,", project: "ROYAL ENFIELD-CHENNAI" },
+        { company: "M/s.Sterling and Wilson Pvt. Ltd.,", project: "P&C Projects- BANGALORE" },
+        { company: "Nuetech Solar Systems Pvt Ltd", project: "Nuetech Solar Systems Pvt Ltd-BANGALORE" },
+        { company: "PRESTIGE AAA INVESTMENTS", project: "WOOD SIDE -BANGALORE" }
+    ],
+    "2020-2021": [
+        { company: "Brigade Enterprises Limited", project: "BRIGADE TOPAZ- MYSURU" },
+        { company: "DEVI POWER TECH SOLUTIONS", project: "DEVI POWER TECH SOLUTIONS-HYDERABAD" },
+        { company: "Eurotech Generators LLP", project: "KALYANI TECH PARK- BANGALROE" },
+        { company: "GMMCO LIMITED(BANGALORE)", project: "HI-Q Electronics Pvt Ltd-HOSUR" },
+        { company: "GMMCO LIMITED(BANGALORE)", project: "GMMCO SANMAR-BANGALORE" },
+        { company: "Gmmco Ltd, (Hyderabad)", project: "C/O DXN MANUFACTUREING (I) Pvt. Ltd- HYDERABAD" },
+        { company: "Gmmco Ltd, (Hyderabad)", project: "INVECAS TECHNOLOGIES Pvt Ltd- HYDERABAD" },
+        { company: "Gmmco Ltd, (Hyderabad)", project: "Pokarna Engineering Stone Limited-Unit--II-HYDERABAD" },
+        { company: "KONSTELEC ENGINEERS PVT LTD", project: "INDIA OIL CORPORATION LIMITED,- ANDRA PRADESH" },
+        { company: "M/s. Jakson Limited- Hyderabad", project: "KEC International Ltd. CCE(R&D)SOUTH,, DRDO -HYDERABAD" },
+        { company: "M/S. POWERICA LTD.,", project: "BRIGADE - POWERICA- BANGALORE" },
+        { company: "M/s. Sudhir Power Project Limited -Kolkata", project: "CANDOR SUPPLY C1 BLOCK-KOLKATA" },
+        { company: "Northland Holding Company Pvt Ltd", project: "PRESTIGE MARRIOT HOTEL-BANGALORE" },
+        { company: "PRESTIGE ESTATES PROJECTS LIMITED", project: "PRESTIGE LAKE RIDGE-BANGALORE" },
+        { company: "PRESTIGE ESTATES PROJECTS LIMITED", project: "Prestige Kenilworth-BANGALORE" },
+        { company: "Progen Engineers", project: "M/s. Marriot Bangalore" }
+    ],
+    "2021-2022": [
+        { company: "Brigade Enterprises Limited", project: "Brigade Bricklane-BANGALORE" },
+        { company: "Brigade Enterprises Limited", project: "Brigade Parkside North- BANGALORE" },
+        { company: "Brigade Enterprises Limited", project: "BRIGADE TOPAZ- MYSORE" },
+        { company: "Brigade Enterprises Limited", project: "Brigade Symphony'A'Block,-BANGALORE" },
+        { company: "Crescon Projects & Services Pvt Ltd", project: "STT Global Data Centres India Pvt Ltd- CHENNAI" },
+        { company: "GMMCO LIMITED(BANGALORE)", project: "PSA AVTECH Powertrain Pvt Ltd,-BANGALORE" },
+        { company: "GMMCO LIMITED(BANGALORE)", project: "Microlabs - Kudlu- BANGALORE" },
+        { company: "GMMCO LIMITED(BANGALORE)", project: "Merck Life Science Pvt Ltd,- BANGALORE" },
+        { company: "Gmmco Ltd, (Hyderabad)", project: "Pokarna Engineering Stone Limited-Unit--II-HYDERABAD" },
+        { company: "JAKSON LTD (BANGALORE)", project: "M/s SBB Sapphire Ground Floor,-BANGALORE" },
+        { company: "M/s. Gmmco Limited", project: "Jayabheri Projects LLP-HYDERABAD" },
+        { company: "M/s. Gmmco Limited", project: "ICRISAT-Hyderabad" },
+        { company: "M/S GMMCO LIMITED - CHENNAI", project: "Supreme Petrochem Limited,-CHENNAI" },
+        { company: "M/s. Gmmco Limited ., Mysore", project: "EMBASSY LAKE TERRACE-MYSORE" },
+        { company: "Prestige Estates Projects Limited-HYD", project: "Prestige High Fields- HYDERABAD" },
+        { company: "Prestige Southcity Holdings", project: "PRESTIGE JINDAL CITY- BANGALORE" }
+    ],
+    "2022-2023": [
+        { company: "BCV DEVELOPERS PVT. LTD.,", project: "M/s. Kino Orchards-BANGALORE" },
+        { company: "Brigade Enterprises Limited", project: "BRIGADE 7 GARDENS-BANGALORE" },
+        { company: "Brigade Enterprises Limited", project: "Brigade Parkside North,-BANGALORE" },
+        { company: "Brigade Enterprises Limited", project: "Brigade Mountain View Mysore" },
+        { company: "Brigade Enterprises Limited", project: "PLUMERIA LIFESTYLE-BANGALORE" },
+        { company: "BRIGADE ENTERPRISES LIMITED-TELANGANA", project: "M/s. Brigade Citadel Ph-1-HYDERABAD" },
+        { company: "CUMMINS INDIA LIMITED", project: "AMAZON DATA SERVICES INDIA PRIVATE LIMITED-TELANGANA-101" },
+        { company: "CUMMINS INDIA LIMITED", project: "AMAZON DATA SERVICES INDIA PRIVATE LIMITED-TELANGANA-111" },
+        { company: "CUMMINS INDIA LIMITED", project: "AMAZON DATA SERVICES INDIA PRIVATE LIMITED-TELANGANA-121" },
+        { company: "Excel Generators Pvt. Ltd.,", project: "HP SITE-BLORE" },
+        { company: "JAKSON LTD (BANGALORE)", project: "LARSEN & TOUBRO LIMITED CONSTRUCTION, DRDO BANGALORE" },
+        { company: "KNND ASSOCIATES PVT LTD - HYD", project: "Vasavi Sky City- HYDERABAD" }
+    ],
+    "2023-2024": [
+        { company: "Apex Realty Ventures LLP", project: "Prestige Finsbury Park, BANGALORE" },
+        { company: "Brigade Enterprises Limited", project: "Brigade -Gem- BANGALORE" },
+        { company: "Brigade Enterprises Limited", project: "Brigade Sapphire-MYSORE" },
+        { company: "BRIGADE ENTERPRISES LIMITED-TELANGANA", project: "M/s. Brigade Citadel Ph-1-HYERABAD" },
+        { company: "BRIGADE ENTERPRISES LIMITED-TELANGANA", project: "M/s. Brigade Citadel Ph-2-HYERABAD" },
+        { company: "BRIGADE INFRASTRUCTURE AND POWER PVT LTD.,", project: "Brigade Twin Towers- BANGALORE" },
+        { company: "Excel Generators Pvt. Ltd.,", project: "Hewlett-Packard (India) Software Operation Private Limited-BANGALORE" },
+        { company: "M/s. Mysore Projects Private Limited", project: "Brigade -Club House-BANGALORE" },
+        { company: "M/s. Mysore Projects Private Limited", project: "Brigade -Arcadia- BANGALORE" },
+        { company: "M/s. Mysore Projects Private Limited", project: "Brigade Utopia-Eden Commercial" },
+        { company: "M/s. Mysore Projects Private Limited", project: "Tranquila Block-BANGALORE" },
+        { company: "M/s. Prestige Realty Ventures", project: "M/s. Prestige Tech Cloud-BANGALORE" },
+        { company: "POWER SYSTEM ENGINEERS", project: "EMBASSY -PARCEL-08 -M/s. Vikas Telecom Private Limited-BLR" },
+        { company: "POWER SYSTEM ENGINEERS", project: "EMBASSY -PARCEL-06-M/s. Vikas Telecom Private Limited-BLR" },
+        { company: "Prestige Beta Projects Private Limited", project: "Prestige Lake Shore-BANGALORE" },
+        { company: "PRESTIGE ESTATES PROJECTS LIMITED", project: "Prestige Spencer Heights-BANGALORE" },
+        { company: "Prestige Exora Business Parks Limited", project: "M/s. Prestige Summit-BANGALORE" },
+        { company: "Sterling Generators Pvt. Ltd.,", project: "ITD CEMENTATION INDIA LIMITED-KARWAR" },
+        { company: "Sudhir Power Project Limited -Blr", project: "M/S. AMITY UNIVERSITY-BANGALORE" },
+        { company: "Sudhir Power Project Limited - Chennai", project: "M/s. Greenlam South Ltd- ANDRA PRADESH" },
+        { company: "Sudhir Power Project Limited - Chennai", project: "M/s. DLF INFO PARK DEVELOPERS-TARAMANI-CHENNAI" },
+        { company: "URC CONSTRUCTION PVT.LTD", project: "BAM DLR Chennai Private Limited-CHENNAI" }
+    ],"2024-2025": [
+        { company: "M/s. Mysore Projects Private Limited", project: "Brigade Utopia- Paradise-BANGALORE" },
+        { company: "M/s Rai AI Robotics Power Pvt. Ltd", project: "EMBASSY PROPERTY DEVELOPMENTS PRIVATE LIMITED-ZENITH-BANGALORE" },
+        { company: "M/s Rai AI Robotics Power Pvt. Ltd", project: "M/S. VISTA SPACES EARTH CENTRE PRIVATE LIMITED-BANGALORE" },
+        { company: "M/s Rai AI Robotics Power Pvt. Ltd", project: "MANYATA PROMOTERS PRIVATE LIMITED -BANGALORE" },
+        { company: "PRESTIGE ESTATES PROJECTS LIMITED", project: "Prestige Cemden Gardens- BANGALORE" },
+        { company: "Sterling Generators Pvt. Ltd.,", project: "DARSHITA SOUTHERN INDIA HAPPY HOMES-BANGALORE" },
+        { company: "Sterling Generators Pvt. Ltd.,", project: "INFORMATION TECHNOLOGY PARK LIMITED-BANGALORE" },
+        { company: "Sterling Generators Pvt. Ltd.,", project: "HEBBAL INFRASPACE PRIVATE LIMITED-BANGALORE" },
+        { company: "STERLING GENERATORS PRIVATE LIMITED-BNWR", project: "RUNGTA MINES LIMITED-Dist - ODISHA" },
+        { company: "STERLING GREEN POWER SOLUTIONS PRIVATE LIMITED", project: "PSK ENGINEERING CONSTRUCTION & CO-PATNA" },
+        { company: "Sudhir Power Project Limited -Blr", project: "AIRPORT-TATA PROJECT-BANGALORE" },
+        { company: "STERLING GREEN POWER SOLUTIONS PRIVATE LIMITED", project: "RUNGTA MINES LIMITED-JHARKHAND" },
+        { company: "STERLING GREEN POWER SOLUTIONS PRIVATE LIMITED", project: "BOSCH LTD-BANGALORE" },
+        { company: "EXCEL GENERATORS PVT LTD.,", project: "TEL COMPONENTS PVT LTD-BANGALORE" },
+        { company: "PRESTIGE ESTATES PROJECTS LIMITED", project: "PRESTIGE CAPITAL SQUARE-BANGALORE" },
+        { company: "NORTHLAND HOLDING COMPANY PVT LTD", project: "Prestige Tech Cloud Data Center-BANGALORE" },
+        { company: "PRESTIGE PROJECT PVT LTD", project: "PRESTIGE CITY EDEN PARK-BANGALORE" },
+        { company: "PRESTIGE PROJECT PVT LTD", project: "PRESTIGE TECH HUB -BANGALORE" },
+        { company: "BRIGADE ENTERPRISES LIMITED", project: "BRIGADE XANADU -CHENNAI" },
+        { company: "BRIGADE ENTERPRISES LIMITED", project: "BRIGADE ST JHONS HOSPITAL-BANGALORE" }
+    ]
+};
+
+// Function to populate timeline items
+document.addEventListener('DOMContentLoaded', function() {
+    // Add click event listeners to timeline items
+    document.querySelectorAll('.timeline-content').forEach(item => {
+        const year = item.getAttribute('data-year');
+        const projectList = item.querySelector('.project-list');
+        
+        // Populate project list for this year
+        if (timelineData[year]) {
+            timelineData[year].forEach(project => {
+                const projectDiv = document.createElement('div');
+                projectDiv.className = 'project-item';
+                projectDiv.innerHTML = `
+                    <strong>${project.company}</strong>
+                    <span>${project.project}</span>
+                `;
+                projectList.appendChild(projectDiv);
+            });
+        }
+
+        // Handle click events
+        item.addEventListener('click', (e) => {
+            // Remove active class from all items
+            document.querySelectorAll('.timeline-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            // Add active class to clicked item
+            item.classList.add('active');
+            e.stopPropagation();
+        });
+    });
+
+    // Close popup when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.timeline-content')) {
+            document.querySelectorAll('.timeline-content').forEach(content => {
+                content.classList.remove('active');
+            });
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const projectsContainer = document.querySelector('.timeline__projects');
+    const navItems = document.querySelectorAll('.timeline__nav li');
+    const defaultYear = '2024-2025'; // Set default year
+
+    // Create year sections
+    Object.entries(timelineData).forEach(([year, projects]) => {
+        const yearSection = document.createElement('div');
+        yearSection.className = 'year-section';
+        yearSection.id = `year-${year}`;
+        
+        yearSection.innerHTML = `
+            <div class="year-header">
+                <h2 class="year-title">${year}</h2>
+            </div>
+            <div class="projects-grid">
+                ${projects.map(project => `
+                    <div class="project-card">
+                        <div class="project-company">${project.company}</div>
+                        <div class="project-name">${project.project}</div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+        
+        projectsContainer.appendChild(yearSection);
+         // Set active class if it's the default year
+         if (year === defaultYear) {
+            yearSection.classList.add('active');
+        }
+    });
+
+    // Set active class on the navigation item for 2024-2025
+    navItems.forEach(item => {
+        const yearText = item.querySelector('span').textContent;
+        if (yearText === defaultYear) {
+            item.classList.add('active');
+        } else {
+            item.classList.remove('active');
+        }
+    });
+
+    // Navigation click handling
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const year = item.querySelector('span').textContent;
+            
+            // Update navigation
+            navItems.forEach(nav => nav.classList.remove('active'));
+            item.classList.add('active');
+            
+            // Update content
+            document.querySelectorAll('.year-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(`year-${year}`).classList.add('active');
+        });
+    });
+
+    // Intersection Observer for nav highlighting
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const year = entry.target.id.replace('year-', '');
+                navItems.forEach(item => {
+                    const itemYear = item.querySelector('span').textContent;
+                    item.classList.toggle('active', itemYear === year);
+                });
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.year-section').forEach(section => {
+        observer.observe(section);
+    });
+});
+    </script>
+</body>
+
+</html>

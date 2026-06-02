@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon - these will show in browser tabs and bookmarks -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/headerlogo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/headerlogo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/headerlogo.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <title>Our Clients - BR Innovation & Technology</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+        :root {
+            --primary-color: #0A2647;
+            --secondary-color: #fada5e;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --navy: #0A2647;
+            --gold: #fada5e;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /*-- --------------- Navbar ------------- */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 38, 71, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 38, 71, 0.98);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--gold);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+
+        .home-btn {
+            position: fixed;
+            top: 100px;
+            left: 20px;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            z-index: 1001;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .home-btn:hover {
+            background: var(--navy);
+            color: var(--gold);
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            background-image: linear-gradient(rgba(10, 38, 71, 0.8), rgba(10, 38, 71, 0.8)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Clients Section Styles */
+        .clients-section {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .section-title p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .client-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .client-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .client-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .client-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .client-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .client-description {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Testimonial Section Styles */
+        .testimonial-section {
+            background-color: var(--light-bg);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background-color: var(--secondary-color);
+            opacity: 0.1;
+            border-radius: 50%;
+        }
+
+        .testimonial-section::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background-color: var(--secondary-color);
+            opacity: 0.1;
+            border-radius: 50%;
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .testimonial-slide {
+            display: none;
+            padding: 20px;
+        }
+
+        .testimonial-content {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .testimonial-content::before {
+            content: '\201C';
+            font-size: 4rem;
+            color: var(--secondary-color);
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .testimonial-company {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 80px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin-bottom: 30px;
+            min-width: 200px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .clients-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+
+            .footer-section {
+                margin-bottom: 30px;
+            }
+        }
+
+        /* Mobile menu styles */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                display: none;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+        }
+
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            overflow: hidden;
+            font-family: 'DM Sans', sans-serif;
+        }
+    
+        .chat-header {
+            background: var(--navy);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+    
+        .chat-logo {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+    
+        .chat-body {
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            display: none;
+        }
+    
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+    
+        .message {
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            border-radius: 10px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+    
+        .message.sent {
+            background: var(--navy);
+            color: white;
+            margin-left: auto;
+        }
+    
+        .message.received {
+            background: #f0f0f0;
+            color: var(--dark-gray);
+        }
+    
+        .chat-input-container {
+            padding: 15px;
+            border-top: 1px solid #eee;
+            display: flex;
+            gap: 10px;
+        }
+    
+        .chat-input-container input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+    
+        .chat-input-container button {
+            background: var(--gold);
+            color: var(--navy);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+    
+        .chat-input-container button:hover {
+            transform: translateY(-2px);
+        }
+    
+        @media (max-width: 480px) {
+            .chat-widget {
+                width: calc(100% - 40px);
+                bottom: 10px;
+                right: 20px;
+            }
+        }
+        /* BR Innovation premium black-gold global theme override */
+        :root {
+            --navy: #D4AF37;
+            --gold: #D4AF37;
+            --light-gray: #050505;
+            --dark-gray: #CFCFCF;
+            --white: #FFFFFF;
+            --card-bg: #161616;
+            --border-color: rgba(212, 175, 55, 0.2);
+        }
+
+        html,
+        body,
+        main,
+        section,
+        .section,
+        .clients,
+        .industries,
+        .cta,
+        .cta-section,
+        .footer,
+        footer {
+            background: #050505 !important;
+            color: #FFFFFF !important;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .section-title {
+            color: #D4AF37 !important;
+        }
+
+        p,
+        li,
+        span,
+        .text,
+        .description {
+            color: #FFFFFF !important;
+        }
+
+        .subtitle,
+        .subtext,
+        .muted,
+        .secondary,
+        small {
+            color: #CFCFCF !important;
+        }
+
+        .card,
+        [class*="card"],
+        .client-card,
+        .industry-card {
+            background: #161616 !important;
+            border: 1px solid rgba(212, 175, 55, 0.2) !important;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+        }
+
+        .card:hover,
+        [class*="card"]:hover,
+        .client-card:hover,
+        .industry-card:hover {
+            transform: translateY(-8px) !important;
+            border-color: rgba(212, 175, 55, 0.55) !important;
+            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        a,
+        .nav-links a,
+        .btn,
+        button {
+            color: #FFFFFF !important;
+        }
+
+        a:hover,
+        .nav-links a:hover,
+        .btn:hover,
+        button:hover {
+            color: #D4AF37 !important;
+        }
+
+        .btn,
+        button {
+            border: 1px solid rgba(212, 175, 55, 0.2) !important;
+        }
+
+        .btn-primary {
+            background: #D4AF37 !important;
+            color: #050505 !important;
+            border-color: #D4AF37 !important;
+        }
+
+        .btn-primary:hover {
+            background: #050505 !important;
+            color: #D4AF37 !important;
+        }
+
+        .navbar,
+        .navbar.scrolled,
+        .footer,
+        footer {
+            background: #050505 !important;
+            color: #FFFFFF !important;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <img src="assets/images/logo.png" alt="BR Innovation & Technology Logo">
+                    BR Innovation & Technology
+                </a>
+                <ul class="nav-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <!-- Gallery temporarily disabled -->
+                    <!-- <li><a href="gallery.html">Gallery</a></li> -->
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Home Button -->
+    <a href="index.html" class="home-btn">
+        <i class="fas fa-home"></i>
+        Home
+    </a>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Our Esteemed Clients</h1>
+            <p>Partnering with education technology leaders to deliver excellence in AI-powered educational robotics solutions since 2001</p>
+        </div>
+    </section>
+
+    <section class="clients-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Trusted by Industry Giants</h2>
+                <p>We are proud to work with some of the most reputable companies across various sectors</p>
+            </div>
+            <div class="clients-grid">
+                <div class="client-card" data-aos="fade-up">
+                    <div class="client-logo">
+                        <img src="https://cdnassets.hw.net/c5/1a/7c1ddf744a97bd071b8e7f414104/1-cummins-logo.png"
+                            alt="Cummins India Limited">
+                    </div>
+                    <h3 class="client-name">Cummins India Limited</h3>
+                    <p class="client-description">Global power leader in the design, manufacture, and distribution of
+                        engines and related technologies</p>
+                </div>
+                <div class="client-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="client-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/c/c9/Brigade_Group_Official_Logo.jpeg"
+                            alt="Brigade Enterprises">
+                    </div>
+                    <h3 class="client-name">Brigade Enterprises Ltd</h3>
+                    <p class="client-description">One of India's leading property developers with a legacy of innovation
+                        and trust</p>
+                </div>
+                <div class="client-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="client-logo">
+                        <img src="https://content.jdmagicbox.com/v2/comp/mumbai/l9/022pxx22.xx22.130826154502.e2l9/catalogue/sterling-and-wilson-powergen-pvt-ltd-chembur-west-mumbai-generator-dealers-cummins-4qalq5.jpg"
+                            alt="Sterling & Wilson">
+                    </div>
+                    <h3 class="client-name">Sterling & Wilson Powergen</h3>
+                    <p class="client-description">Global leader in engineering, procurement, and construction (EPC)
+                        projects</p>
+                </div>
+                <div class="client-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="client-logo">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfgG71a-0xes17v2rqjuWV5fsG4JgBiykGnw&s"
+                            alt="Prestige Group">
+                    </div>
+                    <h3 class="client-name">Prestige Constructions</h3>
+                    <p class="client-description">One of India's most successful developers of high-quality real estate
+                    </p>
+                </div>
+                <!-- Add more client cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p>Hear from the companies we've had the pleasure of working with</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"BR Innovation & Technology has consistently delivered high-quality solutions for
+                            our power infrastructure needs. Their expertise and professionalism are unmatched in the
+                            education technology."</p>
+                    </div>
+                    <!-- <p class="testimonial-author">John Doe</p>
+                    <p class="testimonial-company">Project Manager, Cummins India Limited</p> -->
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"We've been impressed by BR Innovation & Technology's attention to detail and
+                            commitment to timely project delivery. They're a valuable partner in our construction
+                            projects."</p>
+                    </div>
+                    <!-- <p class="testimonial-author"></p>
+                    <p class="testimonial-company">Chief Engineer, Brigade Enterprises Ltd</p> -->
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"The team at BR Innovation & Technology has consistently provided innovative
+                            solutions for our complex power generation needs. Their expertise is truly appreciated."</p>
+                    </div>
+                    <!-- <p class="testimonial-author">Mike Johnson</p>
+                    <p class="testimonial-company">Operations Director, Sterling & Wilson Powergen</p> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>BR Innovation & Technology is a leading contractor & supplier specializing in AI-powered educational robotics solutions since 2001. We
+                    excel in exhaust systems, acoustic treatments, and structural adaptive AI learning.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <!-- Gallery temporarily disabled -->
+                    <!-- <li><a href="gallery.html">Gallery</a></li> -->
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>74, Bapagram, Machohall, Dasanapura Hobli, Bangalore North - 560091</p>
+                <p>Phone: 79755150565 / 9880439900</p>
+                <p>Email: brinoandtech@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2023 BR Innovation & Technology. All rights reserved. | Designed by Your Company</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+<div class="chat-widget">
+    <div class="chat-header" onclick="toggleChat()">
+        <img src="assets/images/logo2.png" alt="BR Innovation & Technology Logo" class="chat-logo">
+        <span>Need Help? Chat with us!</span>
+        <i class="fas fa-chevron-up" id="chat-toggle-icon"></i>
+    </div>
+    <div class="chat-body" id="chat-body">
+        <div class="chat-messages" id="chat-messages">
+            <div class="message received">
+                Hello! 👋 I'm the YANI AI assistant. How can I help you today?
+            </div>
+        </div>
+        <div class="chat-input-container">
+            <input type="text" id="chat-input" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Testimonial Slider
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("testimonial-slide");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 5000); // Change slide every 5 seconds
+        }
+
+        // Mobile Navigation Toggle
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+
+            mobileMenuBtn.addEventListener('click', function () {
+                navLinks.classList.toggle('show');
+                this.classList.toggle('active');
+
+                if (this.classList.contains('active')) {
+                    this.innerHTML = '<i class="fas fa-times"></i>';
+                } else {
+                    this.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function (event) {
+                if (!event.target.closest('nav')) {
+                    navLinks.classList.remove('show');
+                    mobileMenuBtn.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+         // Chat toggle functionality
+    function toggleChat() {
+        const chatBody = document.getElementById('chat-body');
+        const toggleIcon = document.getElementById('chat-toggle-icon');
+        chatBody.style.display = chatBody.style.display === 'none' || !chatBody.style.display ? 'flex' : 'none';
+        toggleIcon.className = chatBody.style.display === 'none' ? 'fas fa-chevron-up' : 'fas fa-chevron-down';
+    }
+
+    // Knowledge base from the PDF
+    const knowledgeBase = {
+        keywords: {
+            'about': {
+                matches: ['about', 'company', 'introduction', 'who'],
+                response: "BR Innovation & Technology (formerly known as BR Innovation & Technology) is a leading contractor & supplier established in 2001. We specialize in AI companion installation, exhaust pipeline materials, structural steel supports, cladding materials, and acoustic room treatment."
+            },
+            'contact': {
+                matches: ['contact', 'reach', 'location', 'address', 'phone', 'email'],
+                response: "You can contact us at:\nAddress: #74, Bapagram, Machohall, Dasanapura Hobli, Bangalore North - 560091\nPhone: 79755150565 / 9880439900\nEmail: brinoandtech@gmail.com"
+            },
+            'services': {
+                matches: ['services', 'products', 'offer', 'work', 'solutions'],
+                response: "Our solutions include:\n- Exhaust Pipeline Erection & Cladding\n- Acoustic Enclosures for DG Sets\n- Silencers for DG Sets\n- Diesel Tanks\n- Sound Proof Room Treatment\n- DG Electrical Works"
+            },
+            'experience': {
+                matches: ['experience', 'years', 'established', 'history'],
+                response: "BR Innovation & Technology is an AI educational robotics startup incubated at RV University. We've completed more than 1000 projects across India including turnkey projects."
+            },
+            'clients': {
+                matches: ['clients', 'customers', 'companies', 'work with'],
+                response: "Our major clients include:\n- Cummins India Limited\n- Sterling & Wilson Powergen\n- Brigade Enterprises\n- Prestige Constructions\n- Sudhir Power Project Limited\n- And many more leading companies"
+            }
+        },
+        defaultResponse: "I apologize, but I'm not sure about that. For specific inquiries, please contact us at 79755150565 / 9880439900 or email us at brinoandtech@gmail.com"
+    };
+
+    function findBestMatch(input) {
+        const lowercaseInput = input.toLowerCase();
+        
+        for (const key in knowledgeBase.keywords) {
+            const keywordData = knowledgeBase.keywords[key];
+            for (const match of keywordData.matches) {
+                if (lowercaseInput.includes(match)) {
+                    return keywordData.response;
+                }
+            }
+        }
+        
+        return knowledgeBase.defaultResponse;
+    }
+
+    function sendMessage() {
+        const input = document.getElementById('chat-input');
+        const message = input.value.trim();
+        
+        if (message) {
+            // Add user message
+            addMessage(message, 'sent');
+            
+            // Get and add bot response
+            const response = findBestMatch(message);
+            setTimeout(() => addMessage(response, 'received'), 500);
+            
+            // Clear input
+            input.value = '';
+        }
+    }
+
+    function addMessage(message, type) {
+        const messagesContainer = document.getElementById('chat-messages');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${type}`;
+        messageDiv.textContent = message;
+        messagesContainer.appendChild(messageDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    function handleKeyPress(event) {
+        if (event.key === 'Enter') {
+            sendMessage();
+        }
+    }
+    </script>
+</body>
+
+</html>
