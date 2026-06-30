@@ -1,234 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Favicon - these will show in browser tabs and bookmarks -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/headerlogo.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/headerlogo.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/headerlogo.png">
-    <link rel="manifest" href="assets/favicon/site.webmanifest">
-    <title>BR Innovation & Technology - AI Robotics Excellence Since 2001</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- Font awesome imports -->
-    <link rel="stylesheet" data-purpose="Layout StyleSheet" title="Web Awesome"
-        href="/css/app-wa-3b124ff0e0d7a67cd8c995d0aeb1d15a.css?vsn=d">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css">
-    <script type="text/javascript" src="https://beacon-v2.helpscout.net/static/js/vendor.5fe8f3bc.js"></script>
-    <script type="text/javascript" src="https://beacon-v2.helpscout.net/static/js/main.9c7aa842.js"></script>
-    <script type="text/javascript" async="" src="https://beacon-v2.helpscout.net"></script>
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPMS41FJD2"></script>
+    <meta name="description" content="BR Innovation & Technology - Building adaptive AI companions focused on emotional intelligence, personalized learning, and interactive educational experiences for children through YANI.">
+    <title>BR Innovation &amp; Technology - AI Robotics &amp; Adaptive Learning</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo.png">
+
+    <!-- Font Awesome (single reliable CDN) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Global shared stylesheet -->
+    <link rel="stylesheet" href="assets/global.css">
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
+        /* ── Page-specific overrides ────────────────────────── */
 
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap');
-
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 500;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'DM Sans', sans-serif;
-        }
-
-        :root {
-                
-            --navy: #000000;
-            --gold: #D4AF37;
-            --light-gray: #111111;
-            --dark-gray: #d1d1d1;
-            --white: #ffffff;
-            --card-bg: #161616;
-            --border-color: #2a2a2a;
-
-            --transition: all 0.3s ease;
-        }
-
-        body {
-            line-height: 1.6;
-            color: var(--dark-gray);
-            background-color: var(--light-gray);
-        }
-
-        /* Navbar Styles */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 38, 71, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            z-index: 1000;
-            transition: var(--transition);
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            color: var(--white);
-            font-size: 1.5rem;
-            font-weight: 700;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .logo img {
-            height: 40px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 3rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-            position: relative;
-            padding: 0.5rem 0;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gold);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
+        /* Hero */
         .hero {
             position: relative;
             height: 100vh;
+            min-height: 500px;
             overflow: hidden;
             background: #050505;
         }
 
         .hero-video {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             object-fit: cover;
             z-index: 1;
             opacity: 1;
         }
 
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.45);
-            z-index: 2;
-        }
-
         .hero-content {
-            position: relative;
-            top: 50%;
-            left: 50%;
+            position: absolute;
+            top: 50%; left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            color: var(--white);
+            color: #fff;
             width: 90%;
-            max-width: 1000px;
+            max-width: 900px;
             z-index: 3;
+            padding: 0 1rem;
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: clamp(2rem, 5vw, 4rem);
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
             line-height: 1.2;
+            color: #fff !important;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 2vw, 1.2rem);
             margin-bottom: 2.5rem;
             opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: rgba(255,255,255,0.9) !important;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             justify-content: center;
             align-items: center;
+            flex-wrap: wrap;
         }
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.75rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            height: 45px;
-            line-height: 1;
-        }
-
-
-        .btn-primary {
-            background: var(--gold);
-            color: var(--navy);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--white);
-            border: 2px solid var(--white);
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Featured Section */
+        /* Featured */
         .featured {
-            padding: 6rem 2rem;
-            background: var(--grey);
+            padding: 5rem 2rem;
+            background: #050505;
         }
 
         .featured-grid {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -236,141 +91,125 @@
         }
 
         .featured-card {
-            background: #161616;
+            background: #161616 !important;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            transition: var(--transition);
+            border: 1px solid rgba(212,175,55,0.2) !important;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .featured-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
+            border-color: rgba(212,175,55,0.5) !important;
+            box-shadow: 0 16px 35px rgba(0,0,0,0.45);
         }
 
         .featured-image {
-            height: 250px;
+            height: 240px;
             overflow: hidden;
         }
 
         .featured-image img {
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
             object-fit: cover;
-            transition: var(--transition);
+            transition: transform 0.4s ease;
         }
 
-        .featured-card:hover .featured-image img {
-            transform: scale(1.1);
-        }
+        .featured-card:hover .featured-image img { transform: scale(1.06); }
 
         .featured-content {
-            padding: 2rem;
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
         }
 
         .featured-content h3 {
-            color: var(--gold);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+            color: var(--gold) !important;
+            font-size: 1.4rem;
         }
 
-        .featured-content p {
-            color: var(--dark-gray);
-            margin-bottom: 1.5rem;
-        }
+        .featured-content p { color: rgba(255,255,255,0.8); }
 
-        /* Overview Section */
+        /* Overview */
         .overview {
-            background: linear-gradient(180deg, #0A2647 0%, #051628 100%);
-            color: #D4AF37;
             padding: 6rem 2rem;
+            background: #0a0a0a;
             position: relative;
-            overflow: hidden;
-        }
-
-        .overview::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 20%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.02);
-            clip-path: polygon(60% 0, 100% 0, 100% 100%, 0% 100%);
         }
 
         .overview-container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .overview-content {
-            padding-right: 2rem;
         }
 
         .overview-content h2 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: var(--gold);
-            line-height: 1.2;
+            font-size: clamp(1.8rem, 3.5vw, 3rem);
+            color: var(--gold) !important;
+            margin-bottom: 0.75rem;
         }
 
-        .subtitle {
-            font-size: 1.2rem;
-            color: #CFB53B;
-            opacity: 0.9;
-            margin-bottom: 1.5rem;
+        .overview-content .subtitle {
+            font-size: 1.1rem;
+            color: rgba(212,175,55,0.8) !important;
+            margin-bottom: 1.25rem;
+            font-style: italic;
         }
 
         .overview-content p {
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255,255,255,0.85);
             line-height: 1.8;
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .achievements {
             display: flex;
-            gap: 2rem;
-            margin: 2rem 0;
+            gap: 1rem;
             flex-wrap: wrap;
+            margin: 1.5rem 0;
         }
 
         .achievement-badge {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1.25rem 2rem;
-            border-radius: 8px;
+            background: rgba(212,175,55,0.1);
+            border: 1px solid rgba(212,175,55,0.25);
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
             text-align: center;
-            min-width: 200px;
+            flex: 1;
+            min-width: 140px;
             transition: all 0.3s ease;
         }
 
         .achievement-badge:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(212,175,55,0.15);
+            transform: translateY(-4px);
         }
 
         .achievement-badge span {
             display: block;
             font-size: 1.5rem;
             font-weight: 700;
-            color: #CFB53B;
-            margin-bottom: 0.5rem;
+            color: var(--gold) !important;
+            margin-bottom: 0.25rem;
+        }
+
+        .achievement-badge span img {
+            display: inline-block;
         }
 
         .overview-stats {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .stat-item {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(212,175,55,0.15);
             padding: 2rem;
             border-radius: 15px;
             text-align: center;
@@ -378,1829 +217,301 @@
         }
 
         .stat-item:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-5px);
+            background: rgba(212,175,55,0.08);
+            transform: translateY(-4px);
         }
 
         .stat-item h3 {
-            font-size: 2.5rem;
-            color: #CFB53B;
-            margin-bottom: 0.5rem;
-            line-height: 1;
+            font-size: 2.25rem;
+            color: var(--gold) !important;
+            margin-bottom: 0.4rem;
         }
 
-        .stat-item p {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1rem;
-        }
-
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: transparent;
-            border: 2px solid #CFB53B;
-            color: #CFB53B;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-top: 2rem;
-        }
-
-        .btn-secondary:hover {
-            background: #CFB53B;
-            color: #0A2647;
-            transform: translateY(-3px);
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 1200px) {
-            .overview-container {
-                gap: 3rem;
-            }
-
-            .overview-content h2 {
-                font-size: 2.5rem;
-            }
-
-            .overview-stats {
-                gap: 1.5rem;
-            }
-
-            .stat-item h3 {
-                font-size: 2.2rem;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .overview-container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .overview-content {
-                padding-right: 0;
-            }
-
-            .achievements {
-                justify-content: center;
-            }
-
-            .overview-stats {
-                max-width: 600px;
-                margin: 0 auto;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .overview {
-                padding: 4rem 1.5rem;
-            }
-
-            .overview-content {
-                text-align: center;
-            }
-
-            .overview::before {
-                display: none;
-                /* This removes the angled overlay on mobile */
-            }
-
-            .overview-content h2 {
-                font-size: 2.2rem;
-            }
-
-            .achievements {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-
-            .achievement-badge {
-                width: 100%;
-                max-width: 300px;
-            }
-
-            .overview-stats {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .btn-secondary {
-                justify-content: center;
-                width: 100%;
-                max-width: 300px;
-                margin: 2rem auto 0;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .overview {
-                padding: 3rem 1rem;
-            }
-
-            .overview-content h2 {
-                font-size: 2rem;
-            }
-
-            .subtitle {
-                font-size: 1.1rem;
-            }
-
-            .stat-item2 {
-                padding: 1.5rem;
-            }
-
-            .stat-item2 h3 {
-                font-size: 2rem;
-            }
-        }
-
-        /* Latest Projects */
-        .projects {
-            padding: 6rem 2rem;
-            background: var(--light-gray);
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 4rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: var(--navy);
-            margin-bottom: 1rem;
-        }
-
-        .section-header p {
-            color: var(--dark-gray);
-            opacity: 0.8;
-        }
-
-        .section-header2 {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 4rem;
-        }
-
-        .section-header2 h2 {
-            font-size: 2.5rem;
-            color: var(--white);
-            margin-bottom: 1rem;
-        }
-
-        .section-header2 p {
-            color: var(--white);
-            opacity: 0.8;
-        }
-
-        .project-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            height: 300px;
-        }
-
-        .project-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .project-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(10, 38, 71, 0.9));
-            padding: 2rem;
-            color: var(--white);
-            transform: translateY(100%);
-            transition: var(--transition);
-        }
-
-        .project-card:hover .project-overlay {
-            transform: translateY(0);
-        }
-
-        .project-card:hover img {
-            transform: scale(1.1);
-        }
-
-        /* Mobile Styles */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .featured-grid,
-            .overview-container {
-                grid-template-columns: 1fr;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu {
-                display: block;
-            }
-        }
-
-        /*  latest project slideshow */
-        .projects-section {
-            padding: 4rem 0;
-            background: #f5f5f5;
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .section-header3-wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 3rem;
-            padding: 0 5%;
-            position: relative;
-            z-index: 2;
-        }
-
-        .section-header3 {
-            text-align: left;
-        }
-
-        .section-header3 h2 {
-            color: #0A2647;
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            text-align: left;
-        }
-
-        .section-header3 p {
-            color: #666;
-            font-size: 1.1rem;
-            text-align: left;
-        }
-
-        .navigation-buttons {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .nav-btn {
-            background: transparent;
-            color: var(--gold);
-            border: 3px solid var(--gold);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .nav-btn:hover {
-            background: #CFB53B;
-            color: #eee;
-        }
-
-        .slideshow-container {
-            position: relative;
-            width: 100%;
-            height: 500px;
-        }
-
-        .slides-wrapper {
-            position: relative;
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .slide {
-            position: absolute;
-            display: flex;
-            width: 90%;
-            height: 100%;
-            left: 5%;
-            transition: all 0.5s ease;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            background: white;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            visibility: hidden;
-            /* Changed: Added visibility */
-            transform: translateX(100%);
-        }
-
-        .slide.active {
-            opacity: 1;
-            transform: translateX(0);
-            visibility: visible;
-            /* Changed: Added visibility */
-            position: relative;
-            /* Changed: Made active slide relative */
-            z-index: 1;
-        }
-
-        .slide.next-slide {
-            left: 100%;
-            opacity: 0.3;
-        }
-
-        .slide-image {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .slide-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* This makes the image cover the container */
-            object-position: center center; /* Centers the image */
-            display: block; /* Removes any extra space */
-        }
-
-        .slide-content {
-            width: 30%;
-            padding: 2rem;
-            background: white;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .slide-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .company-logo {
-            width: 60px;
-            height: 60px;
-            object-fit: contain;
-        }
-
-        .company-name {
-            font-size: 1.5rem;
-            color: #0A2647;
-            font-weight: bold;
-        }
-
-        .divider {
-            height: 2px;
-            background: #eee;
-            width: 100%;
-            margin: 0 0 1.5rem 0;
-            position: relative;
-        }
-
-        .divider::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 2px;
-            width: 50px;
-            background: #CFB53B;
-        }
-
-        .project-details {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            flex-grow: 1;
-            padding: 1rem 0;
-        }
-
-        .detail-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
-        }
-
-        .detail-icon {
-            width: 40px;
-            height: 50px;
-            object-fit: contain;
-            margin-bottom: 0.5rem;
-        }
-
-        .detail-text {
-            display: flex;
-            flex-direction: column;
-            gap: 0.25rem;
-        }
-
-        .detail-label {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .detail-value {
-            font-weight: 600;
-            color: #0A2647;
-            font-size: 1.0rem;
-        }
-
-        .button-container {
-            margin-top: auto;
-            padding-top: 1.5rem;
-            border-top: 2px solid #eee;
-        }
-
-        .know-more-btn {
-            display: inline-block;
-            width: 100%;
-            padding: 1rem;
-            background: #0A2647;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .know-more-btn:hover {
-            background: #CFB53B;
-            transform: translateY(-2px);
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 1200px) {
-            .slide {
-                width: 95%;
-                left: 2.5%;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .slideshow-container {
-                height: auto;
-            }
-
-            .slides-wrapper {
-                height: auto;
-                /* Changed: Allow wrapper to adjust to content */
-                overflow: visible;
-                /* Changed: Allow content to be visible */
-            }
-
-            .slide {
-                position: absolute;
-                /* Keep absolute positioning */
-                flex-direction: column;
-                height: auto;
-                min-height: 700px;
-                /* Added: Minimum height for content */
-                display: none;
-                /* Changed: Hide inactive slides */
-            }
-
-            .slide.active {
-                position: relative;
-                display: flex;
-                /* Changed: Show active slide */
-            }
-
-            .slide-image {
-                width: 100%;
-                height: 300px;
-            }
-
-            .slide-content {
-                width: 100%;
-                min-height: 400px;
-            }
-
-            .project-details {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .section-header3-wrapper {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-
-            .section-header3 {
-                text-align: center;
-            }
-
-            .section-header3 h2 {
-                text-align: center;
-                font-size: 2rem;
-            }
-
-            .section-header3 p {
-                text-align: center;
-            }
-
-            .project-details {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .slide-image {
-                height: 250px;
-            }
-
-            .slide-content {
-                padding: 1.5rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .slide {
-                width: 100%;
-                left: 0;
-                border-radius: 0;
-            }
-
-            .navigation-buttons {
-                position: relative;
-                bottom: auto;
-                right: auto;
-            }
-
-            .detail-item {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .detail-text {
-                align-items: center;
-            }
-        }
-
-
-        /* Updated Clients Section Styles */
-        .clients {
-            padding: 6rem 2rem;
-            background: var(--white);
-            background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.89)), url('assets/images/education technology.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            overflow: hidden;
-        }
-
-        .client-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .client-track {
-            display: flex;
-            width: fit-content;
-            animation: scroll 40s linear infinite;
-        }
-
-        .client-slide {
-            flex: 0 0 auto;
-            text-align: center;
-            padding: 0 2rem;
-        }
-
-        .client-slide img {
-            width: 200px;
-            height: 100px;
-            object-fit: contain;
-            margin-bottom: 1rem;
-        }
-
-        .client-slide p {
-            color: var(--navy);
-            font-weight: 500;
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-
-        /* Clone slides using pseudo-elements for seamless loop */
-        .client-track::before,
-        .client-track::after {
-            content: "";
-            height: 100%;
-            position: absolute;
-            width: 100%;
-            top: 0;
-        }
-
-        .client-track::after {
-            right: 0;
-            transform: translateX(100%);
-        }
-
-        .client-track::before {
-            left: 0;
-            transform: translateX(-100%);
-        }
+        .stat-item p { color: rgba(255,255,255,0.75); font-size: 0.95rem; }
 
-        /* Why Choose Us Section */
+        /* Why Us */
         .why-us {
             padding: 6rem 2rem;
-            background: linear-gradient(135deg, #0A2647 0%, #1B4B8A 100%);
-            color: #fff;
-            position: relative;
-            /* Added for overlay positioning */
-            overflow: hidden;
-            /* Added to contain the overlay */
+            background: #0d0d0d;
         }
-
-        /* Adding the angled overlay */
-        .why-us::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            /* Changed to left */
-            width: 10%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.02);
-            clip-path: polygon(0 0, 100% 0, 40% 100%, 0 100%);
-            /* Modified for left side */
-            z-index: 1;
-        }
-
 
         .why-us-grid {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.75rem;
         }
 
         .why-us-card {
             text-align: center;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            transition: var(--transition);
+            padding: 2rem 1.5rem;
+            background: #161616 !important;
+            border: 1px solid rgba(212,175,55,0.18) !important;
+            border-radius: 12px;
+            transition: all 0.3s ease;
         }
 
         .why-us-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-6px);
+            border-color: rgba(212,175,55,0.45) !important;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.4);
         }
 
         .why-us-card i {
-            font-size: 2.5rem;
-            color: var(--gold);
+            font-size: 2.25rem;
+            color: var(--gold) !important;
             margin-bottom: 1rem;
+            display: block;
         }
 
         .why-us-card h3 {
-            margin-bottom: 1rem;
+            color: var(--gold) !important;
+            margin-bottom: 0.75rem;
         }
 
-        /* Service Areas Section */
-/* Service Areas Section */
+        .why-us-card p { color: rgba(255,255,255,0.75); font-size: 0.95rem; }
 
-        .service-areas {
-            padding: 6rem 2rem;
+        /* Founders / Leadership */
+        .founders {
+            padding: 5rem 2rem;
             background: #050505;
         }
 
-        .service-areas-grid {
-            max-width: 1400px;
+        .founders-inner {
+            max-width: 1100px;
             margin: 0 auto;
-
             display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(200px, 1fr));
-
-            gap: 2rem;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: start;
         }
 
-        .service-area-card {
+        .founders-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--gold) !important;
+            margin-bottom: 0.75rem;
+        }
 
-            text-align: center;
+        .founders-header p { color: rgba(255,255,255,0.7); }
 
-            padding: 2rem;
-
-            background: #161616;
-
-            border: 1px solid rgba(212,175,55,0.15);
-
+        .founder-card {
+            background: #161616 !important;
+            border: 1px solid rgba(212,175,55,0.2) !important;
             border-radius: 15px;
-
-            transition: var(--transition);
-
-            color: #ffffff;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 0;
+            max-width: 700px;
         }
 
-        .service-area-card:hover {
-
-            transform: translateY(-8px);
-
-            border-color: rgba(212,175,55,0.4);
-
-            box-shadow:
-                0 10px 30px rgba(0,0,0,0.5);
+        .founder-card:hover {
+            border-color: rgba(212,175,55,0.45) !important;
+            box-shadow: 0 14px 30px rgba(0,0,0,0.4);
         }
 
-        .service-area-card i {
-
-            font-size: 2.5rem;
-
-            color: #D4AF37;
-
-            margin-bottom: 1rem;
+        .founder-image {
+            width: 220px;
+            height: 100%;
+            min-height: 260px;
+            overflow: hidden;
+            flex-shrink: 0;
         }
 
-        .service-area-card h3 {
-
-            color: #D4AF37;
-
-            margin-bottom: 1rem;
+        .founder-image img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            object-position: center top;
         }
 
-        .service-area-card p,
-        .service-area-card li {
-
-            color: #ffffff;
+        .founder-info {
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
         }
 
-        /* Ensure content stays above the overlay */
-        .section-header2,
-        .why-us-grid {
-            position: relative;
-            z-index: 2;
+        .founder-info h3 {
+            color: var(--gold) !important;
+            font-size: 1.5rem;
         }
 
-        /* Rest of your existing styles */
-        .section-header2 {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 4rem;
+        .founder-title {
+            color: rgba(212,175,55,0.75) !important;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
         }
 
-        .section-header2 h2 {
-            font-size: 2.5rem;
-            color: var(--white);
-            margin-bottom: 1rem;
-        }
-
-        .section-header2 p {
-            color: var(--white);
-            opacity: 0.8;
-        }
-
-        /* Make it responsive */
-        @media (max-width: 768px) {
-            .why-us::before {
-                display: none;
-                /* Remove overlay on mobile */
-            }
+        .founder-bio {
+            color: rgba(255,255,255,0.78) !important;
+            font-size: 0.93rem;
+            line-height: 1.7;
         }
 
         /* CTA Section */
-        /* Modern CTA Section Styles */
         .cta-section {
-            padding: 8rem 0;
-            background: linear-gradient(135deg, #ffffff 0%, #e9ecef 20%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
+            padding: 6rem 2rem;
+            background: #0a0a0a;
         }
 
         .cta-card {
-            background: var(--white);
-            border-radius: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #111 !important;
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
             position: relative;
-            z-index: 2;
         }
 
         .cta-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, var(--navy), var(--gold));
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), transparent);
         }
 
         .cta-content {
-            display: flex;
-            gap: 4rem;
-            padding: 4rem;
-        }
-
-        .left-content {
-            flex: 1;
-            padding-right: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 3rem;
+            padding: 3.5rem;
         }
 
         .experience-badge {
             display: inline-flex;
             align-items: center;
-            gap: 1rem;
-            background: rgba(10, 38, 71, 0.05);
-            padding: 1rem 1.5rem;
-            border-radius: 15px;
-            margin-bottom: 2rem;
+            gap: 0.75rem;
+            background: rgba(212,175,55,0.08);
+            border: 1px solid rgba(212,175,55,0.25);
+            padding: 0.75rem 1.25rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
         }
 
         .experience-badge .years {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
-            color: var(--navy);
+            color: var(--gold) !important;
             line-height: 1;
         }
 
         .experience-badge .text {
-            font-size: 0.9rem;
-            color: var(--dark-gray);
-            line-height: 1.2;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7) !important;
+            line-height: 1.3;
         }
 
         .left-content h2 {
-            font-size: 3.5rem;
-            color: var(--navy);
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
+            font-size: clamp(1.75rem, 3vw, 2.75rem);
+            color: var(--gold) !important;
+            line-height: 1.2;
+            margin-bottom: 1rem;
         }
 
         .left-content p {
-            font-size: 1.1rem;
-            color: var(--dark-gray);
-            margin-bottom: 2.5rem;
-            line-height: 1.6;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.7;
+            margin-bottom: 2rem;
         }
 
         .stats-row {
             display: flex;
-            gap: 3rem;
+            gap: 2.5rem;
+            flex-wrap: wrap;
         }
 
-        .stat-item2 {
-            display: flex;
-            flex-direction: column;
-        }
+        .stat-item2 { display: flex; flex-direction: column; }
 
         .stat-item2 .number {
-            font-size: 2rem;
+            font-size: 1.75rem;
             font-weight: 700;
-            color: var(--navy);
+            color: var(--gold) !important;
             line-height: 1;
-            margin-bottom: 0.5rem;
         }
 
         .stat-item2 .label {
-            font-size: 0.9rem;
-            color: var(--dark-gray);
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 0.25rem;
         }
 
-        .right-content {
-            flex: 0 0 450px;
-        }
-
+        /* Action card (Explore YANI) */
         .action-card {
-            background: var(--navy);
-            border-radius: 20px;
-            padding: 2.5rem;
-            height: 100%;
+            background: #161616;
+            border: 1px solid rgba(212,175,55,0.25);
+            border-radius: 15px;
+            padding: 2rem;
             display: flex;
             flex-direction: column;
+            gap: 1.25rem;
         }
 
-        .card-header {
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
+        .card-header { text-align: center; }
 
         .icon-badge {
-            width: 60px;
-            height: 60px;
+            width: 56px; height: 56px;
             background: var(--gold);
-            border-radius: 15px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
+            margin: 0 auto 1rem;
         }
 
-        .icon-badge i {
-            font-size: 1.5rem;
-            color: var(--navy);
-        }
+        .icon-badge i { font-size: 1.4rem; color: #050505; }
 
         .card-header h3 {
-            color: var(--white);
-            font-size: 1.75rem;
+            color: var(--gold) !important;
+            font-size: 1.5rem;
             margin-bottom: 0.5rem;
         }
 
-        .card-header p {
-            color: rgba(255, 255, 255, 0.8);
-        }
+        .card-header p { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
 
+        /* Feature list — modern chip style */
         .feature-list {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
-            margin-bottom: 2.5rem;
+            gap: 0.6rem;
         }
 
         .feature {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            color: var(--white);
-            padding: 0.75rem 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
+            gap: 0.75rem;
+            padding: 0.6rem 0.9rem;
+            background: rgba(212,175,55,0.07);
+            border: 1px solid rgba(212,175,55,0.15);
+            border-radius: 8px;
             transition: all 0.3s ease;
+            font-size: 0.9rem;
         }
 
         .feature:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateX(5px);
+            background: rgba(212,175,55,0.12);
+            transform: translateX(4px);
         }
 
-        .feature i {
-            color: var(--gold);
-        }
+        .feature i { color: var(--gold) !important; font-size: 0.9rem; flex-shrink: 0; }
+        .feature span { color: rgba(255,255,255,0.85) !important; }
 
         .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
             margin-top: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
         }
 
-
-        .btn-primary2,
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            padding: 1rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: transparent;
-            border: 2px solid #CFB53B;
-            color: #CFB53B;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-top: 2rem;
-        }
-
-        .btn-primary2 {
-            background: var(--gold);
-            color: var(--navy);
-        }
-
-        .btn-primary2:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-primary2:hover i {
-            transform: translateX(3px);
-        }
-
-
-        .btn-primary,
-        .btn-secondary {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            padding: 1rem;
-            border-radius: 12px;
-            font-weight: 600;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary {
-            background: var(--gold);
-            color: var(--navy);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-primary:hover i {
-            transform: translateX(3px);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            color: var(--white);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-3px);
-        }
-
-        .shape-divider {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: linear-gradient(135deg, var(--navy) 25%, transparent 25%) -50px 0,
-                linear-gradient(225deg, var(--navy) 25%, transparent 25%) -50px 0,
-                linear-gradient(315deg, var(--navy) 25%, transparent 25%),
-                linear-gradient(45deg, var(--navy) 25%, transparent 25%);
-            background-size: 100px 100px;
-            background-color: transparent;
-            opacity: 0.05;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 1200px) {
-            .cta-content {
-                gap: 2rem;
-                padding: 3rem;
-            }
-
-            .right-content {
-                flex: 0 0 400px;
-            }
-
-            .left-content h2 {
-                font-size: 3rem;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .cta-content {
-                flex-direction: column;
-            }
-
-            .left-content {
-                padding-right: 0;
-                text-align: center;
-            }
-
-            .stats-row {
-                justify-content: center;
-            }
-
-            .right-content {
-                flex: 0 0 auto;
-                width: 100%;
-                max-width: 500px;
-                margin: 0 auto;
-            }
-
-            .experience-badge {
-                margin: 0 auto 2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .cta-section {
-                padding: 4rem 0;
-            }
-
-            .cta-content {
-                padding: 2rem;
-            }
-
-            .left-content h2 {
-                font-size: 2.5rem;
-            }
-
-            .stats-row {
-                flex-direction: column;
-                gap: 1.5rem;
-                align-items: center;
-            }
-
-            .stat-item2 {
-                align-items: center;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .cta-container {
-                padding: 0 1rem;
-            }
-
-            .left-content h2 {
-                font-size: 2rem;
-            }
-
-            .experience-badge {
-                flex-direction: column;
-                text-align: center;
-                padding: 1rem;
-            }
-        }
-
-        /* Animation Classes */
-        @keyframes slideInUp {
-            from {
-                transform: translateY(30px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .cta-card {
-            animation: slideInUp 0.6s ease forwards;
-        }
-
-        .left-content>*,
-        .right-content {
-            opacity: 0;
-            animation: slideInUp 0.6s ease forwards;
-        }
-
-        .left-content>*:nth-child(1) {
-            animation-delay: 0.2s;
-        }
-
-        .left-content>*:nth-child(2) {
-            animation-delay: 0.3s;
-        }
-
-        .left-content>*:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-
-        .left-content>*:nth-child(4) {
-            animation-delay: 0.5s;
-        }
-
-        .right-content {
-            animation-delay: 0.6s;
-        }
-
-
-        /* Footer */
-        .footer {
-            background: linear-gradient(180deg, #0A2647 0%, #051628 100%);
-            color: #fff;
-            padding: 5rem 0 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(207, 181, 59, 0.5), transparent);
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .footer-main {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 4rem;
-            margin-bottom: 4rem;
-        }
-
-        .footer-brand {
-            padding-right: 2rem;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-logo img {
-            height: 50px;
-            width: auto;
-        }
-
-        .footer-logo-text {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #fff;
-        }
-
-        .footer-description {
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.6;
-            margin-bottom: 2rem;
-        }
-
-        .footer-links h4 {
-            color: #CFB53B;
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 0.75rem;
-        }
-
-        .footer-links h4::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 30px;
-            height: 2px;
-            background: #CFB53B;
-        }
-
-        .footer-links ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer-links li {
-            margin-bottom: 1rem;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .footer-links a:hover {
-            color: #CFB53B;
-            transform: translateX(5px);
-        }
-
-        .footer-contact-info .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-item i {
-            color: #CFB53B;
-            font-size: 1.2rem;
-            padding-top: 0.25rem;
-        }
-
-        .contact-item .contact-text {
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.6;
-        }
-
-        .contact-item .contact-label {
-            color: #fff;
-            font-weight: 500;
-            margin-bottom: 0.25rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .social-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #CFB53B;
-            transform: translateY(100%);
-            transition: all 0.3s ease;
-            z-index: 1;
-        }
-
-        .social-link i {
-            position: relative;
-            z-index: 2;
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover::before {
-            transform: translateY(0);
-        }
-
-        .social-link:hover i {
-            transform: scale(1.2);
-        }
-
-        .footer-bottom {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 1.5rem 0;
-            margin-top: 3rem;
-            text-align: center;
-            position: relative;
-        }
-
-        .footer-bottom::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-        }
-
-        .footer-bottom-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-bottom-text {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
-        }
-
-        .footer-bottom-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .footer-bottom-links a {
-            color: rgba(255, 255, 255, 0.6);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-bottom-links a:hover {
-            color: #CFB53B;
-        }
-
-        @media (max-width: 1200px) {
-            .footer-main {
-                grid-template-columns: 1fr 1fr;
-                gap: 3rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .footer-main {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .footer-bottom-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .footer-bottom-links {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-        }
-
-        /* New Founders Section Styles */
-        /* Updated Founders Section Styles */
-        .founders {
-            padding: 6rem 2rem;
-            background: var(--light-gray);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-
-        .founders-container-wrapper {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            /* Increased gap between header and cards */
-            width: 100%;
-            padding: 0 2rem;
-            /* Added padding for better edge spacing */
-        }
-
-        .founders-header {
-            flex: 0 0 30%;
-            position: relative;
-            text-align: left;
-            padding-left: 3rem;
-            /* Move header more to the left */
-        }
-
-        .founders-header h2 {
-            font-size: 3.5rem;
-            /* Increased font size */
-            color: var(--navy);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            font-weight: 500;
-            /* Increased font weight */
-            letter-spacing: -0.5px;
-            /* Added letter spacing for better readability */
-        }
-
-        .founders-header p {
-            color: var(--dark-gray);
-            opacity: 0.8;
-            line-height: 1.6;
-            font-size: 1.2rem;
-            /* Increased subtitle size */
-        }
-
-        .founders-container {
-            flex: 0 0 60%;
-            /* Reduced to create more space */
-            display: flex;
-            gap: 2.5rem;
-            margin-left: auto;
-            /* Push cards to the right */
-        }
-
-        .founder-card {
-            flex: 1;
-            background: var(--white);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            min-width: 350px; /* Reduced minimum width */
-            max-width: 400px; /* Adjusted maximum width */
-            transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .founder-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .founder-image {
-            position: relative;
-            width: 100%;
-            height: 400px; /* Fixed height */
-            overflow: hidden;
-        }
-
-        .founder-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* This ensures the image covers the area without distortion */
-            object-position: center top; /* Positions the image from the top center */
-            transition: transform 0.3s ease;
-        }
-
-        .founder-card:hover .founder-image img {
-            transform: scale(1.05);
-            /* Subtle zoom effect on hover */
-        }
-
-        .founder-info {
-            padding: 2rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-        }
-
-        .founder-info h3 {
-            color: var(--navy);
-            font-size: 1.75rem;
-            /* Increased heading size */
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .founder-title {
-            color: var(--gold);
-            font-weight: 600;
-            margin-bottom: 1.25rem;
-            font-size: 1.1rem;
-        }
-
-        .founder-bio {
-            color: var(--dark-gray);
-            line-height: 1.6;
-            font-size: 1.05rem;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 1400px) {
-            .founders-container-wrapper {
-                gap: 6rem;
-            }
-
-            .founders-header h2 {
-                font-size: 3rem;
-            }
-        }
-
-        @media (max-width: 1200px) {
-            .founders-container-wrapper {
-                gap: 4rem;
-            }
-
-            .founder-card {
-                min-width: 300px;
-            }
-            
-            .founder-image {
-                height: 350px;
-            }
-
-            .founders-header {
-                padding-left: 2rem;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .founders {
-                min-height: auto;
-                padding: 5rem 1.5rem;
-            }
-
-            .founders-container-wrapper {
-                flex-direction: column;
-                gap: 4rem;
-                padding: 0;
-            }
-
-            .founders-header {
-                flex: 0 0 100%;
-                text-align: center;
-                padding-left: 0;
-                margin-bottom: 1rem;
-            }
-
-            .founders-container {
-                flex: 0 0 100%;
-                flex-wrap: wrap;
-                justify-content: center;
-                margin-left: 0;
-            }
-
-            .founder-card {
-                flex: 0 0 calc(50% - 1.25rem);
-                max-width: 450px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .founders {
-                padding: 4rem 1.5rem;
-            }
-
-            .founders-header h2 {
-                font-size: 2.5rem;
-            }
-
-            .founders-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .founder-card {
-                min-width: 280px;
-                max-width: 350px;
-            }
-            
-            .founder-image {
-                height: 320px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .founder-card {
-                min-width: 260px;
-                max-width: 320px;
-            }
-            
-            .founder-image {
-                height: 300px;
-            }
-        }
-
-        .detail-item {
-            display: flex;
-            flex-direction: center;
-            gap: 0.5rem;
-        }
-
-        .detail-icon {
-            width: 40px;
-            height: 50px;
-            object-fit: contain;
-            margin-bottom: 0.5rem;
-        }
-
-        .detail-text {
-            display: flex;
-            flex-direction: column;
-            gap: 0.25rem;
-        }
-
-        .project-details {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            flex-grow: 1;
-            padding: 1rem 0;
-        }
-
-        .detail-label {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .detail-value {
-            font-weight: 600;
-            /* Made bolder */
-            color: #0A2647;
-            font-size: 1.0rem;
-            /* Slightly larger */
-        }
-
-
-        /* Additional Overview Section Styles */
-        .overview-content h2 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: var(--gold);
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            color: var(--white);
-            opacity: 0.9;
-            margin-bottom: 1.5rem;
-        }
-
-        .achievements {
-            display: flex;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .achievement-badge {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .achievement-badge span {
-            display: block;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--gold);
-            margin-bottom: 0.5rem;
-        }
-
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            border: 2px solid var(--gold);
-            color: var(--gold);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            margin-top: 2rem;
-        }
-
-        .btn-secondary:hover {
-            background: var(--gold);
-            color: var(--navy);
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .overview-container {
-                grid-template-columns: 1fr;
-            }
-
-            .achievements {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .overview-content h2 {
-                font-size: 2.5rem;
-            }
-        }
-
-        /* Industries Scroll Section Styles */
-        /* Industries Scroll Section Styles */
+        /* Industries / Solutions Marquee */
         .industries-scroll {
-            padding: 6rem 0;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('assets/images/education technology.jpg');
+            padding: 5rem 0;
+            background: #080808;
             overflow: hidden;
             position: relative;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-            padding: 0 2rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.75rem;
-            color: var(--navy);
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .section-header p {
-            color: var(--dark-gray);
-            font-size: 1.1rem;
-            opacity: 0.8;
         }
 
         .scroll-container {
@@ -2214,7 +525,7 @@
             content: '';
             position: absolute;
             top: 0;
-            width: 100px;
+            width: 80px;
             height: 100%;
             z-index: 2;
             pointer-events: none;
@@ -2222,978 +533,498 @@
 
         .scroll-container::before {
             left: 0;
-            background: linear-gradient(to right, var(--light-gray), transparent);
+            background: linear-gradient(to right, #080808, transparent);
         }
 
         .scroll-container::after {
             right: 0;
-            background: linear-gradient(to left, var(--light-gray), transparent);
+            background: linear-gradient(to left, #080808, transparent);
         }
 
         .scroll-track {
             display: flex;
-            gap: 2rem;
-            padding: 1rem 2rem;
-            animation: scroll 23s linear infinite;
-            width: fit-content;
+            gap: 1.5rem;
+            padding: 1rem 1.5rem;
+            width: max-content;
+            animation: infiniteScroll 30s linear infinite;
         }
 
-        .scroll-track:hover {
-            animation-play-state: paused;
+        .scroll-track:hover { animation-play-state: paused; }
+
+        @keyframes infiniteScroll {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-50%);
-                /* Modified to only move half the distance */
-            }
+        .industry-item {
+            flex: 0 0 280px;
+            background: #161616;
+            border: 1px solid rgba(212,175,55,0.18);
+            padding: 1.75rem;
+            border-radius: 14px;
+            transition: transform 0.3s ease, border-color 0.3s;
         }
 
-        .education technology-item {
-            flex: 0 0 300px;
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
+        .industry-item:hover {
+            transform: translateY(-4px);
+            border-color: rgba(212,175,55,0.45);
         }
 
-        .education technology-item:hover {
-            transform: translateY(-5px);
+        .industry-item h3 {
+            color: var(--gold) !important;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid rgba(212,175,55,0.2);
         }
 
-        .education technology-item h3 {
-            color: var(--navy);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        .education technology-item h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--gold);
-        }
-
-        .education technology-item ul {
-            list-style: none;
+        /* Feature chips instead of bullet list */
+        .industry-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
             padding: 0;
             margin: 0;
+            list-style: none;
         }
 
-        .education technology-item ul li {
-            color: var(--dark-gray);
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
-            position: relative;
-            line-height: 1.4;
-        }
-
-        .education technology-item ul li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0.5rem;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--gold);
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .industries-scroll {
-                padding: 4rem 0;
-            }
-
-            .section-header h2 {
-                font-size: 2.25rem;
-            }
-
-            .education technology-item {
-                flex: 0 0 280px;
-                padding: 1.5rem;
-            }
-
-            @keyframes scroll {
-                0% {
-                    transform: translateX(0);
-                }
-
-                100% {
-                    transform: translateX(calc(-280px * 7 - 2rem * 7));
-                }
-            }
-        }
-
-        @media (max-width: 576px) {
-            .section-header {
-                padding: 0 1rem;
-            }
-
-            .education technology-item {
-                flex: 0 0 260px;
-            }
-
-            @keyframes scroll {
-                0% {
-                    transform: translateX(0);
-                }
-
-                100% {
-                    transform: translateX(calc(-260px * 7 - 2rem * 7));
-                }
-            }
-        }
-
-
-        .chat-widget {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 350px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            overflow: hidden;
-            font-family: 'DM Sans', sans-serif;
-        }
-    
-        .chat-header {
-            background: var(--navy);
-            color: white;
-            padding: 15px 20px;
+        .industry-chips li {
+            background: rgba(212,175,55,0.08);
+            border: 1px solid rgba(212,175,55,0.15);
+            color: rgba(255,255,255,0.8) !important;
+            font-size: 0.78rem;
+            padding: 0.3rem 0.7rem;
+            border-radius: 20px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            cursor: pointer;
+            gap: 0.3rem;
+            transition: background 0.2s;
         }
-    
-        .chat-logo {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
+
+        .industry-chips li::before {
+            content: '✓';
+            color: var(--gold);
+            font-size: 0.7rem;
         }
-    
-        .chat-body {
-            height: 400px;
-            display: flex;
-            flex-direction: column;
-            display: none;
+
+        .industry-chips li:hover { background: rgba(212,175,55,0.14); }
+
+        /* Footer contact — no phone */
+        /* (Phone item hidden via inline display:none) */
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .featured-grid { grid-template-columns: 1fr; }
+            .overview-container { grid-template-columns: 1fr; gap: 2.5rem; }
+            .founders-inner { grid-template-columns: 1fr; gap: 2rem; }
+            .cta-content { grid-template-columns: 1fr; }
         }
-    
-        .chat-messages {
-            flex: 1;
-            padding: 20px;
-            overflow-y: auto;
-        }
-    
-        .message {
-            margin-bottom: 15px;
-            padding: 10px 15px;
-            border-radius: 10px;
-            max-width: 80%;
-            word-wrap: break-word;
-        }
-    
-        .message.sent {
-            background: var(--navy);
-            color: white;
-            margin-left: auto;
-        }
-    
-        .message.received {
-            background: #f0f0f0;
-            color: var(--dark-gray);
-        }
-    
-        .chat-input-container {
-            padding: 15px;
-            border-top: 1px solid #eee;
-            display: flex;
-            gap: 10px;
-        }
-    
-        .chat-input-container input {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            outline: none;
-        }
-    
-        .chat-input-container button {
-            background: var(--gold);
-            color: var(--navy);
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-    
-        .chat-input-container button:hover {
-            transform: translateY(-2px);
-        }
-    
-        @media (max-width: 480px) {
-            .chat-widget {
-                width: calc(100% - 40px);
-                bottom: 10px;
-                right: 20px;
+
+        @media (max-width: 768px) {
+            .hero { min-height: 100svh; }
+
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .hero-buttons .btn { width: 100%; max-width: 280px; justify-content: center; }
+
+            .overview-stats { grid-template-columns: repeat(2, 1fr); }
+
+            .founders-inner { grid-template-columns: 1fr; }
+
+            .founder-card {
+                grid-template-columns: 1fr;
+                max-width: 100%;
             }
-        }
-        /* BR Innovation premium black-gold global theme override */
-        :root {
-            --navy: #D4AF37;
-            --gold: #D4AF37;
-            --light-gray: #050505;
-            --dark-gray: #CFCFCF;
-            --white: #FFFFFF;
-            --card-bg: #161616;
-            --border-color: rgba(212, 175, 55, 0.2);
+
+            .founder-image {
+                width: 100%;
+                height: 260px;
+                min-height: unset;
+            }
+
+            .cta-content { padding: 2rem; gap: 2rem; }
+            .stats-row { justify-content: center; }
+
+            .why-us-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
-        html,
-        body,
-        main,
-        section,
-        .section,
-        .featured,
-        .services,
-        .projects,
-        .industries,
-        .solutions,
-        .leadership,
-        .founders,
-        .future-learning,
-        .cta,
-        .cta-section,
-        .footer,
-        footer {
-            background: #050505 !important;
-            color: #FFFFFF !important;
-        }
-
-        .hero {
-            background: #050505 !important;
-        }
-
-        .hero-video {
-            z-index: 1 !important;
-            object-fit: cover !important;
-            opacity: 1 !important;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.45);
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        .hero-content {
-            z-index: 3 !important;
-            position: relative !important;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        .section-title,
-        .heading,
-        .title {
-            color: #D4AF37 !important;
-        }
-
-        p,
-        li,
-        span,
-        label,
-        input,
-        textarea,
-        select,
-        .text,
-        .description {
-            color: #FFFFFF !important;
-        }
-
-        .subtitle,
-        .subtext,
-        .muted,
-        .secondary,
-        small {
-            color: #CFCFCF !important;
-        }
-
-        .card,
-        [class*="card"],
-        .service-card,
-        .featured-card,
-        .project-card,
-        .industry-card,
-        .solution-card,
-        .leadership-card,
-        .founder-card {
-            background: #161616 !important;
-            border: 1px solid rgba(212, 175, 55, 0.2) !important;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
-        }
-
-        .card:hover,
-        [class*="card"]:hover,
-        .service-card:hover,
-        .featured-card:hover,
-        .project-card:hover,
-        .industry-card:hover,
-        .solution-card:hover,
-        .leadership-card:hover,
-        .founder-card:hover {
-            transform: translateY(-8px) !important;
-            border-color: rgba(212, 175, 55, 0.55) !important;
-            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.5) !important;
-        }
-
-        a,
-        .nav-links a,
-        .btn,
-        button {
-            color: #FFFFFF !important;
-            transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease !important;
-        }
-
-        a:hover,
-        .nav-links a:hover,
-        .btn:hover,
-        button:hover {
-            color: #D4AF37 !important;
-        }
-
-        .btn,
-        button,
-        .cta .btn,
-        .cta-section .btn {
-            border: 1px solid rgba(212, 175, 55, 0.2) !important;
-        }
-
-        .btn-primary,
-        .gold-btn,
-        .cta .btn-primary,
-        .cta-section .btn-primary {
-            background: #D4AF37 !important;
-            color: #050505 !important;
-            border-color: #D4AF37 !important;
-        }
-
-        .btn-primary:hover,
-        .gold-btn:hover,
-        .cta .btn-primary:hover,
-        .cta-section .btn-primary:hover {
-            background: #050505 !important;
-            color: #D4AF37 !important;
-            border-color: #D4AF37 !important;
-        }
-
-        .btn-secondary {
-            background: transparent !important;
-            color: #FFFFFF !important;
-            border: 1px solid rgba(212, 175, 55, 0.45) !important;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(212, 175, 55, 0.12) !important;
-            color: #D4AF37 !important;
-        }
-
-        .navbar,
-        .navbar.scrolled,
-        .chat-widget,
-        .chat-container,
-        .chat-box,
-        .chat-header,
-        .chat-body,
-        .chat-input,
-        .chat-message,
-        .footer,
-        footer {
-            background: #050505 !important;
-            color: #FFFFFF !important;
-            border-color: rgba(212, 175, 55, 0.2) !important;
-        }
-
-        .chat-widget *,
-        .footer * {
-            color: inherit !important;
-        }
-
-        .container,
-        .section-container,
-        .content-wrapper {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
+        @media (max-width: 480px) {
+            .overview-stats { grid-template-columns: 1fr 1fr; }
+            .why-us-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
-
 <body>
     <!-- Navbar -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="assets/images/logo.png" alt="BR Innovation & Technology Logo">
-                BR Innovation & Technology
+            <a href="index.html" class="logo" aria-label="BR Innovation & Technology Home">
+                <img src="assets/images/logo.png" alt="BR Innovation & Technology Logo" loading="lazy">
+                BR Innovation &amp; Technology
             </a>
-            <ul class="nav-links">
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <!-- Gallery temporarily disabled -->
-                <!-- <li><a href="gallery.html">Gallery</a></li> -->
-                <li><a href="contact.html">Contact</a></li>
+            <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="about.html" role="menuitem">About</a></li>
+                <li role="none"><a href="services.html" role="menuitem">Services</a></li>
+                <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <video autoplay muted loop playsinline class="hero-video" id="myVideo">
+    <!-- Hero -->
+    <section class="hero" aria-label="Hero">
+        <video autoplay muted loop playsinline class="hero-video" aria-hidden="true">
             <source src="assets/videos/yani-demo.mp4" type="video/mp4">
-            Your browser does not support the video tag.
         </video>
-        <div class="hero-overlay"></div>
-
+        <div class="hero-overlay" aria-hidden="true"></div>
         <div class="hero-content">
-            <h1>YANI - Focus. Feel. Learn. <br>  Since 2025<br></h1>
+            <h1>YANI — Focus. Feel. Learn.</h1>
             <p>Building adaptive AI companions focused on emotional intelligence, personalized learning, and interactive educational experiences for children.</p>
             <div class="hero-buttons">
-                <a href="services.html" class="btn btn-primary2">Our Services</a>
-                <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+                <a href="services.html" class="btn btn-primary2" id="hero-services-btn">Our Services</a>
+                <a href="contact.html" class="btn btn-secondary" id="hero-contact-btn">Get in Touch</a>
             </div>
         </div>
     </section>
 
-    <!-- Featured Section -->
-    <section class="featured">
+    <!-- Featured -->
+    <section class="featured" aria-label="Featured Solutions">
         <div class="featured-grid">
             <div class="featured-card">
                 <div class="featured-image">
-                    <img src="assets/images/adaptivelearning.png"
-                        alt="Adaptive Learning Excellence">
+                    <img src="assets/images/adaptivelearning.png" alt="Adaptive Learning Excellence" loading="lazy">
                 </div>
                 <div class="featured-content">
                     <h3>Adaptive Learning Excellence</h3>
-                    <p>State-of-the-art facilities for precision adaptive AI learning and AI development.</p>
-                    <a href="services.html" class="btn btn-primary">Learn More</a>
+                    <p>State-of-the-art AI-driven adaptive learning for precision educational development and engagement.</p>
+                    <a href="services.html" class="btn btn-primary2" id="featured-learn-adaptive">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="featured-card">
                 <div class="featured-image">
-                    <img src="assets/images/aipowered.png"
-                        alt="School AI Integration">
+                    <img src="assets/images/aipowered.png" alt="School AI Integration" loading="lazy">
                 </div>
                 <div class="featured-content">
                     <h3>School AI Integration</h3>
-                    <p>End-to-end project management and execution capabilities.</p>
-                    <a href="services.html" class="btn btn-primary">Learn More</a>
+                    <p>End-to-end AI educational systems designed for classrooms, homes, and future-ready learning environments.</p>
+                    <a href="services.html" class="btn btn-primary2" id="featured-learn-school">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Overview Section -->
-    <!-- Overview Section -->
-    <section class="overview">
+    <!-- Overview -->
+    <section class="overview" aria-label="About Overview">
         <div class="overview-container">
             <div class="overview-content">
-                <h2>About BR Innovation & Technology</h2>
-                <p class="subtitle">Leading AI Robotics Excellence Since 1998</p>
-                <p>A leading contractor & supplier specializing in installation of AI companions, exhaust pipeline materials,
-                    structural steel supports, cladding materials, acoustic room treatments and enclosures. With over
-                    two decades of experience, we've established ourselves as education technology leaders serving major companies
-                    across India.</p>
+                <h2>About BR Innovation &amp; Technology</h2>
+                <p class="subtitle">Leading AI Robotics &amp; Adaptive Learning Since 2025</p>
+                <p>An AI educational robotics startup focused on building adaptive learning companions that support children's focus, emotional engagement, and personalized learning experiences through intelligent robotics and AI systems.</p>
                 <div class="achievements">
                     <div class="achievement-badge">
-                        <span><img src="assets/images/india.png" alt="India map" style="width: 60px; height: 60px; object-fit: contain; margin-right: 5px; vertical-align: middle;"></span>
+                        <span><img src="assets/images/india.png" alt="India" style="width:50px;height:50px;object-fit:contain;display:inline-block;"></span>
                         Pan India Presence
                     </div>
                     <div class="achievement-badge">
-                        <span>50+</span>
-                        Expert Team
+                        <span><i class="fas fa-users" style="font-size:1.75rem;color:var(--gold);"></i></span>
+                        Growing Team
                     </div>
                 </div>
-                <a href="about.html" class="btn btn-secondary">See Details <i class="fas fa-arrow-right"></i></a>
+                <a href="about.html" class="btn btn-secondary" id="overview-see-details" style="margin-top:1.5rem;">See Details <i class="fas fa-arrow-right"></i></a>
             </div>
-                <div class="overview-stats">
-
-                    <div class="stat-item">
-                        <h3>2025</h3>
-                        <p>Founded</p>
-                    </div>
-
-                    <div class="stat-item">
-                        <h3>1</h3>
-                        <p>Working Prototype</p>
-                    </div>
-
-                    <div class="stat-item">
-                        <h3>AI</h3>
-                        <p>Adaptive Learning Focus</p>
-                    </div>
-
-                    <div class="stat-item">
-                        <h3> YANI</h3>
-                        <p>AI Companion System</p>
-                    </div>
-
+            <div class="overview-stats">
+                <div class="stat-item">
+                    <h3>2025</h3>
+                    <p>Founded</p>
                 </div>
+                <div class="stat-item">
+                    <h3>1</h3>
+                    <p>Working Prototype</p>
+                </div>
+                <div class="stat-item">
+                    <h3>AI</h3>
+                    <p>Adaptive Learning</p>
+                </div>
+                <div class="stat-item">
+                    <h3>YANI</h3>
+                    <p>AI Companion System</p>
+                </div>
+            </div>
         </div>
     </section>
 
-
-    
-    <!-- Latest Projects -->
-    <!-- <section class="projects">
-        <div class="section-header">
-            <h2>Latest Projects</h2>
-            <p>Discover our recent achievements and successful implementations</p>
-        </div>
-        <div class="project-grid">
-            <div class="project-card">
-                <img src="https://www.bendigoadvertiser.com.au/images/transform/v1/crop/frm/silverstone-feed-data/339b4627-722f-4f94-b625-eb08bed15650.jpg/r0_0_800_600_w800_h600_fmax.jpg"
-                    alt="Project 1">
-                <div class="project-overlay">
-                    <h3>Brigade Sterling Bangalore</h3>
-                    <p>2 X 2250 KVA & 4 X 1250 KVA Exhaust & Diesel line Works</p>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="https://www.bendigoadvertiser.com.au/images/transform/v1/crop/frm/silverstone-feed-data/339b4627-722f-4f94-b625-eb08bed15650.jpg/r0_0_800_600_w800_h600_fmax.jpg"
-                    alt="Project 2">
-                <div class="project-overlay">
-                    <h3>Prestige Technostart</h3>
-                    <p>1500 KVA X 4 NOS Room Treatment & Exhaust Works</p>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="https://www.bendigoadvertiser.com.au/images/transform/v1/crop/frm/silverstone-feed-data/339b4627-722f-4f94-b625-eb08bed15650.jpg/r0_0_800_600_w800_h600_fmax.jpg"
-                    alt="Project 3">
-                <div class="project-overlay">
-                    <h3>STT Sterling Bangalore</h3>
-                    <p>2250 KVA X 10 NOS Room Treatment & Exhaust Works</p>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-
-
-    <!-- Why Choose Us Section -->
-    <section class="why-us">
+    <!-- Why Us -->
+    <section class="why-us" aria-label="Why Choose Us">
         <div class="section-header2">
-            <h2>Why Choose BR Innovation & Technology</h2>
+            <h2>Why Choose BR Innovation &amp; Technology</h2>
             <p>Excellence in every aspect of our service</p>
         </div>
         <div class="why-us-grid">
             <div class="why-us-card">
-                <i class="fa-regular fa-calendar-circle-user"></i>
+                <i class="fas fa-clock" aria-hidden="true"></i>
                 <h3>Timely Delivery</h3>
                 <p>Committed to meeting project deadlines with precision and reliability</p>
             </div>
             <div class="why-us-card">
-                <i class="fa-regular fa-medal"></i>
+                <i class="fas fa-medal" aria-hidden="true"></i>
                 <h3>Quality Assurance</h3>
                 <p>Rigorous quality control measures ensuring excellence in every project</p>
             </div>
             <div class="why-us-card">
-                <i class="fa-duotone fa-solid fa-people-group"></i>
+                <i class="fas fa-people-group" aria-hidden="true"></i>
                 <h3>Expert Team</h3>
-                <p>Skilled professionals with extensive education technology experience</p>
+                <p>Skilled professionals with extensive AI and education technology experience</p>
             </div>
             <div class="why-us-card">
-                <i class="fa-duotone fa-solid fa-screwdriver-wrench"></i>
-                <h3>Modern Facility</h3>
-                <p>State-of-the-art AI development unit with latest equipment</p>
+                <i class="fas fa-microchip" aria-hidden="true"></i>
+                <h3>Modern Technology</h3>
+                <p>State-of-the-art AI development with the latest adaptive learning tech</p>
             </div>
         </div>
     </section>
 
-    <!-- New Founders Section -->
-    <!-- New Founders Section -->
-    <section class="founders">
-        <div class="founders-container-wrapper">
+    <!-- Leadership -->
+    <section class="founders" aria-label="Leadership">
+        <div class="founders-inner">
             <div class="founders-header">
                 <h2>Our Leadership</h2>
-                <p>Meet the visionary behind BR Innovation & Technology</p>
+                <p>Meet the visionary behind BR Innovation &amp; Technology</p>
             </div>
-            <div class="founders-container">
+            <div>
                 <div class="founder-card">
                     <div class="founder-image">
-                        <img src="assets/images/founder.png"
-                            alt="Founder Name">
+                        <img src="assets/images/founder.png" alt="Bindu R, Founder and Partner" loading="lazy">
                     </div>
                     <div class="founder-info">
                         <h3>Bindu R</h3>
-                        <p class="founder-title">Founder and Partner</p>
-                        <p class="founder-bio">Bindu R is the founder of BR Innovation & Technology and the visionary behind YANI, an adaptive AI companion designed to support children’s focus, emotions, and learning. With strong experience in business management, marketing, and innovation leadership, she is driving the company toward building accessible AI-powered learning systems for homes and schools across India. Under her leadership, BR Innovation & Technology developed the YANI prototype and successfully conducted early testing with children and schools, achieving strong engagement and positive educational impact.</p>
+                        <p class="founder-title">Founder &amp; Partner</p>
+                        <p class="founder-bio">Visionary behind YANI, an adaptive AI companion for children. With expertise in business management, marketing, and innovation leadership, Bindu R is driving accessible AI-powered learning for homes and schools across India. BR Innovation &amp; Technology developed the YANI prototype and successfully conducted early testing with strong educational impact.</p>
                     </div>
-                <!-- </div>
-                    <div class="founder-card">
-                        <div class="founder-image">
-                            <img src="assets/images/cofounder.png"
-                                alt="Co-Founder Name">
-                        </div>
-                        <div class="founder-info">
-                            <h3>Mrs. Usha Rani G</h3>
-                            <p class="founder-title">Managing Partner</p>
-                            <p class="founder-bio">Co-founded BR Innovation & Technology with her husband and plays a vital role in its success while also serving in leadership positions at various education technology bodies like KASSIA, PIA, and FKCCI.</p>
-                        </div>
-                    </div>
-                </div> -->
-            </div>
-        </section>
-
-
-
-    <!-- Call to Action -->
-    <!-- Modern CTA Section -->
-    <section class="cta-section">
-        <div class="cta-container">
-            <div class="cta-card">
-                <div class="cta-content">
-
-                    <div class="left-content">
-
-                        <div class="experience-badge">
-                            <span class="years">AI</span>
-                            <span class="text">Innovation &<br>Learning</span>
-                        </div>
-
-                        <h2>Building the Future<br>of Adaptive Learning</h2>
-
-                        <p>
-                            BR Innovation & Technology is developing AI-powered educational
-                            companions designed to improve children’s focus, emotional engagement,
-                            and personalized learning experiences through interactive robotics.
-                        </p>
-
-                        <div class="stats-row">
-
-                            <div class="stat-item2">
-                                <span class="number"></span>
-                                <span class="label">Working Prototype</span>
-                            </div>
-
-                            <div class="stat-item2">
-                                <span class="number">2025</span>
-                                <span class="label">Founded</span>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="right-content">
-
-                        <div class="action-card">
-
-                            <div class="card-header">
-
-                                <div class="icon-badge">
-                                    <i class="fas fa-robot"></i>
-                                </div>
-
-                                <h3>Explore YANI</h3>
-
-                                <p>
-                                    Discover adaptive AI learning experiences designed for children,
-                                    schools, and future-ready education ecosystems.
-                                </p>
-
-                            </div>
-
-                            <div class="feature-list">
-
-                                <div class="feature">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Adaptive Learning</span>
-                                </div>
-
-                                <div class="feature">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Emotional Intelligence Support</span>
-                                </div>
-
-                                <div class="feature">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Interactive AI Companion</span>
-                                </div>
-
-                            </div>
-
-                            <div class="action-buttons">
-
-                                <a href="contact.html" class="btn-primary">
-                                    Get in Touch
-                                    <i class="fas fa-arrow-right"></i>
-                                </a>
-
-                                <a href="services.html" class="btn-secondary">
-                                    View Solutions
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
                 </div>
             </div>
-
-            <div class="shape-divider"></div>
-
         </div>
     </section>
-    <!-- Service Areas -->
-    <!-- Industries Scroll Section -->
-    <section class="industries-scroll">
 
+    <!-- CTA / Explore YANI -->
+    <section class="cta-section" aria-label="Explore YANI">
+        <div class="cta-card">
+            <div class="cta-content">
+                <div class="left-content">
+                    <div class="experience-badge">
+                        <span class="years">AI</span>
+                        <span class="text">Innovation &amp;<br>Learning</span>
+                    </div>
+                    <h2>Building the Future<br>of Adaptive Learning</h2>
+                    <p>BR Innovation &amp; Technology is developing AI-powered educational companions designed to improve children's focus, emotional engagement, and personalized learning through interactive robotics.</p>
+                    <div class="stats-row">
+                        <div class="stat-item2">
+                            <span class="number">1</span>
+                            <span class="label">Working Prototype</span>
+                        </div>
+                        <div class="stat-item2">
+                            <span class="number">2025</span>
+                            <span class="label">Founded</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-content">
+                    <div class="action-card">
+                        <div class="card-header">
+                            <div class="icon-badge">
+                                <i class="fas fa-robot" aria-hidden="true"></i>
+                            </div>
+                            <h3>Explore YANI</h3>
+                            <p>Discover adaptive AI learning experiences designed for children, schools, and future-ready education ecosystems.</p>
+                        </div>
+                        <div class="feature-list" aria-label="YANI features">
+                            <div class="feature">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                <span>Adaptive Learning</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                                <span>Emotional Intelligence Support</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-robot" aria-hidden="true"></i>
+                                <span>Interactive AI Companion</span>
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <a href="contact.html" class="btn btn-primary2" id="cta-get-in-touch">
+                                Get in Touch <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                            <a href="services.html" class="btn btn-secondary" id="cta-view-solutions">
+                                View Solutions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Marquee -->
+    <section class="industries-scroll" aria-label="Solutions We Focus On">
         <div class="section-header">
             <h2>Solutions We Focus On</h2>
             <p>Adaptive AI and educational robotics designed for future-ready learning environments</p>
         </div>
-
-        <div class="scroll-container">
-
-            <div class="scroll-track">
-
-                <!-- First Set -->
-
-                <div class="education technology-item">
-                    <h3>Adaptive Learning</h3>
-                    <ul>
+        <div class="scroll-container" aria-live="off">
+            <div class="scroll-track" role="list">
+                <!-- First set -->
+                <div class="industry-item" role="listitem">
+                    <h3><i class="fas fa-brain" style="margin-right:0.5rem;"></i>Adaptive Learning</h3>
+                    <ul class="industry-chips">
                         <li>Personalized AI Interaction</li>
-                        <li>Focus Enhancement Support</li>
+                        <li>Focus Enhancement</li>
                         <li>Behavior-Based Learning</li>
                     </ul>
                 </div>
-
-                <div class="education technology-item">
-                    <h3>Emotional Intelligence</h3>
-                    <ul>
+                <div class="industry-item" role="listitem">
+                    <h3><i class="fas fa-heart" style="margin-right:0.5rem;"></i>Emotional Intelligence</h3>
+                    <ul class="industry-chips">
                         <li>Emotion-Aware Responses</li>
                         <li>Interactive Communication</li>
                         <li>Engagement Monitoring</li>
                     </ul>
                 </div>
-
-                <div class="education technology-item">
-                    <h3>Educational Robotics</h3>
-                    <ul>
+                <div class="industry-item" role="listitem">
+                    <h3><i class="fas fa-robot" style="margin-right:0.5rem;"></i>Educational Robotics</h3>
+                    <ul class="industry-chips">
                         <li>AI Companion Systems</li>
                         <li>Interactive STEM Learning</li>
-                        <li>Hands-On Technology Exposure</li>
+                        <li>Hands-On Technology</li>
                     </ul>
                 </div>
-
-                <div class="education technology-item">
-                    <h3>Schools & Learning</h3>
-                    <ul>
+                <div class="industry-item" role="listitem">
+                    <h3><i class="fas fa-school" style="margin-right:0.5rem;"></i>Schools &amp; Learning</h3>
+                    <ul class="industry-chips">
                         <li>Classroom AI Assistance</li>
                         <li>Student Engagement Tools</li>
-                        <li>Smart Learning Experiences</li>
+                        <li>Smart Learning</li>
                     </ul>
                 </div>
-
-                <div class="education technology-item">
-                    <h3>Parents & Families</h3>
-                    <ul>
+                <div class="industry-item" role="listitem">
+                    <h3><i class="fas fa-users" style="margin-right:0.5rem;"></i>Parents &amp; Families</h3>
+                    <ul class="industry-chips">
                         <li>Home Learning Support</li>
                         <li>Safe AI Interaction</li>
-                        <li>Personalized Learning Guidance</li>
+                        <li>Personalized Guidance</li>
                     </ul>
                 </div>
-
-                <div class="education technology-item">
-                    <h3>Future Innovation</h3>
-                    <ul>
+                <div class="industry-item" role="listitem">
+                    <h3><i class="fas fa-rocket" style="margin-right:0.5rem;"></i>Future Innovation</h3>
+                    <ul class="industry-chips">
                         <li>Scalable AI Ecosystems</li>
-                        <li>Next-Generation Robotics</li>
-                        <li>Continuous AI Development</li>
+                        <li>Next-Gen Robotics</li>
+                        <li>Continuous Development</li>
                     </ul>
                 </div>
-
-                <!-- Duplicate Set for Seamless Scrolling -->
-
-                <div class="education technology-item">
-                    <h3>Adaptive Learning</h3>
-                    <ul>
+                <!-- Duplicate set for seamless loop -->
+                <div class="industry-item" role="listitem" aria-hidden="true">
+                    <h3><i class="fas fa-brain" style="margin-right:0.5rem;"></i>Adaptive Learning</h3>
+                    <ul class="industry-chips">
                         <li>Personalized AI Interaction</li>
-                        <li>Focus Enhancement Support</li>
+                        <li>Focus Enhancement</li>
                         <li>Behavior-Based Learning</li>
                     </ul>
                 </div>
-
-                <div class="education technology-item">
-                    <h3>Emotional Intelligence</h3>
-                    <ul>
+                <div class="industry-item" role="listitem" aria-hidden="true">
+                    <h3><i class="fas fa-heart" style="margin-right:0.5rem;"></i>Emotional Intelligence</h3>
+                    <ul class="industry-chips">
                         <li>Emotion-Aware Responses</li>
                         <li>Interactive Communication</li>
                         <li>Engagement Monitoring</li>
                     </ul>
                 </div>
-
-                <div class="education technology-item">
-                    <h3>Educational Robotics</h3>
-                    <ul>
+                <div class="industry-item" role="listitem" aria-hidden="true">
+                    <h3><i class="fas fa-robot" style="margin-right:0.5rem;"></i>Educational Robotics</h3>
+                    <ul class="industry-chips">
                         <li>AI Companion Systems</li>
                         <li>Interactive STEM Learning</li>
-                        <li>Hands-On Technology Exposure</li>
+                        <li>Hands-On Technology</li>
                     </ul>
                 </div>
-
+                <div class="industry-item" role="listitem" aria-hidden="true">
+                    <h3><i class="fas fa-school" style="margin-right:0.5rem;"></i>Schools &amp; Learning</h3>
+                    <ul class="industry-chips">
+                        <li>Classroom AI Assistance</li>
+                        <li>Student Engagement Tools</li>
+                        <li>Smart Learning</li>
+                    </ul>
+                </div>
+                <div class="industry-item" role="listitem" aria-hidden="true">
+                    <h3><i class="fas fa-users" style="margin-right:0.5rem;"></i>Parents &amp; Families</h3>
+                    <ul class="industry-chips">
+                        <li>Home Learning Support</li>
+                        <li>Safe AI Interaction</li>
+                        <li>Personalized Guidance</li>
+                    </ul>
+                </div>
+                <div class="industry-item" role="listitem" aria-hidden="true">
+                    <h3><i class="fas fa-rocket" style="margin-right:0.5rem;"></i>Future Innovation</h3>
+                    <ul class="industry-chips">
+                        <li>Scalable AI Ecosystems</li>
+                        <li>Next-Gen Robotics</li>
+                        <li>Continuous Development</li>
+                    </ul>
+                </div>
             </div>
-
         </div>
-
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-
-        <div class="footer-content">
-
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content" style="max-width:1400px;margin:0 auto;padding:0 2rem;">
             <div class="footer-main">
-
                 <div class="footer-brand">
-
                     <div class="footer-logo">
-                        <img src="assets/images/logo.png" alt="BR Innovation & Technology Logo">
-                        <span class="footer-logo-text">BR Innovation & Technology</span>
+                        <img src="assets/images/logo.png" alt="BR Innovation &amp; Technology Logo" loading="lazy">
+                        <span class="footer-logo-text">BR Innovation &amp; Technology</span>
                     </div>
-
                     <p class="footer-description">
-                        BR Innovation & Technology is an AI educational robotics startup focused on building adaptive
-                        learning companions that support children’s focus, emotional engagement, and interactive learning
-                        experiences through intelligent robotics and AI systems.
+                        An AI educational robotics startup focused on building adaptive learning companions that support children's focus, emotional engagement, and interactive learning through intelligent robotics and AI systems.
                     </p>
-
                     <div class="social-links">
-
-                        <a href="https://www.linkedin.com/company/br-innovation-and-technology/"
-                        target="_blank"
-                        class="social-link">
-                            <i class="fab fa-linkedin-in"></i>
+                        <a href="https://www.linkedin.com/company/br-innovation-and-technology/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                         </a>
-
-                        <a href="https://www.instagram.com/brinnovationandtechnology?igsh=aGExMDNpMHMxOXZx"
-                        target="_blank"
-                        class="social-link">
-                            <i class="fab fa-instagram"></i>
+                        <a href="https://www.instagram.com/brinnovationandtechnology?igsh=aGExMDNpMHMxOXZx" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
                         </a>
-
                     </div>
-
                 </div>
-
                 <div class="footer-links">
-
                     <h4>Quick Links</h4>
-
                     <ul>
-                        <li>
-                            <a href="about.html">
-                                <i class="fas fa-chevron-right"></i> About Us
-                            </a>
-                        </li>
-                        <li>
-                            <a href="services.html">
-                                <i class="fas fa-chevron-right"></i> Solutions
-                            </a>
-                        </li>
-                        <li>
-                            <!-- Gallery temporarily disabled -->
-                            <!-- <a href="gallery.html">
-                                <i class="fas fa-chevron-right"></i> Gallery
-                            </a> -->
-                        </li>
-                        <li>
-                            <a href="contact.html">
-                                <i class="fas fa-chevron-right"></i> Contact Us
-                            </a>
-                        </li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> About Us</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Solutions</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contact Us</a></li>
                     </ul>
-
                 </div>
-
                 <div class="footer-links">
-
                     <h4>Our Focus Areas</h4>
-
                     <ul>
-                        <li>
-                            <a href="services.html">
-                                <i class="fas fa-chevron-right"></i>
-                                Adaptive Learning
-                            </a>
-                        </li>
-                        <li>
-                            <a href="services.html">
-                                <i class="fas fa-chevron-right"></i>
-                                Emotional Intelligence
-                            </a>
-                        </li>
-                        <li>
-                            <a href="services.html">
-                                <i class="fas fa-chevron-right"></i>
-                                Educational Robotics
-                            </a>
-                        </li>
-                        <li>
-                            <a href="services.html">
-                                <i class="fas fa-chevron-right"></i>
-                                AI Learning Systems
-                            </a>
-                        </li>
-                        <li>
-                            <a href="services.html">
-                                <i class="fas fa-chevron-right"></i>
-                                STEM Innovation
-                            </a>
-                        </li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Adaptive Learning</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Emotional Intelligence</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Educational Robotics</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> AI Learning Systems</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> STEM Innovation</a></li>
                     </ul>
-
                 </div>
-
                 <div class="footer-contact-info">
-
                     <h4>Contact Information</h4>
-
                     <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                         <div>
                             <div class="contact-label">Location</div>
                             <div class="contact-text">Bangalore, Karnataka, India</div>
                         </div>
                     </div>
-
                     <div class="contact-item">
-                        <i class="fas fa-globe"></i>
+                        <i class="fas fa-globe" aria-hidden="true"></i>
                         <div>
                             <div class="contact-label">Website</div>
                             <div class="contact-text">
@@ -3201,20 +1032,17 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="contact-item">
-                        <i class="fas fa-phone-alt"></i>
+                        <i class="fas fa-mobile-screen-button" aria-hidden="true"></i>
                         <div>
-                            <div class="contact-label">Call Us</div>
+                            <div class="contact-label">Mobile Number</div>
                             <div class="contact-text">
-                                <a href="tel:+917975515056">+91 7975515056</a> /
-                                <a href="tel:+919880439900">+91 9880439900</a>
+                                <a href="tel:+917975515056">+91 7975515056</a>
                             </div>
                         </div>
                     </div>
-
                     <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
                         <div>
                             <div class="contact-label">Email</div>
                             <div class="contact-text">
@@ -3223,479 +1051,49 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
         <div class="footer-bottom">
-
             <div class="footer-bottom-content">
-
-                <div class="footer-bottom-text">
-                    © 2025 BR Innovation & Technology. All rights reserved.
-                </div>
-
+                <div class="footer-bottom-text">© 2026 BR Innovation &amp; Technology. All rights reserved.</div>
                 <div class="footer-bottom-links">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
                 </div>
-
             </div>
-
         </div>
-
     </footer>
 
+    <!-- Mobile FAB for chat -->
+    <button class="chat-toggle-fab" id="chat-fab" aria-label="Open YANI chat assistant">
+        <i class="fas fa-comments" aria-hidden="true"></i>
+    </button>
+
     <!-- Chat Widget -->
-<!-- Chat Widget -->
-<div class="chat-widget">
-
-    <div class="chat-header" onclick="toggleChat()">
-
-        <img src="assets/images/logo.png"
-            alt="YANI AI Assistant"
-            class="chat-logo">
-
-        <span>Talk with YANI Assistant</span>
-
-        <i class="fas fa-chevron-up" id="chat-toggle-icon"></i>
-
-    </div>
-
-    <div class="chat-body" id="chat-body">
-
-        <div class="chat-messages" id="chat-messages">
-
-            <div class="message received">
-                Hello! 👋
-                Welcome to BR Innovation & Technology.
-
-                I'm the YANI AI Assistant.
-                How can I help you today?
+    <div class="chat-widget" id="chat-widget" role="dialog" aria-label="YANI AI Assistant" aria-modal="true">
+        <div class="chat-header" onclick="toggleChat()" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' ')toggleChat()">
+            <img src="assets/images/logo.png" alt="YANI Assistant" class="chat-logo">
+            <span>Talk with YANI Assistant</span>
+            <i class="fas fa-chevron-up" id="chat-toggle-icon" aria-hidden="true"></i>
+        </div>
+        <div class="chat-body" id="chat-body" style="display:none;">
+            <div class="chat-messages" id="chat-messages" role="log" aria-live="polite">
+                <div class="message received">
+                    Hello! 👋 Welcome to BR Innovation &amp; Technology.<br>
+                    I'm the YANI AI Assistant. How can I help you today?
+                </div>
             </div>
-
+            <div class="chat-input-container">
+                <input type="text" id="chat-input" placeholder="Ask about YANI, our solutions..." onkeypress="handleKeyPress(event)" aria-label="Chat message input">
+                <button onclick="sendMessage()" aria-label="Send message">
+                    <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                </button>
+            </div>
         </div>
-
-        <div class="chat-input-container">
-
-            <input
-                type="text"
-                id="chat-input"
-                placeholder="Ask about YANI, our solutions, or contact details..."
-                onkeypress="handleKeyPress(event)"
-            >
-
-            <button onclick="sendMessage()">
-                <i class="fas fa-paper-plane"></i>
-            </button>
-
-        </div>
-
     </div>
 
-</div>
-
-    <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function () {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Mobile menu functionality
-        function setupMobileMenu() {
-        const navbar = document.querySelector('.navbar');
-        const navContainer = document.querySelector('.nav-container');
-        const navLinks = document.querySelector('.nav-links');
-        
-        // Create mobile menu button if it doesn't exist
-        if (!document.querySelector('.mobile-menu-btn')) {
-            const mobileMenuBtn = document.createElement('button');
-            mobileMenuBtn.classList.add('mobile-menu-btn');
-            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            navContainer.appendChild(mobileMenuBtn);
-
-            // Add necessary styles
-            const mobileStyles = `
-                .mobile-menu-btn {
-                    display: none;
-                    background: none;
-                    border: none;
-                    color: var(--white);
-                    font-size: 1.5rem;
-                    cursor: pointer;
-                    padding: 0.5rem;
-                    z-index: 1000;
-                }
-
-                @media (max-width: 768px) {
-                    .mobile-menu-btn {
-                        display: block;
-                    }
-
-                    .nav-links {
-                        display: none;
-                        position: absolute;
-                        top: 100%;
-                        left: 0;
-                        right: 0;
-                        background: rgba(10, 38, 71, 0.95);
-                        padding: 1rem;
-                        flex-direction: column;
-                        align-items: center;
-                        gap: 1rem;
-                        width: 100%;
-                    }
-
-                    .nav-links.active {
-                        display: flex;
-                    }
-
-                    .nav-links a {
-                        width: 100%;
-                        text-align: center;
-                        padding: 1rem;
-                    }
-
-                    .nav-links a:hover {
-                        background: rgba(255,255,255,0.1);
-                    }
-                }
-            `;
-
-            // Add styles to document
-            const styleSheet = document.createElement('style');
-            styleSheet.textContent = mobileStyles;
-            document.head.appendChild(styleSheet);
-
-            // Toggle menu function
-            function toggleMenu() {
-                navLinks.classList.toggle('active');
-                const isOpen = navLinks.classList.contains('active');
-                mobileMenuBtn.innerHTML = isOpen ? 
-                    '<i class="fas fa-times"></i>' : 
-                    '<i class="fas fa-bars"></i>';
-            }
-
-            // Event Listeners
-            mobileMenuBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                toggleMenu();
-            });
-
-            // Close menu when clicking on a link
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                });
-            });
-
-            // Close menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!navbar.contains(e.target)) {
-                    navLinks.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                }
-            });
-        }
-    }
-
-    // Initialize mobile menu on page load
-    document.addEventListener('DOMContentLoaded', setupMobileMenu);
-        // Animate stats on scroll
-        // Add this CSS to your stylesheet
-        const styleSheet = document.createElement('style');
-        styleSheet.textContent = `
-.stat-item h3 {
-    color: #fada5e; /* Main number in gold - #CFB53B */
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-.stat-item h3 .plus-suffix {
-    color: #B8860B; /* Darker gold for plus sign */
-}
-
-.stat-item h3 .cr-suffix {
-    color: #fada5e; /* Cr in same gold as numbers */
-}
-`;
-        document.head.appendChild(styleSheet);
-
-        // Updated animation code
-        const stats = document.querySelectorAll('.stat-item h3');
-        const animationDuration = 2000;
-
-        const animateValue = (element, start, end, duration) => {
-            const valueText = element.dataset.finalText;
-            const numericValue = parseFloat(valueText);
-            let suffix = valueText.replace(/[\d.]/g, '');
-
-            // Special handling for "Cr+" to style Cr and + differently
-            if (suffix.includes('Cr')) {
-                suffix = '<span class="cr-suffix">Cr</span><span class="plus-suffix">+</span>';
-            } else {
-                suffix = `<span class="plus-suffix">${suffix}</span>`;
-            }
-
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                const currentValue = Math.floor(progress * (end - start) + start);
-                element.innerHTML = `<span class="number">${currentValue}</span>${suffix}`;
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                } else {
-                    element.innerHTML = `<span class="number">${end}</span>${suffix}`;
-                }
-            };
-            window.requestAnimationFrame(step);
-        };
-
-            const observer = new IntersectionObserver((entries) => {
-
-                entries.forEach(entry => {
-
-                    if (entry.isIntersecting) {
-
-                        const element = entry.target;
-
-                        const textValue = element.dataset.finalText;
-
-                        // Check if value is numeric
-                        if (!isNaN(parseInt(textValue))) {
-
-                            const finalValue = parseInt(textValue);
-
-                            const suffix = textValue.replace(/[\d.]/g, '');
-
-                            element.innerHTML =
-                                '0' + `<span class="suffix">${suffix}</span>`;
-
-                            animateValue(
-                                element,
-                                0,
-                                finalValue,
-                                animationDuration
-                            );
-
-                        } else {
-
-                            // Directly show text if not a number
-                            element.innerHTML = textValue;
-
-                        }
-
-                        observer.unobserve(element);
-
-                    }
-
-                });
-
-            }, observerOptions);
-
-        stats.forEach(stat => {
-            stat.dataset.finalText = stat.textContent;
-            observer.observe(stat);
-        });
-
-        // Smooth scroll for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Clone client logos for infinite scroll
-        document.addEventListener('DOMContentLoaded', function () {
-            const track = document.querySelector('.client-track');
-            const slides = document.querySelectorAll('.client-slide');
-
-            // Clone slides just once for the loop
-            slides.forEach(slide => {
-                const clone = slide.cloneNode(true);
-                track.appendChild(clone);
-            });
-        });
-
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const totalSlides = slides.length;
-
-        function changeSlide(direction) {
-            // Remove all classes first
-            slides.forEach(slide => {
-                slide.classList.remove('active', 'next-slide', 'prev-slide');
-            });
-
-            // Update current slide index
-            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-
-            // Set classes for current, next and previous slides
-            slides[currentSlide].classList.add('active');
-            slides[(currentSlide + 1) % totalSlides].classList.add('next-slide');
-            slides[(currentSlide - 1 + totalSlides) % totalSlides].classList.add('prev-slide');
-        }
-
-        // Initialize first slide
-        changeSlide(0);
-
-        // Optional: Auto-slide every 5 seconds
-        setInterval(() => changeSlide(1), 5000);
-
-
-        function scrollIndustries(direction) {
-            const container = document.querySelector('.scroll-wrapper');
-            const scrollAmount = 320; // Width of item + gap
-
-            if (direction === 1) {
-                container.scrollLeft += scrollAmount;
-            } else {
-                container.scrollLeft -= scrollAmount;
-            }
-        }
-
-        // Optional: Add touch scroll functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            const container = document.querySelector('.scroll-wrapper');
-            let isDown = false;
-            let startX;
-            let scrollLeft;
-
-            container.addEventListener('mousedown', (e) => {
-                isDown = true;
-                container.style.cursor = 'grabbing';
-                startX = e.pageX - container.offsetLeft;
-                scrollLeft = container.scrollLeft;
-            });
-
-            container.addEventListener('mouseleave', () => {
-                isDown = false;
-                container.style.cursor = 'grab';
-            });
-
-            container.addEventListener('mouseup', () => {
-                isDown = false;
-                container.style.cursor = 'grab';
-            });
-
-            container.addEventListener('mousemove', (e) => {
-                if (!isDown) return;
-                e.preventDefault();
-                const x = e.pageX - container.offsetLeft;
-                const walk = (x - startX) * 2;
-                container.scrollLeft = scrollLeft - walk;
-            });
-        });
-
-         // Chat toggle functionality
-    function toggleChat() {
-        const chatBody = document.getElementById('chat-body');
-        const toggleIcon = document.getElementById('chat-toggle-icon');
-        chatBody.style.display = chatBody.style.display === 'none' || !chatBody.style.display ? 'flex' : 'none';
-        toggleIcon.className = chatBody.style.display === 'none' ? 'fas fa-chevron-up' : 'fas fa-chevron-down';
-    }
-
-    // Knowledge base from the PDF
-    const knowledgeBase = {
-
-        keywords: {
-
-            about: {
-                matches: ['about', 'company', 'who', 'startup'],
-                response: "BR Innovation & Technology is an AI educational robotics startup focused on building adaptive learning companions that support children's focus, emotions, and personalized learning experiences."
-            },
-
-            yani: {
-                matches: ['yani', 'robot', 'ai companion'],
-                response: "YANI is an adaptive AI companion designed to support children through interactive learning, emotional engagement, and personalized educational experiences."
-            },
-
-            services: {
-                matches: ['services', 'solutions', 'products'],
-                response: "Our focus areas include Adaptive Learning Systems, Educational Robotics, Emotional Intelligence Support, AI Learning Experiences, and STEM Innovation."
-            },
-
-            prototype: {
-                matches: ['prototype', 'testing', 'development'],
-                response: "We have successfully developed an early-stage YANI prototype and are currently improving the system through continuous testing and innovation."
-            },
-
-            contact: {
-                matches: ['contact', 'email', 'phone', 'location'],
-                response: "You can contact BR Innovation & Technology at contact@brinnoandtech.com or info@brinnoandtech.com, or call us at +91 7975515056 / +91 9880439900. Website: brinnoandtech.com."
-            }
-
-        },
-
-        defaultResponse:
-            "Thank you for your message. Please contact BR Innovation & Technology directly for detailed inquiries."
-    };
-
-    function findBestMatch(input) {
-        const lowercaseInput = input.toLowerCase();
-        
-        for (const key in knowledgeBase.keywords) {
-            const keywordData = knowledgeBase.keywords[key];
-            for (const match of keywordData.matches) {
-                if (lowercaseInput.includes(match)) {
-                    return keywordData.response;
-                }
-            }
-        }
-        
-        return knowledgeBase.defaultResponse;
-    }
-
-    function sendMessage() {
-        const input = document.getElementById('chat-input');
-        const message = input.value.trim();
-        
-        if (message) {
-            // Add user message
-            addMessage(message, 'sent');
-            
-            // Get and add bot response
-            const response = findBestMatch(message);
-            setTimeout(() => addMessage(response, 'received'), 500);
-            
-            // Clear input
-            input.value = '';
-        }
-    }
-
-    function addMessage(message, type) {
-        const messagesContainer = document.getElementById('chat-messages');
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `message ${type}`;
-        messageDiv.textContent = message;
-        messagesContainer.appendChild(messageDiv);
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    }
-
-    function handleKeyPress(event) {
-        if (event.key === 'Enter') {
-            sendMessage();
-        }
-    }
-    </script>
+    <!-- Global JS -->
+    <script src="assets/global.js"></script>
 </body>
-
 </html>

@@ -1,234 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact BR Innovation & Technology — Reach out about YANI, AI educational robotics, adaptive learning solutions, and innovation inquiries.">
+    <title>Contact Us — BR Innovation &amp; Technology</title>
 
-    <title>Contact Us - BR Innovation & Technology</title>
-
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logo.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo.png">
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Global stylesheet -->
+    <link rel="stylesheet" href="assets/global.css">
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'DM Sans', sans-serif;
-        }
-
-        :root {
-            --navy: #0A2647;
-            --gold: #fada5e;
-            --light-gray: #f5f5f5;
-            --dark-gray: #333;
-            --white: #ffffff;
-        }
-
-        body {
-            background: var(--light-gray);
-            color: var(--dark-gray);
-            line-height: 1.6;
-        }
-
-        /* Navbar */
-
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 38, 71, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            z-index: 1000;
-            transition: var(--transition);
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            color: var(--white);
-            font-size: 1.5rem;
-            font-weight: 700;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .logo img {
-            height: 40px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 3rem;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-            position: relative;
-            padding: 0.5rem 0;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gold);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
-            width: 100%;
-        }
-
-        .nav-links a.active {
-            color: var(--gold);
-        }
+        /* Page: Contact */
+        body { padding-top: 70px; }
 
         /* Hero */
-
         .hero {
-            height: 45vh;
-            background:
-                linear-gradient(rgba(10, 38, 71, 0.8),
-                    rgba(10, 38, 71, 0.7)),
-                url('assets/images/prototype1.jpeg');
-
-            background-size: cover;
-            background-position: center;
-
+            height: 42vh;
+            min-height: 260px;
+            background: linear-gradient(rgba(5,5,5,0.8), rgba(5,5,5,0.7)),
+                url('assets/images/prototype1.jpeg') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-
-            color: white;
-
-            margin-top: 80px;
+            color: #fff;
+            padding: 0 1.5rem;
         }
 
         .hero-content h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
+            font-size: clamp(2rem, 5vw, 4rem);
+            margin-bottom: 0.75rem;
+            color: #fff !important;
         }
 
         .hero-content p {
-            max-width: 700px;
-            font-size: 1.1rem;
+            font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+            max-width: 680px;
+            margin: 0 auto;
+            color: rgba(255,255,255,0.85) !important;
         }
 
         /* Contact Section */
-
         .contact-section {
-            padding: 5rem 2rem;
+            padding: 5rem 2rem 4rem;
+            background: #050505;
         }
 
         .contact-container {
-            max-width: 1200px;
-            margin: auto;
-
+            max-width: 1100px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+            align-items: start;
         }
+
+        /* Contact Info Cards */
+        .contact-info { display: flex; flex-direction: column; gap: 1rem; }
 
         .contact-card {
-            background: white;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
+            background: #161616 !important;
+            border: 1px solid rgba(212,175,55,0.2) !important;
+            padding: 1.5rem;
             border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
         }
 
-        .contact-card h3 {
-            margin-bottom: 1rem;
-            color: var(--navy);
+        .contact-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(212,175,55,0.45) !important;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.35);
         }
 
-        .contact-card i {
-            color: var(--gold);
-            margin-right: 10px;
+        .contact-card-icon {
+            width: 44px; height: 44px;
+            background: rgba(212,175,55,0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
         }
 
-        /* Form */
+        .contact-card-icon i { font-size: 1.1rem; color: var(--gold) !important; }
 
+        .contact-card-text h3 {
+            color: var(--gold) !important;
+            font-size: 1rem;
+            margin-bottom: 0.35rem;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+        }
+
+        .contact-card-text p, .contact-card-text a {
+            color: rgba(255,255,255,0.8) !important;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .contact-card-text a:hover { color: var(--gold) !important; }
+
+        /* Contact Form */
         .contact-form {
-            background: white;
-            padding: 3rem;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            background: #161616 !important;
+            border: 1px solid rgba(212,175,55,0.2) !important;
+            padding: 2.5rem;
+            border-radius: 14px;
         }
 
         .contact-form h2 {
-            margin-bottom: 2rem;
-            color: var(--navy);
+            color: var(--gold) !important;
+            font-size: 1.75rem;
+            margin-bottom: 1.75rem;
         }
 
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
+        .form-group { margin-bottom: 1.25rem; }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
-            color: var(--navy);
+            margin-bottom: 0.4rem;
+            color: var(--gold) !important;
             font-weight: 500;
+            font-size: 0.9rem;
         }
 
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             width: 100%;
-            padding: 1rem;
-            border: 1px solid #ddd;
+            padding: 0.85rem 1rem;
+            background: #1e1e1e !important;
+            border: 1px solid rgba(212,175,55,0.2) !important;
             border-radius: 8px;
-            font-size: 1rem;
+            color: #fff !important;
+            font-size: 0.95rem;
+            transition: border-color 0.3s;
         }
 
-        .form-group textarea {
-            resize: vertical;
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: rgba(212,175,55,0.5) !important;
         }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.3) !important;
+        }
+
+        .form-group textarea { resize: vertical; min-height: 130px; }
 
         .submit-btn {
-            background: var(--navy);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
+            background: var(--gold) !important;
+            color: #050505 !important;
+            border: 2px solid var(--gold) !important;
+            padding: 0.85rem 2rem;
             border-radius: 50px;
-            cursor: pointer;
             font-size: 1rem;
-            transition: 0.3s;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .submit-btn:hover {
-            background: var(--gold);
-            color: var(--navy);
+            background: #050505 !important;
+            color: var(--gold) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(212,175,55,0.25);
         }
 
         .form-message {
@@ -241,518 +193,275 @@
 
         .form-message.success {
             display: block;
-            background: rgba(46, 204, 113, 0.15);
-            border: 1px solid rgba(46, 204, 113, 0.45);
+            background: rgba(46, 204, 113, 0.12);
+            border: 1px solid rgba(46, 204, 113, 0.4);
             color: #8ef7b7 !important;
         }
 
         .form-message.error {
             display: block;
-            background: rgba(231, 76, 60, 0.15);
-            border: 1px solid rgba(231, 76, 60, 0.45);
+            background: rgba(231, 76, 60, 0.12);
+            border: 1px solid rgba(231, 76, 60, 0.4);
             color: #ffb3a9 !important;
         }
 
         /* Map */
-
         .map-section {
-            padding: 4rem 2rem;
+            padding: 3.5rem 2rem;
+            background: #080808;
         }
 
         .map-container {
-            max-width: 1200px;
-            margin: auto;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
         .map-container h2 {
+            color: var(--gold) !important;
             text-align: center;
-            margin-bottom: 2rem;
-            color: var(--navy);
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
         }
 
         .map-frame {
             width: 100%;
-            height: 450px;
+            height: 420px;
             border: none;
-            border-radius: 12px;
+            border-radius: 14px;
+            filter: grayscale(0.3) brightness(0.85);
         }
 
         /* Footer */
-
-        .footer {
-            background: var(--navy);
-            color: white;
-            padding: 4rem 2rem 2rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: auto;
-
+        .footer-main {
             display: grid;
-            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-            gap: 2rem;
-        }
-
-        .footer h3 {
-            margin-bottom: 1rem;
-            color: var(--gold);
-        }
-
-        .footer a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            color: var(--gold);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            margin-top: 3rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 2rem;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 2.5rem;
+            padding: 4rem 0 3rem;
         }
 
         /* Responsive */
-
-        @media(max-width:768px){
-
-            .contact-container{
-                grid-template-columns:1fr;
-            }
-
-            .hero-content h1{
-                font-size:2.5rem;
-            }
-
-            .nav-links{
-                display:none;
-            }
-
+        @media (max-width: 768px) {
+            body { padding-top: 65px; }
+            .contact-container { grid-template-columns: 1fr; }
+            .contact-section { padding: 3.5rem 1.5rem 3rem; }
+            .contact-form { padding: 1.75rem; }
+            .map-frame { height: 300px; }
+            .footer-main { grid-template-columns: 1fr; }
         }
 
-        /* BR Innovation premium black-gold global theme override */
-        :root {
-            --navy: #D4AF37;
-            --gold: #D4AF37;
-            --light-gray: #050505;
-            --dark-gray: #CFCFCF;
-            --white: #FFFFFF;
-            --card-bg: #161616;
-            --border-color: rgba(212, 175, 55, 0.2);
-        }
-
-        html,
-        body,
-        main,
-        section,
-        .section,
-        .contact,
-        .contact-section,
-        .cta,
-        .cta-section,
-        .footer,
-        footer {
-            background: #050505 !important;
-            color: #FFFFFF !important;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        .section-title {
-            color: #D4AF37 !important;
-        }
-
-        p,
-        li,
-        span,
-        label,
-        input,
-        textarea,
-        select {
-            color: #FFFFFF !important;
-        }
-
-        input,
-        textarea,
-        select,
-        .contact-form,
-        .contact-card,
-        [class*="card"] {
-            background: #161616 !important;
-            border: 1px solid rgba(212, 175, 55, 0.2) !important;
-        }
-
-        .card:hover,
-        [class*="card"]:hover,
-        .contact-card:hover {
-            transform: translateY(-8px) !important;
-            border-color: rgba(212, 175, 55, 0.55) !important;
-            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.5) !important;
-        }
-
-        .subtitle,
-        .subtext,
-        .muted,
-        .secondary,
-        small,
-        ::placeholder {
-            color: #CFCFCF !important;
-        }
-
-        a,
-        .nav-links a,
-        .btn,
-        button {
-            color: #FFFFFF !important;
-        }
-
-        a:hover,
-        .nav-links a:hover,
-        .btn:hover,
-        button:hover {
-            color: #D4AF37 !important;
-        }
-
-        .btn,
-        button {
-            border: 1px solid rgba(212, 175, 55, 0.2) !important;
-        }
-
-        .btn-primary {
-            background: #D4AF37 !important;
-            color: #050505 !important;
-            border-color: #D4AF37 !important;
-        }
-
-        .btn-primary:hover {
-            background: #050505 !important;
-            color: #D4AF37 !important;
-        }
-
-        .navbar,
-        .navbar.scrolled,
-        .footer,
-        footer {
-            background: #050505 !important;
-            color: #FFFFFF !important;
+        @media (max-width: 480px) {
+            .hero-content h1 { font-size: 2rem; }
         }
     </style>
 </head>
-
 <body>
-
     <!-- Navbar -->
-
-    <nav class="navbar">
-
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-
-            <a href="index.html" class="logo">
-                <img src="assets/images/logo.png" alt="BR Innovation & Technology">
-                BR Innovation & Technology
+            <a href="index.html" class="logo" aria-label="BR Innovation & Technology Home">
+                <img src="assets/images/logo.png" alt="BR Innovation & Technology Logo" loading="lazy">
+                BR Innovation &amp; Technology
             </a>
-
-            <ul class="nav-links">
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
+            <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="about.html" role="menuitem">About</a></li>
+                <li role="none"><a href="services.html" role="menuitem">Services</a></li>
+                <li role="none"><a href="contact.html" class="active" role="menuitem">Contact</a></li>
             </ul>
-
         </div>
-
     </nav>
 
     <!-- Hero -->
-
-    <section class="hero">
-
+    <section class="hero" aria-label="Contact page hero">
         <div class="hero-content">
-
             <h1>Contact Us</h1>
-
-            <p>
-                Connect with BR Innovation & Technology for AI educational robotics,
-                adaptive learning solutions, and YANI innovation inquiries.
-            </p>
-
+            <p>Connect with BR Innovation &amp; Technology for AI educational robotics, adaptive learning solutions, and YANI innovation inquiries.</p>
         </div>
-
     </section>
 
     <!-- Contact -->
-
-    <section class="contact-section">
-
+    <section class="contact-section" aria-label="Contact information and form">
         <div class="contact-container">
 
-            <!-- Left -->
-
+            <!-- Left: Info cards -->
             <div class="contact-info">
-
                 <div class="contact-card">
-
-                    <h3>
-                        <i class="fas fa-map-marker-alt"></i>
-                        Location
-                    </h3>
-
-                    <p>
-                        Bangalore, Karnataka, India
-                    </p>
-
+                    <div class="contact-card-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
+                    <div class="contact-card-text">
+                        <h3>Location</h3>
+                        <p>Bangalore, Karnataka, India</p>
+                    </div>
                 </div>
-
                 <div class="contact-card">
-
-                    <h3>
-                        <i class="fas fa-phone"></i>
-                        Phone
-                    </h3>
-
-                    <p>
-                        +91 79755150565
-                    </p>
-
+                    <div class="contact-card-icon"><i class="fas fa-mobile-screen-button" aria-hidden="true"></i></div>
+                    <div class="contact-card-text">
+                        <h3>Mobile Number</h3>
+                        <p><a href="tel:+917975515056">+91 7975515056</a></p>
+                    </div>
                 </div>
-
                 <div class="contact-card">
-
-                    <h3>
-                        <i class="fas fa-envelope"></i>
-                        Email
-                    </h3>
-
-                    <p>
-                        contact@brinnoandtech.com
-                    </p>
-
-                    <p>
-                        info@brinnoandtech.com
-                    </p>
-
+                    <div class="contact-card-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+                    <div class="contact-card-text">
+                        <h3>Email</h3>
+                        <p><a href="mailto:contact@brinnoandtech.com">contact@brinnoandtech.com</a></p>
+                        <p><a href="mailto:info@brinnoandtech.com">info@brinnoandtech.com</a></p>
+                    </div>
                 </div>
-
                 <div class="contact-card">
-
-                    <h3>
-                        <i class="fas fa-info-circle"></i>
-                        Company
-                    </h3>
-
-                    <p>
-                        Founded: 2025
-                    </p>
-
-                    <p>
-                        Focus: AI Educational Robotics, Adaptive Learning Companions
-                    </p>
-
+                    <div class="contact-card-icon"><i class="fas fa-building" aria-hidden="true"></i></div>
+                    <div class="contact-card-text">
+                        <h3>Company</h3>
+                        <p>Founded: 2025</p>
+                        <p>Focus: AI Educational Robotics, Adaptive Learning Companions</p>
+                    </div>
                 </div>
-
+                <div class="contact-card">
+                    <div class="contact-card-icon"><i class="fas fa-share-nodes" aria-hidden="true"></i></div>
+                    <div class="contact-card-text">
+                        <h3>Social Media</h3>
+                        <p><a href="https://www.linkedin.com/company/br-innovation-and-technology/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in" style="margin-right:0.4rem;"></i>LinkedIn</a></p>
+                        <p><a href="https://www.instagram.com/brinnovationandtechnology?igsh=aGExMDNpMHMxOXZx" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" style="margin-right:0.4rem;"></i>Instagram</a></p>
+                    </div>
+                </div>
             </div>
 
-            <!-- Right -->
-
+            <!-- Right: Form -->
             <div class="contact-form">
-
                 <h2>Send Us a Message</h2>
-
-                <form
-                    id="contact-form"
-                    action="https://formspree.io/f/mjgznljq"
-                    method="POST"
-                >
-                    <input
-                        type="hidden"
-                        name="_subject"
-                        value="New Inquiry - BR Innovation & Technology"
-                    >
+                <form id="contact-form" action="https://formspree.io/f/mjgznljq" method="POST" novalidate>
+                    <input type="hidden" name="_subject" value="New Inquiry — BR Innovation & Technology">
 
                     <div class="form-group">
-
-                        <label>Full Name</label>
-
-                        <input
-                            type="text"
-                            name="name"
-                            placeholder="Enter your full name"
-                            required
-                        >
-
+                        <label for="contact-name">Full Name <span aria-hidden="true">*</span></label>
+                        <input type="text" id="contact-name" name="name" placeholder="Enter your full name" required autocomplete="name">
                     </div>
 
                     <div class="form-group">
-
-                        <label>Email Address</label>
-
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder="you@example.com"
-                            required
-                        >
-
+                        <label for="contact-email">Email Address <span aria-hidden="true">*</span></label>
+                        <input type="email" id="contact-email" name="email" placeholder="you@example.com" required autocomplete="email">
                     </div>
 
                     <div class="form-group">
-
-                        <label>Phone Number</label>
-
-                        <input
-                            type="tel"
-                            name="phone"
-                            placeholder="+91 9876543210"
-                        >
-
+                        <label for="contact-message">Message <span aria-hidden="true">*</span></label>
+                        <textarea id="contact-message" name="message" rows="6" placeholder="Tell us about your inquiry..." required></textarea>
                     </div>
 
-                    <div class="form-group">
-
-                        <label>Message</label>
-
-                        <textarea
-                            name="message"
-                            rows="6"
-                            placeholder="Tell us about your inquiry..."
-                            required
-                        ></textarea>
-
-                    </div>
-
-                    <button type="submit" class="submit-btn">
-                        Send Message
+                    <button type="submit" class="submit-btn" id="submit-btn">
+                        <i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message
                     </button>
-
                     <div id="form-status" class="form-message" role="status" aria-live="polite"></div>
-
                 </form>
-
             </div>
-
         </div>
-
     </section>
 
     <!-- Map -->
-
-    <section class="map-section">
-
+    <section class="map-section" aria-label="Our Location on map">
         <div class="map-container">
-
             <h2>Our Location</h2>
-
-            <iframe class="map-frame"
-                src="https://maps.google.com/maps?q=bangalore&t=&z=11&ie=UTF8&iwloc=&output=embed">
+            <iframe
+                class="map-frame"
+                src="https://maps.google.com/maps?q=bangalore&t=&z=11&ie=UTF8&iwloc=&output=embed"
+                title="BR Innovation & Technology location in Bangalore, India"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
             </iframe>
-
         </div>
-
     </section>
 
     <!-- Footer -->
-
-    <footer class="footer">
-
-        <div class="footer-content">
-
-            <div>
-
-                <h3>About</h3>
-
-                <p>
-                    BR Innovation & Technology is an AI educational robotics startup
-                    focused on adaptive learning companions and intelligent educational systems.
-                </p>
-
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content" style="max-width:1400px;margin:0 auto;padding:0 2rem;">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo.png" alt="BR Innovation &amp; Technology Logo" loading="lazy">
+                        <span class="footer-logo-text">BR Innovation &amp; Technology</span>
+                    </div>
+                    <p class="footer-description">
+                        An AI educational robotics startup focused on adaptive learning companions and intelligent educational systems.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/br-innovation-and-technology/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.instagram.com/brinnovationandtechnology?igsh=aGExMDNpMHMxOXZx" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> About</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Solutions</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><a href="tel:+917975515056"><i class="fas fa-mobile-screen-button" aria-hidden="true"></i> +91 7975515056</a></li>
+                        <li><a href="mailto:contact@brinnoandtech.com"><i class="fas fa-envelope" aria-hidden="true"></i> contact@brinnoandtech.com</a></li>
+                        <li><a href="mailto:info@brinnoandtech.com"><i class="fas fa-envelope" aria-hidden="true"></i> info@brinnoandtech.com</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Bangalore, India</a></li>
+                    </ul>
+                </div>
             </div>
-
-            <div>
-
-                <h3>Quick Links</h3>
-
-                <p><a href="index.html">Home</a></p>
-                <p><a href="about.html">About</a></p>
-                <p><a href="services.html">Solutions</a></p>
-                <!-- Gallery temporarily disabled -->
-                <!-- <p><a href="gallery.html">Gallery</a></p> -->
-
-            </div>
-
-            <div>
-
-                <h3>Contact</h3>
-
-                <p>contact@brinnoandtech.com</p>
-                <p>info@brinnoandtech.com</p>
-                <p>+91 79755150565</p>
-
-            </div>
-
         </div>
-
         <div class="footer-bottom">
-            © 2025 BR Innovation & Technology. All Rights Reserved.
+            <div class="footer-bottom-content">
+                <div class="footer-bottom-text">© 2026 BR Innovation &amp; Technology. All rights reserved.</div>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
         </div>
-
     </footer>
 
+    <script src="assets/global.js"></script>
     <script>
-        const contactForm = document.getElementById('contact-form');
-        const formStatus = document.getElementById('form-status');
+    // Contact form submission
+    const contactForm = document.getElementById('contact-form');
+    const formStatus  = document.getElementById('form-status');
+    const submitBtn   = document.getElementById('submit-btn');
 
-        function setFormMessage(type, message) {
-            formStatus.className = `form-message ${type}`;
-            formStatus.textContent = message;
-        }
+    function setFormMessage(type, message) {
+        formStatus.className = 'form-message ' + type;
+        formStatus.textContent = message;
+    }
 
-        contactForm.addEventListener('submit', async (event) => {
-            event.preventDefault();
-            formStatus.className = 'form-message';
-            formStatus.textContent = '';
+    contactForm.addEventListener('submit', async function(event) {
+        event.preventDefault();
+        formStatus.className = 'form-message';
+        formStatus.textContent = '';
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 
-            const submitButton = contactForm.querySelector('button[type="submit"]');
-            submitButton.disabled = true;
-            submitButton.textContent = 'Sending...';
+        try {
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: new FormData(contactForm),
+                headers: { Accept: 'application/json' }
+            });
 
-            try {
-                const response = await fetch(contactForm.action, {
-                    method: 'POST',
-                    body: new FormData(contactForm),
-                    headers: {
-                        Accept: 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    contactForm.reset();
-                    setFormMessage(
-                        'success',
-                        'Thank you! Your message has been sent successfully.'
-                    );
-                } else {
-                    setFormMessage(
-                        'error',
-                        'Unable to send your message right now. Please try again.'
-                    );
-                }
-            } catch (error) {
-                setFormMessage(
-                    'error',
-                    'Network error. Please check your connection and try again.'
-                );
-            } finally {
-                submitButton.disabled = false;
-                submitButton.textContent = 'Send Message';
+            if (response.ok) {
+                contactForm.reset();
+                setFormMessage('success', '✓ Thank you! Your message has been sent successfully.');
+            } else {
+                setFormMessage('error', 'Unable to send your message right now. Please try again or email us directly.');
             }
-        });
+        } catch (err) {
+            setFormMessage('error', 'Network error. Please check your connection and try again.');
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+        }
+    });
     </script>
 </body>
-
 </html>
