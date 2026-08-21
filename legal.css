@@ -1,0 +1,12 @@
+.legal-page{min-height:70vh;padding:clamp(118px,13vw,168px) 0 76px;background:linear-gradient(180deg,#f8f5ff 0%,#fff 45%)}
+.legal-card{width:min(100% - 40px,900px);margin:0 auto;padding:clamp(28px,5vw,58px);border:1px solid #e4dcff;border-radius:30px;background:#fff;box-shadow:0 22px 70px rgba(62,40,139,.1)}
+.legal-eyebrow{display:inline-block;margin-bottom:12px;color:#6d4bef;font-size:12px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+.legal-card h1{margin:0 0 10px;color:#171d50;font:700 clamp(36px,6vw,58px)/1.08 Mali,Nunito,sans-serif;letter-spacing:-.045em}
+.legal-updated{margin:0 0 35px;color:#757a98;font-size:14px}
+.legal-card h2{margin:34px 0 10px;color:#232961;font:700 clamp(21px,3vw,27px)/1.25 Mali,Nunito,sans-serif}
+.legal-card p,.legal-card li{color:#4e5579;font-size:16px;line-height:1.75}
+.legal-card p{margin:0 0 14px}.legal-card ul{margin:8px 0 18px;padding-left:22px}.legal-card li+li{margin-top:7px}
+.legal-card a{color:#5b3be8;font-weight:800;text-decoration:underline;text-underline-offset:3px}
+.legal-note{margin-top:30px!important;padding:18px 20px;border-left:4px solid #714ff0;border-radius:6px 16px 16px 6px;background:#f3efff}
+.not-found-card{text-align:center}.not-found-card .legal-eyebrow{font-size:42px;letter-spacing:0}.not-found-card p{max-width:590px;margin:0 auto 24px}.not-found-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.not-found-actions a{padding:13px 22px;border-radius:14px;color:#fff;background:#623ee9;text-decoration:none}.not-found-actions a:last-child{color:#5035c7;background:#eee9ff}
+@media(max-width:650px){.legal-page{padding:94px 0 48px}.legal-card{width:calc(100% - 28px);padding:25px 20px;border-radius:22px}.legal-card p,.legal-card li{font-size:14px;line-height:1.7}.legal-card h2{margin-top:28px}}

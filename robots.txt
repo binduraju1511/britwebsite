@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://binduraju1511.github.io/britwebsite/sitemap.xml

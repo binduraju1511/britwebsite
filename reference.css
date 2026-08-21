@@ -1,0 +1,109 @@
+/* Exact reference-canvas tuning for the supplied 862–864 px designs. */
+.shell{width:calc(100% - 54px);max-width:1180px}
+.gallery-item{margin:0}
+
+@media (min-width:761px) and (max-width:1050px){
+  .shell{width:calc(100% - 34px);max-width:1180px}
+  body{font-size:12px}
+  .site-header,.nav{height:64px}
+  .logo{font-size:27px}
+  .nav-links a{padding:23px 0 17px}
+  .hero-home{height:475px}
+  .hero-about,.hero-features,.hero-parents,.hero-kids,.hero-gallery{height:405px}
+  .hero-faq{height:340px}
+  .hero-copy{padding-top:45px}
+  .hero-home .hero-copy{padding-top:38px}
+  .hero p{line-height:1.55;margin-bottom:16px}
+  .hero-actions{margin-top:18px}
+  .btn{padding:12px 21px;border-radius:13px}
+  .trust{margin-top:22px}
+  .section{padding:14px 0}
+  .section-title{margin-bottom:22px}
+  .section-title h2{font-size:27px}
+  .cards{gap:13px}
+  .mini-card{min-height:178px;padding:17px 10px;border-radius:16px}
+  .mini-card .ico{font-size:31px}
+  .love-panel{min-height:278px}
+  .love-copy{padding:28px 23px}
+  .love-copy h2{font-size:26px}
+  .love-copy ul{gap:9px}
+  .love-quote{margin:16px;padding:25px 15px;font-size:21px}
+  .age-intro{padding:22px}
+  .age-intro h2{font-size:24px}
+  .age img{width:108px;height:108px}
+  .testimonial{min-height:220px;padding:20px}
+  .review{padding:15px}
+  .testimonial-yani img{max-height:210px}
+  .journey-grid{gap:20px}
+  .story{padding:15px 25px}
+  .story h2{font-size:26px}
+  .story .mini-card{min-height:86px;padding:11px;text-align:left}
+  .story .mini-card .ico{float:left;margin-right:12px}
+  .timeline{min-height:285px;padding:22px 15px}
+  .timeline .dot{width:47px;height:47px}
+  .timeline h3{font-size:16px}
+  .founder{min-height:215px;padding:22px 40px}
+  .founder img{height:170px;width:155px}
+  .founder-quote{padding:25px;font-size:16px}
+  .purpose-card{min-height:175px;padding:18px}
+  .purpose-card img{height:135px}
+  .india{min-height:175px;padding:25px}
+  .india-art img{height:165px}
+  .feature-list{gap:9px}
+  .feature-strip{min-height:175px}
+  .feature-art{height:175px}
+  .feature-art img{height:165px}
+  .feature-text{padding:24px 35px}
+  .feature-text h2{font-size:24px}
+  .num{width:39px;height:39px}
+  .learn-loop{padding:14px}
+  .loop{padding:10px}
+  .loop .ico{width:48px;height:48px}
+  .safety-row article{padding:18px}
+  .dashboard{padding:20px}
+  .dashboard-grid{gap:10px}
+  .metric{min-height:175px;padding:14px}
+  .stat{font-size:25px;margin:10px 0}
+  .bars{height:55px}
+  .control-card{min-height:205px}
+  .control-card img{height:108px}
+  .control-card div{padding:13px}
+  .safety4 article{padding:17px}
+  .day article{padding:12px}
+  .day img{height:90px}
+  .activities{gap:9px}
+  .activity{min-height:245px;padding-top:15px}
+  .activity img{height:125px;margin-top:6px}
+  .adventure img{height:105px}
+  .adventure h3{padding:6px;margin:0}
+  .badges{padding:12px}
+  .badge .round{width:58px;height:58px}
+  .ask{padding:16px}
+  .ask img{height:170px}
+  .gallery-masonry{grid-auto-rows:170px}
+  .mood img{height:90px}
+  .faq-search-wrap{margin:-20px auto 18px}
+  .faq-search{padding:14px 50px 14px 22px}
+  .faq-q{padding:13px;font-size:14px}
+  .steps{padding:14px}
+  .step{padding:10px}
+  .step img{height:90px}
+  .help{padding:18px;grid-template-columns:65px 1fr}
+  .help .icon{font-size:36px}
+  .wide-cta{min-height:110px;padding:10px 30px}
+  .wide-cta img{height:105px}
+  .wide-cta h2{font-size:25px}
+  .newsletter{min-height:92px;padding:14px 36px}
+  .newsletter .gift{font-size:45px}
+  .site-footer{padding:32px 0 14px}
+  .footer-grid{gap:25px}
+  .copyright{margin-top:22px}
+}
+
+@media (max-width:600px){
+  html,body{max-width:100%;overflow-x:hidden}
+  .shell{width:calc(100% - 28px);max-width:1180px}
+  .nav{width:100%}.menu-btn{flex:0 0 44px}
+  .hero-copy{max-width:100%}
+  .hero h1{overflow-wrap:anywhere}
+}
