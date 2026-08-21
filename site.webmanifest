@@ -8,6 +8,6 @@
   "background_color": "#fbf9ff",
   "theme_color": "#5b3be8",
   "icons": [
-    {"src": "assets/images/br-innovation-logo-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"}
+    {"src": "assets/images/new_logo.png", "sizes": "1254x1254", "type": "image/png", "purpose": "any"}
   ]
 }

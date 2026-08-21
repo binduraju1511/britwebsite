@@ -11,8 +11,8 @@ Relative asset and page links work at the project URL:
 
 `https://binduraju1511.github.io/britwebsite/`
 
-The HTML includes pre-rendered content for indexing and retains `fidelity.js`
-for navigation, filters, FAQ interactions and the local keyword-based YANI
+The HTML includes pre-rendered content for indexing and uses the small `site.js`
+file for navigation, filters, FAQ interactions and the local keyword-based YANI
 Product Guide.
 
 ## Deploy
@@ -31,7 +31,7 @@ file when publishing this BR Innovation & Technology site. This package
 intentionally contains no `CNAME`.
 
 If a new BR Innovation & Technology custom domain is added later, update the
-absolute URL in every canonical/social tag, `SITE_URL` in `fidelity.js`,
+absolute URL in every canonical/social tag, `SITE_URL` in `site.js`,
 `robots.txt`, and `sitemap.xml` before publishing the domain.
 
 ## Preview locally

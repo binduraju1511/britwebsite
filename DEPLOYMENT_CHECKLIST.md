@@ -19,6 +19,8 @@ deployed GitHub account, domain or ongoing marketing work.
 - [x] Responsive mobile layouts, fixed mobile navigation, skip links, accessible
       labels and keyboard-operable interactive controls.
 - [x] Large page artwork converted to WebP and below-the-fold images lazy-loaded.
+- [x] Page templates are pre-rendered and the browser loads only a small
+      interaction/schema script instead of duplicate client-side page templates.
 - [x] No embedded secrets, private API keys, analytics cookies, localStorage,
       authentication, uploads, database or runtime dependencies.
 - [x] Browser Content Security Policy, strict referrer policy, safe external-link
